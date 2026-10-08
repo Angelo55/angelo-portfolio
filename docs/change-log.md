@@ -111,3 +111,10 @@ Asset status:
 - Reused the accessible blurred overlay for responsive PDF viewing, metadata, download, focus management, Escape close, and focus restoration.
 - Confirmed ESLint and the Next.js production build pass.
 - Adopted `update my local docs and etc. and commit and push` as the standard project finalization reminder.
+
+## 2026-10-09 - v1.3 production URL refinement
+
+- Added `https://angelolacsao-portfolio.vercel.app` as the preferred public production alias.
+- Verified the new alias returns HTTP 200 and serves the portfolio.
+- Updated canonical metadata, robots sitemap reference, generated sitemap URL, and current project state to use the preferred address.
+- Retained earlier deployment addresses as Vercel aliases for compatibility.

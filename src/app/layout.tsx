@@ -4,7 +4,7 @@ import "./globals.css";
 
 const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
-const productionUrl = "https://angelo-portfolio-angelo55s-projects.vercel.app";
+const productionUrl = "https://angelolacsao-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),

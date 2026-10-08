@@ -4,7 +4,7 @@ Last updated: 2026-10-09
 
 ## Production
 
-- Live URL: https://angelo-portfolio-angelo55s-projects.vercel.app
+- Live URL: https://angelolacsao-portfolio.vercel.app
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
