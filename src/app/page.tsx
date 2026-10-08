@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { ArrowUpRight, Code2, Facebook, FileText, Instagram, Languages, Linkedin, Mail, Sparkles, Wrench } from "lucide-react";
-import { CertificateItem } from "@/components/certificate-item";
+import { CertificateGallery } from "@/components/certificate-gallery";
 import { ContactForm } from "@/components/contact-form";
 import { DocumentDialog } from "@/components/document-dialog";
 import { Header } from "@/components/header";
+import { HeroTitle } from "@/components/hero-title";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Reveal } from "@/components/reveal";
 
@@ -12,11 +13,6 @@ const capabilities = [
   ["02", "UI/UX Implementation", "Clear, intuitive interfaces designed around usability, accessibility, and real service workflows."],
   ["03", "Automation", "Working knowledge of AI-assisted development and automations that improve everyday processes."],
   ["04", "IT Hardware Support", "Hands-on troubleshooting for electrical, computer hardware, and common technical problems."],
-];
-
-const certificates = [
-  ["Introduction to AI Literacy and Responsible Use", "Mapua University", "Sep 2026"],
-  ["Core Generative AI Skills", "Cisco Networking Academy", "Oct 2026"],
 ];
 
 const experience = [
@@ -38,16 +34,16 @@ export default function Home() {
     <section className="hero pad">
       <Reveal className="heroCopy">
         <div className="available"><i />Open to opportunities</div>
-        <h1>Hi, I&apos;m Angelo.<br />I build useful<br />digital products.</h1>
+        <HeroTitle />
         <p>A fourth-year BSIT student and full-stack developer focused on thoughtful interfaces, reliable systems, and technology that serves real communities.</p>
         <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
-        <div className="profile">
-          <div className="portrait">
+        <div className="profileCard">
+          <div className="profileMedia">
             <Image src="/images/lacsao-formal-photo.png" alt="Angelo Lacsao in formal business attire" fill priority sizes="(max-width: 700px) calc(100vw - 72px), (max-width: 1100px) 620px, 32vw" />
           </div>
-          <div><span><b>Angelo Lacsao</b><small>Full-stack Developer</small></span><small>Sipalay City, Philippines</small></div>
+          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack Developer</small></span><small>Sipalay City, Philippines</small></div>
         </div>
         <div className="focus"><small>CURRENT FOCUS</small><b>Building accessible full-stack experiences for practical services and real users.</b></div>
         <div className="social">
@@ -74,7 +70,7 @@ export default function Home() {
 
     <section id="certificates" className="split pad">
       <Reveal className="intro"><small>03 / CREDENTIALS</small><h2>Certificates &<br />continuous learning.</h2></Reveal>
-      <div className="certs">{certificates.map((certificate, index) => <Reveal key={certificate[0]} delay={index * 0.04}><CertificateItem title={certificate[0]} issuer={certificate[1]} date={certificate[2]} /></Reveal>)}</div>
+      <Reveal><CertificateGallery /></Reveal>
     </section>
 
     <section id="experience" className="experience pad">

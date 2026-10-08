@@ -77,7 +77,7 @@ Asset status:
 
 - The corrected source asset is `Lacsao's Formal Photo.png`.
 - The production asset was verified byte-for-byte against the supplied PNG.
-- The portfolio remains on the supplied non-2 PNG until the distinct JPG is added.
+- The supplied PNG is the final approved source asset.
 
 ## 2026-10-09 - v1.0 production release
 
@@ -91,3 +91,23 @@ Asset status:
 - Disabled Vercel SSO protection for this public portfolio project.
 - Added canonical metadata, Open Graph metadata, robots route, sitemap, and favicon.
 - Supabase was omitted because the static portfolio has no persistence requirement.
+
+## 2026-10-09 - v1.1 focused visual refinement
+
+- Reduced the expanded and compressed navigation height while preserving every navigation and interaction behavior.
+- Centered the approved formal portrait with a stable responsive crop and unchanged aspect ratio handling.
+- Added a low-motion looping highlight treatment to the hero phrase "digital products" with a static reduced-motion fallback.
+- Kept the existing Lucide visual language and added one semantic public-service icon beside the PESO category label.
+- Replaced the cropped PESO preview with the supplied full 16:9 preview image in both the showcase and case-study overlay.
+- Verified desktop, mobile, and PESO showcase renders locally; ESLint and the production build pass.
+
+## 2026-10-09 - v1.2 profile, navigation, and certificate refinement
+
+- Corrected the profile image at the container level with isolated profile card, media, and metadata styles.
+- Matched the profile frame to the approved PNG aspect ratio and centered its responsive crop.
+- Reduced and centered the navigation width, with a narrower compressed state while preserving its links, mobile menu, and scroll behavior.
+- Replaced placeholder certificate rows with a reusable, data-driven certificate gallery.
+- Added optimized previews and original PDF access for the Mapua/ACHIEVE AI literacy and Cisco Networking Academy generative AI certificates.
+- Reused the accessible blurred overlay for responsive PDF viewing, metadata, download, focus management, Escape close, and focus restoration.
+- Confirmed ESLint and the Next.js production build pass.
+- Adopted `update my local docs and etc. and commit and push` as the standard project finalization reminder.

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, BriefcaseBusiness, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CheckCircle2, Landmark } from "lucide-react";
 import { useState } from "react";
 import { OverlayDialog } from "@/components/overlay-dialog";
 
@@ -14,7 +14,7 @@ const projects = [{
   summary: "A digital employment platform connecting job seekers, employers, and PESO personnel through clearer, more accessible service workflows.",
   role: "Architecture, Full-stack Development, UI/UX",
   tags: ["Full-stack", "UI/UX", "Infrastructure"],
-  image: "/images/peso-kabankalan-public-site.png",
+  image: "/images/peso-kabankalan-preview.png",
   website: "https://pesokabankalanjobs.tech",
   features: [
     "Verified vacancy discovery and job fair information",
@@ -40,7 +40,7 @@ export function ProjectShowcase() {
             </button>
             <div className="projectInfo">
               <div>
-                <p className="eyebrow">{project.category}</p>
+                <p className="eyebrow projectCategory"><Landmark />{project.category}</p>
                 <h3>{project.shortTitle}</h3>
                 <p>{project.summary}</p>
               </div>

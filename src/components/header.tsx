@@ -70,7 +70,7 @@ export function Header() {
     };
   }, [open]);
 
-  return <header className={"header" + (compressed ? " headerCompressed" : "")} data-compressed={compressed}>
+  return <header className={"header siteHeader" + (compressed ? " headerCompressed" : "")} data-compressed={compressed}>
     <a className="brand" href="#top"><b>A</b><span>ANGELO</span></a>
     <nav className="desktop" aria-label="Primary navigation">{links.map((link) => <a key={link[1]} href={link[1]}>{link[0]}</a>)}</nav>
     <a className="btn desktop" href="#contact">Let&apos;s talk</a>
