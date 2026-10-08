@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.vercel/
+.dev-server.pid
+.dev-server.log
+.dev-server-error.log
+*.tsbuildinfo
+.edge-*/
+qa-*.png
+My Documents/
+Website Portoflio Inspo.mp4
+Portfolio
+Website

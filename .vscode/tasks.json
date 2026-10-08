@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Portfolio: Start",
+      "type": "process",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": ["node_modules/next/dist/bin/next", "dev"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "portfolio",
+        "pattern": { "regexp": "^(.*)$", "message": 1 },
+        "background": { "activeOnStart": true, "beginsPattern": "Next.js|� Next.js", "endsPattern": "Ready in|Local:" }
+      },
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Portfolio: Build",
+      "type": "process",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": ["node_modules/next/dist/bin/next", "build"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}
