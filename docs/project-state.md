@@ -2,33 +2,44 @@
 
 Last updated: 2026-10-09
 
+## Production
+
+- Live URL: https://angelo-portfolio-angelo55s-projects.vercel.app
+- GitHub: https://github.com/Angelo55/angelo-portfolio
+- Vercel project: angelo55s-projects/angelo-portfolio
+- Branch: main
+- Application: Next.js 16 App Router, React 19, TypeScript, Motion
+- Data model: static source-controlled content; Supabase is not required
+- Required environment variables: none
+- Deployment protection: disabled so the portfolio is public
+
 ## Completed
 
-- Next.js 16 App Router, React 19, TypeScript, Motion, and Supabase-ready foundation.
-- Full-width desktop shell with responsive tablet and mobile layouts.
-- Wide sticky navigation with scroll-direction-aware expanded and compressed states.
-- Accessible mobile navigation with Escape handling, outside-click close, and focus restoration.
-- Bidirectional viewport reveals that animate on entry and exit and respect reduced motion.
-- Responsive hero, mission, capabilities, selected work, credentials, experience, contact, and social sections.
-- Wide horizontal PESO Kabankalan project showcase using an extensible data model.
-- Accessible case-study, resume, and credential overlays.
-- LinkedIn, Facebook, Instagram, Gmail, resume, and validated email-draft contact flow.
-- Production build and TypeScript checks pass.
-- Persistent design and development records are current.
+- Correct PNG profile asset verified by SHA-256 and served from public/images/lacsao-formal-photo.png.
+- Responsive desktop, tablet, and mobile profile composition.
+- Wide sticky navigation with reliable scroll-direction expansion and compression.
+- Bidirectional viewport reveals with reduced-motion support.
+- Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
+- Accessible resume and credential overlays.
+- Social links, external project link, resume document, and email-draft contact flow.
+- Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
+- ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
+- GitHub repository and Vercel Git integration configured.
 
 ## Pending
 
 - Add certificate evidence files or public verification URLs when supplied.
-- Add future applications to the reusable project collection.
-- Configure production URL, metadata image, favicon, analytics, and deployment.
-- Add Supabase only when editable content or an administration workflow is required.
+- Add future projects to the reusable project collection.
+- Add a custom domain if desired.
+- Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
 
-## Known issues
+## Known limitations
 
-- Certificate dialogs show record details only because evidence files or URLs have not been supplied.
 - Contact submission opens the visitor's configured email application.
-- Headless Edge screenshot creation is currently unreliable on this Windows installation, although the production build succeeds.
+- Certificate dialogs contain record details until evidence files are supplied.
+- Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
+- The local Vercel prebuilt packager could not create Windows symlinks, so the successful release used the remote Linux builder.
 
 ## Continue here
 
-Proceed with production deployment verification and record the live release URL.
+Use GitHub main as the production source of truth. Future pushes deploy through the connected Vercel project. Verify the live URL after each release and update this file plus the change history.

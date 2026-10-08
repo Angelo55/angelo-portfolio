@@ -78,3 +78,16 @@ Asset status:
 - The corrected source asset is `Lacsao's Formal Photo.png`.
 - The production asset was verified byte-for-byte against the supplied PNG.
 - The portfolio remains on the supplied non-2 PNG until the distinct JPG is added.
+
+## 2026-10-09 - v1.0 production release
+
+- Confirmed the production profile image matches the supplied Formal Photo PNG byte-for-byte.
+- Published the image as public/images/lacsao-formal-photo.png and removed the superseded public asset.
+- Reworked header scroll detection to accumulate directional movement and applied a clearly visible compressed state.
+- Added ESLint 9 flat configuration; lint, TypeScript, and production build all pass.
+- Created private GitHub repository: https://github.com/Angelo55/angelo-portfolio
+- Connected Vercel project: angelo55s-projects/angelo-portfolio
+- Deployed production: https://angelo-portfolio-angelo55s-projects.vercel.app
+- Disabled Vercel SSO protection for this public portfolio project.
+- Added canonical metadata, Open Graph metadata, robots route, sitemap, and favicon.
+- Supabase was omitted because the static portfolio has no persistence requirement.
