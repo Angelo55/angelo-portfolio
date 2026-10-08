@@ -296,3 +296,17 @@ button{color:inherit}
 @media(hover:hover) and (pointer:fine){.certificateCard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.certificateCard:hover .certificatePreview img{transform:scale(1.018)}}
 @media(max-width:980px){.siteHeader{width:calc(100% - 32px)}.siteHeader.headerCompressed{width:calc(100% - 48px)}.heroCards{grid-template-columns:minmax(0,1fr) 74px;justify-content:stretch}.profileCard{width:min(100%,560px);justify-self:start}.certificateDialog{grid-template-columns:1fr}.certificateDetails{order:-1}.certificateDocumentFrame{height:58vh}}
 @media(max-width:700px){.siteHeader{width:calc(100% - 16px);margin:8px auto}.siteHeader.headerCompressed{width:calc(100% - 28px);margin:5px auto}.heroCards{grid-template-columns:1fr}.profileCard{width:100%;justify-self:stretch}.profileMeta{align-items:flex-start;flex-direction:column;gap:5px}.profileMeta small{text-align:left}.certificateGallery{grid-template-columns:1fr}.certificateCardBody{min-height:170px;padding:21px}.certificateDialog{gap:16px}.certificateDetails{padding:20px}.certificateDocumentFrame{height:55vh}}
+/* Responsive navigation alignment and reversible menu motion */
+.menuIcon{position:absolute;inset:0;display:grid;place-items:center;transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1)}
+.menuIcon svg{width:20px;height:20px}
+.menuIconOpen{transform:rotate(0deg) scale(1)}
+.menuIconClose{transform:rotate(0deg) scale(1)}
+.menuIconOpen.menuIconHidden{opacity:0;transform:rotate(45deg) scale(.78)}
+.menuIconClose.menuIconHidden{opacity:0;transform:rotate(-45deg) scale(.78)}
+@media(max-width:980px){
+  .siteHeader,.siteHeader.headerCompressed{grid-template-columns:minmax(0,1fr) auto}
+  .siteHeader .menu{position:relative;justify-self:end}
+  .mobile{display:grid;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px) scale(.985);transform-origin:top right;transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1),visibility 0s linear .28s}
+  .mobile.mobileOpen{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1);transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1),visibility 0s}
+}
+@media(prefers-reduced-motion:reduce){.mobile,.mobile.mobileOpen,.menuIcon{transition:none!important;transform:none}}

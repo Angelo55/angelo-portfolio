@@ -118,3 +118,12 @@ Asset status:
 - Verified the new alias returns HTTP 200 and serves the portfolio.
 - Updated canonical metadata, robots sitemap reference, generated sitemap URL, and current project state to use the preferred address.
 - Retained earlier deployment addresses as Vercel aliases for compatibility.
+## 2026-10-09 - v1.4 responsive navigation refinement
+
+- Corrected the narrow-header grid override that placed the menu trigger in the center column.
+- Restored a left-aligned brand and right-aligned menu trigger across tablet and mobile breakpoints.
+- Added reversible dropdown fade, slide, and scale transitions using the established easing and timing language.
+- Added a coordinated menu-to-close icon transition and a motion-free reduced-motion state.
+- Preserved first-link focus, Escape close with focus restoration, outside-click close, link selection, and scroll-responsive header behavior.
+- Verified the interaction at 390x844 and 820x1180 with automated browser tests and visual screenshots.
+- Confirmed ESLint and the Next.js production build pass.

@@ -29,6 +29,7 @@ Last updated: 2026-10-09
 - Full PESO Kabankalan preview asset is used in the wide showcase and overlay without cropping.
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
+- Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
 - Both supplied certificates have responsive preview cards and accessible PDF overlays with verified metadata.
 
 ## Pending

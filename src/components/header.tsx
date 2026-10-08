@@ -75,11 +75,12 @@ export function Header() {
     <nav className="desktop" aria-label="Primary navigation">{links.map((link) => <a key={link[1]} href={link[1]}>{link[0]}</a>)}</nav>
     <a className="btn desktop" href="#contact">Let&apos;s talk</a>
     <button ref={menuRef} className="menu" type="button" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
-      {open ? <X /> : <Menu />}
+      <span className={`menuIcon menuIconOpen${open ? " menuIconHidden" : ""}`}><Menu /></span>
+      <span className={`menuIcon menuIconClose${open ? "" : " menuIconHidden"}`}><X /></span>
     </button>
-    {open && <nav ref={navRef} id="mobile-navigation" className="mobile" aria-label="Mobile navigation">
-      {links.map((link) => <a key={link[1]} href={link[1]} onClick={() => setOpen(false)}>{link[0]}</a>)}
-      <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-    </nav>}
+    <nav ref={navRef} id="mobile-navigation" className={`mobile${open ? " mobileOpen" : ""}`} aria-label="Mobile navigation" aria-hidden={!open}>
+      {links.map((link) => <a key={link[1]} href={link[1]} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{link[0]}</a>)}
+      <a href="#contact" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Contact</a>
+    </nav>
   </header>;
 }
