@@ -4,6 +4,7 @@ import { CertificateGallery } from "@/components/certificate-gallery";
 import { ContactForm } from "@/components/contact-form";
 import { DocumentDialog } from "@/components/document-dialog";
 import { Header } from "@/components/header";
+import { HeroLogoField } from "@/components/hero-logo-field";
 import { HeroTitle } from "@/components/hero-title";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Reveal } from "@/components/reveal";
@@ -32,6 +33,7 @@ export default function Home() {
   return <main id="top"><div className="shell">
     <Header />
     <section className="hero pad">
+      <HeroLogoField />
       <Reveal className="heroCopy">
         <div className="available"><i />Open to internships & entry-level roles</div>
         <HeroTitle />

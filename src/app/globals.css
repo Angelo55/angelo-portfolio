@@ -310,3 +310,21 @@ button{color:inherit}
   .mobile.mobileOpen{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1);transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1),visibility 0s}
 }
 @media(prefers-reduced-motion:reduce){.mobile,.mobile.mobileOpen,.menuIcon{transition:none!important;transform:none}}
+/* Decorative, source-documented technology field for the hero */
+.hero{position:relative;isolation:isolate;overflow:clip}
+.heroCopy,.heroCards{position:relative;z-index:1}
+.heroLogoField{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.heroLogo{position:absolute;display:block;opacity:.1;animation:hero-logo-bounce var(--hero-logo-duration) var(--hero-logo-easing) var(--hero-logo-delay) infinite alternate;will-change:transform}
+.heroLogo img{display:block;width:100%;height:auto}
+.heroLogoPython{top:9%;left:2%;width:52px}
+.heroLogoJavascript{bottom:13%;left:5%;width:45px}
+.heroLogoTypescript{top:7%;left:46%;width:44px}
+.heroLogoReact{right:40%;bottom:9%;width:52px}
+.heroLogoNodejs{top:7%;right:7%;width:52px}
+.heroLogoPhp{right:3%;bottom:11%;width:55px}
+.heroLogoNextjs{top:49%;right:2%;width:46px}
+.heroLogoN8n{top:4%;right:24%;width:144px;opacity:.075}
+@keyframes hero-logo-bounce{0%{transform:translate3d(0,0,0) rotate(0) scale(1)}42%{transform:translate3d(var(--hero-logo-mid-x),var(--hero-logo-mid-y),0) rotate(calc(var(--hero-logo-rotate) * -.45)) scale(1)}100%{transform:translate3d(var(--hero-logo-drift-x),var(--hero-logo-drift-y),0) rotate(var(--hero-logo-rotate)) scale(var(--hero-logo-scale))}}
+@media(max-width:980px){.heroLogo{opacity:.075}.heroLogoPython{top:7%;left:3%;width:45px}.heroLogoJavascript{display:none}.heroLogoTypescript{top:13%;left:auto;right:9%;width:40px}.heroLogoReact{display:none}.heroLogoNodejs{top:auto;right:8%;bottom:7%;width:44px}.heroLogoPhp{display:none}.heroLogoNextjs{display:none}.heroLogoN8n{top:4%;right:22%;width:112px;opacity:.06}}
+@media(max-width:700px){.heroLogo{opacity:.055}.heroLogoPython{top:18%;left:4%;width:36px}.heroLogoTypescript{top:37%;right:4%;width:32px}.heroLogoNodejs{right:7%;bottom:4%;width:36px}.heroLogoN8n{display:none}}
+@media(prefers-reduced-motion:reduce){.heroLogo{animation:none;transform:none;will-change:auto}}
