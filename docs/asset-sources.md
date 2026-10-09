@@ -4,7 +4,7 @@
 
 The animated hero logo field is decorative. It is hidden from assistive technologies and does not represent sponsorship, endorsement, certification, or a commercial partnership.
 
-Motion uses deterministic, per-logo CSS profiles rather than runtime randomness. Durations, negative phase offsets, travel directions, easing curves, rotations, and intensity vary within a small range to create a controlled back-and-forth bounce without affecting layout or adding client-side JavaScript. Logos are progressively reduced on narrower viewports, and animation is disabled when `prefers-reduced-motion: reduce` is active.
+The hero logo field is rendered by `src/components/hero-logo-field.tsx`; all marks are decorative (`aria-hidden`) and non-interactive. Each logo uses a deterministic CSS profile supplied by React custom properties: a 9–15.2 second duration, negative phase offset, small asymmetric drift and midpoint offsets, restrained rotation/scale, and an individual easing curve. CSS alternates the logo between its configured start and drift state, creating slow floating motion without layout changes or client-side animation logic. At tablet and mobile widths, opacity is reduced and selected marks are hidden; `prefers-reduced-motion: reduce` disables the logo animations.
 
 | Local asset | Mark | Source | License or usage condition | Notes |
 | --- | --- | --- | --- | --- |

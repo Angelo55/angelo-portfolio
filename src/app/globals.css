@@ -241,11 +241,10 @@ button{color:inherit}
 .headerCompressed>.btn{min-height:36px;padding-inline:15px}
 .portrait{aspect-ratio:4/4.15}
 .portrait img{object-position:50% 50%}
-.heroTitle{margin:0 0 30px;font-size:clamp(55px,6.2vw,103px);line-height:.91;letter-spacing:-.075em;font-weight:590}
+.heroTitle{position:relative;isolation:isolate;margin:0 0 30px;font-size:clamp(55px,6.2vw,103px);line-height:.91;letter-spacing:-.075em;font-weight:590}
 .heroTitle>span{display:block}
 .heroTitleEmphasis{position:relative;isolation:isolate;width:max-content;max-width:100%}
-.heroTitleEmphasis:before{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;top:58%;height:.27em;border-radius:999px;background:linear-gradient(90deg,#dff1f2,#aaa9f6,#dff1f2);background-size:220% 100%;opacity:.58;transform:scaleX(.28);transform-origin:left;animation:hero-emphasis 7.2s cubic-bezier(.22,1,.36,1) infinite}
-@keyframes hero-emphasis{0%,18%,100%{background-position:100% 0;transform:scaleX(.28)}28%,56%{background-position:0 0;transform:scaleX(1)}68%{background-position:0 0;transform:scaleX(.28);transform-origin:right}}
+.heroTitleMotionTrace{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:-1}.heroTitleOrb{position:absolute;z-index:-1;left:0;top:0;border-radius:50%;background:radial-gradient(circle at 34% 29%,#f5f4ff 0 15%,#b1afff 42%,#8886ec 75%,#6e6bd2 100%);box-shadow:0 2px 9px #7775df77,0 0 16px #aaa9f644;offset-anchor:center;offset-rotate:0deg;will-change:offset-distance,transform;pointer-events:none}
 .projectPreview{display:grid;place-items:center;min-height:0;aspect-ratio:16/9;padding:0;background:#071d23}
 .projectPreview img{object-fit:contain;object-position:center}
 .projectPreview:after{background:linear-gradient(180deg,transparent 55%,#06130b8c)}
@@ -254,7 +253,7 @@ button{color:inherit}
 @media(max-width:980px){.projectPreview{min-height:0;aspect-ratio:16/9}.mobile{top:66px}}
 @media(max-width:700px){.header{min-height:56px;padding:6px 9px 6px 14px}.header .brand b{width:28px;height:28px;font-size:16px}.header>.btn{min-height:40px}.headerCompressed{min-height:48px;padding:4px 6px 4px 12px}.heroTitle{font-size:clamp(43px,12.4vw,58px);letter-spacing:-.065em}.portrait{aspect-ratio:4/4.15}.projectPreview{aspect-ratio:16/9}.mobile{top:62px}}
 @media(max-width:390px){.heroTitle{font-size:11.9vw}}
-@media(prefers-reduced-motion:reduce){.heroTitleEmphasis:before{animation:none;transform:scaleX(1);background-position:0 0}}
+@media(prefers-reduced-motion:reduce){.heroTitleMotionTrace,.heroTitleOrb{display:none!important}}
 
 /* Structural header and profile correction */
 .siteHeader{width:min(1120px,calc(100% - 48px));margin:10px auto;min-height:58px;padding:6px 12px 6px 16px;grid-template-columns:1fr auto 1fr}

@@ -5,7 +5,7 @@
 - Frontend: Next.js App Router, React, and TypeScript.
 - Rendering: server components and static/server rendering by default; client components only for navigation and animation.
 - Styling: global CSS with explicit design tokens and reusable layout/component classes.
-- Animation: Motion for React for viewport reveals; CSS transitions for hover and focus feedback.
+- Animation: Motion for React for viewport reveals and the client-side hero orb path; CSS handles the decorative hero logo field and hover/focus feedback.
 - Backend: Supabase is planned for structured portfolio data, Storage, and optional private authoring authentication.
 - Initial content: typed or code-local placeholder data until final profile content and assets are supplied.
 

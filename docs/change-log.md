@@ -134,3 +134,13 @@ Asset status:
 - Retained full-stack development, IT support, and hardware support as parallel career opportunities.
 - Preserved the approved layout, responsive behavior, navigation, animations, and interaction system.
 - Verified desktop hero, workflow-automation capability section, and mobile contact CTA; ESLint and the production build pass.
+
+
+## 2026-10-09 - v1.6 continuous hero bounce and logo-field documentation
+
+- Replaced the static emphasis shimmer with a Motion-powered orb, curved trace, and immediate continuous path handoff.
+- Kept cadence and easing steady while randomizing arc height, rebound, landing location, and travel direction; direction selection permits consecutive travel in the same direction as well as reversals.
+- Preserved responsive sizing and removed decorative motion under `prefers-reduced-motion`.
+- Documented hero logo asset sources, deterministic per-mark motion profiles, CSS variables, responsive reductions, and accessibility behavior.
+- `npm run lint`, `npm run build`, and `git diff --check` pass. A local production-browser sample observed seven landings with both consecutive same-direction travel and reversals.
+- The proposed fade-out/randomized re-entry second stage remains pending user approval.

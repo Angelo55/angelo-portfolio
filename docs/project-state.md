@@ -25,7 +25,8 @@ Last updated: 2026-10-09
 - Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
 - ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
 - GitHub repository and Vercel Git integration configured.
-- Compact responsive navigation treatment, centered portrait crop, and hero emphasis animation refined.
+- Compact responsive navigation treatment and centered portrait crop refined.
+- Hero statement uses a Motion-powered bouncing orb and fine lavender trace; the continuous cycle randomizes landing points/direction while maintaining a steady cadence and honors reduced motion.
 - Full PESO Kabankalan preview asset is used in the wide showcase and overlay without cropping.
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
@@ -35,6 +36,7 @@ Last updated: 2026-10-09
 
 ## Pending
 
+- Review and approve the proposed two-stage hero animation refinement (baseline bounce followed by overlapping fade-out/randomized-direction fade-in) before implementation.
 - Add future projects to the reusable project collection.
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
