@@ -11,7 +11,7 @@ import { Reveal } from "@/components/reveal";
 const capabilities = [
   ["01", "Full-stack Development", "Frontend and backend implementation, system architecture, and infrastructure for practical web applications."],
   ["02", "UI/UX Implementation", "Clear, intuitive interfaces designed around usability, accessibility, and real service workflows."],
-  ["03", "Automation", "Working knowledge of AI-assisted development and automations that improve everyday processes."],
+  ["03", "Workflow Automation", "Foundational hands-on exposure to n8n and AI-assisted workflows for connecting tools, reducing repetitive steps, and improving everyday processes."],
   ["04", "IT Hardware Support", "Hands-on troubleshooting for electrical, computer hardware, and common technical problems."],
 ];
 
@@ -33,9 +33,9 @@ export default function Home() {
     <Header />
     <section className="hero pad">
       <Reveal className="heroCopy">
-        <div className="available"><i />Open to opportunities</div>
+        <div className="available"><i />Open to internships & entry-level roles</div>
         <HeroTitle />
-        <p>A fourth-year BSIT student and full-stack developer focused on thoughtful interfaces, reliable systems, and technology that serves real communities.</p>
+        <p>A fourth-year BSIT student with practical exposure to AI-powered workflow automation, n8n, full-stack development, IT support, and hardware support—focused on building reliable technology that improves everyday work.</p>
         <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
@@ -43,9 +43,9 @@ export default function Home() {
           <div className="profileMedia">
             <Image src="/images/lacsao-formal-photo.png" alt="Angelo Lacsao in formal business attire" fill priority sizes="(max-width: 700px) calc(100vw - 72px), (max-width: 1100px) 620px, 32vw" />
           </div>
-          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack Developer</small></span><small>Sipalay City, Philippines</small></div>
+          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small>Sipalay City, Philippines</small></div>
         </div>
-        <div className="focus"><small>CURRENT FOCUS</small><b>Building accessible full-stack experiences for practical services and real users.</b></div>
+        <div className="focus"><small>CURRENT FOCUS</small><b>Exploring AI-powered workflow automation and n8n integrations for practical services and everyday work.</b></div>
         <div className="social">
           <a href="mailto:angelopamalacsao@gmail.com" aria-label="Email Angelo"><Mail /></a>
           <DocumentDialog src="/documents/Angelo_Lacsao_Resume.pdf" title="Angelo Lacsao Resume" className="iconButton" iconOnly><FileText /></DocumentDialog>
@@ -54,7 +54,7 @@ export default function Home() {
     </section>
 
     <Reveal><section className="mission">
-      <p>I combine <em>design thinking</em>, full-stack development, and practical problem-solving to build technology people can use with confidence.</p>
+      <p>I combine <em>design thinking</em>, full-stack development, workflow automation, and practical problem-solving to build technology people can use with confidence.</p>
       <div><span><Code2 />Full-stack web</span><span><Sparkles />Automation</span><span><Wrench />Hardware support</span></div>
     </section></Reveal>
 
@@ -83,7 +83,7 @@ export default function Home() {
 
     <section id="contact" className="contact">
       <Reveal className="contactBox">
-        <div><small>05 / GET IN TOUCH</small><h2>Have a project or<br />opportunity in mind?</h2><p>I&apos;m open to internships, entry-level roles, collaborations, and conversations about building useful technology.</p></div>
+        <div><small>05 / GET IN TOUCH</small><h2>Have a project or<br />opportunity in mind?</h2><p>I&apos;m open to AI automation, IT support, hardware support, development internships, entry-level roles, collaborations, and conversations about useful technology.</p></div>
         <ContactForm />
       </Reveal>
     </section>

@@ -31,6 +31,7 @@ Last updated: 2026-10-09
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
 - Both supplied certificates have responsive preview cards and accessible PDF overlays with verified metadata.
+- Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
 
 ## Pending
 

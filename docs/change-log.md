@@ -127,3 +127,10 @@ Asset status:
 - Preserved first-link focus, Escape close with focus restoration, outside-click close, link selection, and scroll-responsive header behavior.
 - Verified the interaction at 390x844 and 820x1180 with automated browser tests and visual screenshots.
 - Confirmed ESLint and the Next.js production build pass.
+## 2026-10-09 - v1.5 automation internship positioning
+
+- Updated hero, profile, current-focus, mission, workflow-automation capability, and contact messaging to include AI automation and automation internship positioning.
+- Described n8n and AI-powered workflow automation as foundational hands-on exposure and practical interest, without claiming expert or production-specialist experience.
+- Retained full-stack development, IT support, and hardware support as parallel career opportunities.
+- Preserved the approved layout, responsive behavior, navigation, animations, and interaction system.
+- Verified desktop hero, workflow-automation capability section, and mobile contact CTA; ESLint and the production build pass.
