@@ -144,3 +144,9 @@ Asset status:
 - Documented hero logo asset sources, deterministic per-mark motion profiles, CSS variables, responsive reductions, and accessibility behavior.
 - `npm run lint`, `npm run build`, and `git diff --check` pass. A local production-browser sample observed seven landings with both consecutive same-direction travel and reversals.
 - The proposed fade-out/randomized re-entry second stage remains pending user approval.
+
+
+## 2026-10-09 - retained continuous hero bounce baseline
+
+- Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
+- Kept the committed continuous randomized bounce as the active implementation; no animation code changed in this documentation update.

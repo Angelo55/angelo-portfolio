@@ -36,7 +36,6 @@ Last updated: 2026-10-09
 
 ## Pending
 
-- Review and approve the proposed two-stage hero animation refinement (baseline bounce followed by overlapping fade-out/randomized-direction fade-in) before implementation.
 - Add future projects to the reusable project collection.
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.

@@ -32,7 +32,7 @@ Header, hero, mission statement, capabilities, selected projects, certificates, 
 - A small lavender orb follows a curved bounce arc from one landing point on “digital products” up through the greeting line, with a thin, low-opacity trace behind it.
 - The cycle immediately hands off from each landing to the next path. Duration and easing stay fixed for a steady rhythm; landing position, apex, rebound, and whether travel continues or reverses are randomized within the text area.
 - Motion is decorative, does not reserve layout space, remains behind readable text, and is omitted when reduced motion is requested.
-- A proposed second-stage fade/re-entry treatment is pending explicit approval; do not implement it until approved.
+- A two-stage fade/re-entry variation was prototyped for local testing, then rolled back at the user's request. The continuous bounce described above remains the active design.
 
 ## Responsive behavior
 
