@@ -51,6 +51,7 @@ Last updated: 2026-10-12
 - Deployment responses now include baseline security headers, and the analytics endpoint rejects unexpected origins and oversized payloads.
 - GitHub Actions now runs locked dependency installation, lint, production build, and whitespace checks on pull requests and `main` pushes.
 - Added a public `/privacy` page describing analytics, hashed identifiers, local storage, theme preferences, contact behavior, and current retention.
+- Final production QA verified root/privacy/robots/sitemap HTTP 200 responses, protected analytics redirect, JSON-LD, security headers, and analytics origin rejection. Browser automation remains unavailable in this environment.
 
 ## Known limitations
 

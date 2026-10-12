@@ -208,6 +208,15 @@ Asset status:
 - Added a public privacy page linked from the footer.
 - Documented the actual analytics, local-storage, theme, contact, access, and retention behavior without implying unimplemented consent or deletion controls.
 
+## 2026-10-12 - v1.17 final release QA
+
+- Verified production root and privacy routes return HTTP 200.
+- Verified robots and sitemap endpoints return HTTP 200 and private paths are excluded from indexing.
+- Verified the unauthenticated analytics route redirects to `/analytics/login`.
+- Verified JSON-LD and the baseline security headers are present.
+- Verified cross-origin analytics requests are rejected with HTTP 403.
+- Browser automation was not available in this environment; interactive QA remains a manual follow-up if needed.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
