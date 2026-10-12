@@ -1,6 +1,6 @@
 # Current project state
 
-Last updated: 2026-10-09
+Last updated: 2026-10-12
 
 ## Production
 
@@ -21,7 +21,8 @@ Last updated: 2026-10-09
 - Bidirectional viewport reveals with reduced-motion support.
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
 - Accessible resume and credential overlays.
-- Social links, external project link, resume document, and email-draft contact flow.
+- Social links, GitHub profile link, explicit live-demo/source actions, resume document, and email-draft contact flow.
+- Project showcase links distinguish the PESO live deployment from the portfolio source repository; a dedicated PESO repository URL can replace the portfolio source when confirmed.
 - Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
 - ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
 - GitHub repository and Vercel Git integration configured.
@@ -39,6 +40,7 @@ Last updated: 2026-10-09
 - Add future projects to the reusable project collection.
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
+- Add a dedicated PESO repository link when the canonical project repository is confirmed.
 
 ## Known limitations
 

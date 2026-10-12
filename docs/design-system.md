@@ -89,3 +89,10 @@ Approved on 2026-10-09.
 - The project collection is data-driven so future work can be added without changing the section structure.
 - Tablet and mobile layouts stack the preview and information panel.
 - The project overlay remains the detailed reading experience.
+
+## Project link hierarchy
+
+- The showcase exposes two action types: the verified live deployment and a clearly labeled source repository.
+- External links open in a new tab with `noreferrer`; labels identify whether the destination is a demo or source.
+- Actions wrap naturally on narrow screens and remain keyboard reachable without changing the card layout.
+- Repository links must only be added when their ownership and relationship to the displayed project are verified.

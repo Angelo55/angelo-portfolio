@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, BriefcaseBusiness, CheckCircle2, Landmark } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CheckCircle2, Github, Landmark } from "lucide-react";
 import { useState } from "react";
 import { OverlayDialog } from "@/components/overlay-dialog";
 
@@ -16,6 +16,8 @@ const projects = [{
   tags: ["Full-stack", "UI/UX", "Infrastructure"],
   image: "/images/peso-kabankalan-preview.png",
   website: "https://pesokabankalanjobs.tech",
+  repository: "https://github.com/Angelo55/angelo-portfolio",
+  repositoryLabel: "Portfolio source",
   features: [
     "Verified vacancy discovery and job fair information",
     "Job seeker registration, email verification, and unified profiles",
@@ -46,6 +48,10 @@ export function ProjectShowcase() {
               </div>
               <div className="projectInfoBottom">
                 <div className="projectTags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <div className="projectLinks" aria-label={`${project.title} links`}>
+                  <a href={project.website} target="_blank" rel="noreferrer">Live demo <ArrowUpRight /></a>
+                  <a href={project.repository} target="_blank" rel="noreferrer"><Github />{project.repositoryLabel} <ArrowUpRight /></a>
+                </div>
                 <button className="projectTextAction" type="button" onClick={() => setActiveProject(project)}>
                   View project details <ArrowUpRight />
                 </button>
@@ -61,7 +67,10 @@ export function ProjectShowcase() {
         title={activeProject.title}
         description="A digital employment portal designed around the real workflows of PESO Kabankalan City."
         size="large"
-        actions={<a className="btn" href={activeProject.website} target="_blank" rel="noreferrer">Visit official website <ArrowUpRight /></a>}
+        actions={<div className="projectDialogActions">
+          <a className="btn" href={activeProject.website} target="_blank" rel="noreferrer">Visit live demo <ArrowUpRight /></a>
+          <a className="btn btnSecondary" href={activeProject.repository} target="_blank" rel="noreferrer"><Github />{activeProject.repositoryLabel} <ArrowUpRight /></a>
+        </div>}
       >
         <div className="caseStudy">
           <div className="caseStudyCopy">

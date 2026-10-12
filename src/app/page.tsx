@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Code2, Facebook, FileText, Instagram, Languages, Linkedin, Mail, Sparkles, Wrench } from "lucide-react";
+import { ArrowUpRight, Code2, Facebook, FileText, Github, Instagram, Languages, Linkedin, Mail, Sparkles, Wrench } from "lucide-react";
 import { CertificateGallery } from "@/components/certificate-gallery";
 import { ContactForm } from "@/components/contact-form";
 import { DocumentDialog } from "@/components/document-dialog";
@@ -27,6 +27,7 @@ const socials = [
   ["LinkedIn", "https://www.linkedin.com/in/angelo-pama-lacsao-0aa681353/?isSelfProfile=true", Linkedin],
   ["Facebook", "https://www.facebook.com/angelopamalacsao", Facebook],
   ["Instagram", "https://www.instagram.com/angelolacsao/?hl=en", Instagram],
+  ["GitHub", "https://github.com/Angelo55", Github],
 ] as const;
 
 export default function Home() {

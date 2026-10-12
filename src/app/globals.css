@@ -190,7 +190,14 @@ button{color:inherit}
 .projectInfoBottom{display:grid;gap:25px}
 .projectTags{display:flex;flex-wrap:wrap;gap:7px}
 .projectTags span{padding:8px 11px;color:#38727b;background:#e4f1f0;border-radius:999px;font-size:10px;font-weight:700}
+.projectLinks{display:flex;flex-wrap:wrap;gap:10px}
+.projectLinks a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;color:#245b63;background:#edf5f2;border:1px solid #d9e9e4;border-radius:999px;font-size:11px;font-weight:750;transition:.25s ease}
+.projectLinks a svg{width:14px;height:14px}
+.projectLinks a:hover{color:#fff;background:var(--teal);border-color:var(--teal);transform:translateY(-2px)}
 .projectTextAction{display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 0;border:0;border-top:1px solid #deded9;border-bottom:1px solid #deded9;background:transparent;font-size:13px;font-weight:750;cursor:pointer}
+.projectDialogActions{display:flex;flex-wrap:wrap;gap:10px}
+.projectDialogActions .btn{margin:0}
+.projectDialogActions .btnSecondary{color:#245b63;background:#edf5f2}
 @media(hover:hover) and (pointer:fine){
   .projectShowcase:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .projectShowcase:hover .projectPreview img{transform:scale(1.025)}

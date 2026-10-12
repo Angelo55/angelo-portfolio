@@ -146,6 +146,13 @@ Asset status:
 - The proposed fade-out/randomized re-entry second stage remains pending user approval.
 
 
+## 2026-10-12 - v1.7 GitHub and live-demo project actions
+
+- Added a visible GitHub profile link to the portfolio's social links.
+- Added explicit live-demo and source-repository actions to the project showcase and case-study overlay.
+- Kept the current PESO deployment as the live demo and labeled the known portfolio repository accurately; no unverified PESO repository was invented.
+- Preserved keyboard access, external-link semantics, responsive wrapping, and the existing case-study interaction.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
