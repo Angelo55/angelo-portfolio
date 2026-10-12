@@ -96,3 +96,29 @@ Approved on 2026-10-09.
 - External links open in a new tab with `noreferrer`; labels identify whether the destination is a demo or source.
 - Actions wrap naturally on narrow screens and remain keyboard reachable without changing the card layout.
 - Repository links must only be added when their ownership and relationship to the displayed project are verified.
+
+## Content voice standard
+
+Approved on 2026-10-12.
+
+- Use first person for the candidate narrative: “I build,” “I contributed,” “I’m exploring,” and “I’m open to.”
+- Keep section copy concise, specific, and recruiter-readable. Prefer one clear idea per sentence and avoid inflated claims.
+- Describe skills as practical contribution areas and label foundational exposure honestly (for example, n8n and AI-assisted workflows).
+- Keep the chatbot in the same first-person voice, grounded only in verified portfolio facts. Answers should be a short paragraph or up to five scannable bullets with a relevant next action when useful.
+
+## Recruiter assistant interaction system
+
+Approved on 2026-10-12.
+
+- The assistant uses the existing teal surface, Geist typography, Motion easing, and responsive overlay language.
+- Quick actions prioritize candidate summary, skills, career interests, resume, credentials, contact, and the PESO project.
+- Assistant and visitor avatars distinguish message ownership without relying on color alone.
+- New chat restores the verified welcome state and clears the current input/conversation; Escape and outside click close the panel and return focus to the launcher.
+- Resume and PESO resources use embedded previews or existing overlays where appropriate. Certificate navigation returns visitors to the established credential gallery.
+- The panel uses a blurred backdrop, bounded height, compact spacing, and a mobile-safe width. Reduced motion removes transitions and backdrop blur while preserving state changes.
+
+## Responsive header controls
+
+- At tablet and mobile widths, the brand, theme toggle, and menu trigger use explicit grid columns so controls never overlap or fall into an implicit row.
+- The menu dropdown is anchored below the full header height rather than a fixed pixel offset, so compressed and expanded states share the same alignment.
+- The theme toggle keeps a stable server-rendered light icon, then applies the saved or system preference after hydration to avoid a client/server mismatch.

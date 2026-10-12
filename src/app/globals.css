@@ -342,3 +342,63 @@ button{color:inherit}
 @media(max-width:980px){.heroLogo{opacity:.075}.heroLogoPython{top:7%;left:3%;width:45px}.heroLogoJavascript{display:none}.heroLogoTypescript{top:13%;left:auto;right:9%;width:40px}.heroLogoReact{display:none}.heroLogoNodejs{top:auto;right:8%;bottom:7%;width:44px}.heroLogoPhp{display:none}.heroLogoNextjs{display:none}.heroLogoN8n{top:4%;right:22%;width:112px;opacity:.06}}
 @media(max-width:700px){.heroLogo{opacity:.055}.heroLogoPython{top:18%;left:4%;width:36px}.heroLogoTypescript{top:37%;right:4%;width:32px}.heroLogoNodejs{right:7%;bottom:4%;width:36px}.heroLogoN8n{display:none}}
 @media(prefers-reduced-motion:reduce){.heroLogo{animation:none;transform:none;will-change:auto}}
+
+/* Recruiter assistant: compact, layered, and consistent with the portfolio overlay language. */
+.chatBackdrop{position:fixed;inset:0;z-index:0;background:#15211c18;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.chatbot{isolation:isolate}
+.chatLauncher,.chatPanel{position:relative;z-index:1}
+.chatPanel{grid-template-rows:auto minmax(0,1fr) auto auto auto;max-height:min(680px,calc(100vh - 96px));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.chatHeader{min-height:66px}
+.chatHeader>div{min-width:0}
+.chatHeader h2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chatMessages{max-height:none;min-height:96px;scrollbar-width:thin}
+.chatMessageRow{display:flex;align-items:flex-end;gap:7px;max-width:95%}
+.chatMessageRow.user{justify-content:flex-end;align-self:end;margin-left:auto}
+.chatMessageRow.user .chatAvatar{order:2;color:#fff;background:#267d88}
+.chatMessageRow.user .chatMessage{order:1}
+.chatAvatar{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;margin-bottom:2px;color:#33747a;background:#dff1f2;border-radius:50%}
+.chatAvatar svg{width:13px;height:13px}
+.chatMessage{max-width:calc(100% - 31px)}
+.chatActions{padding-bottom:10px}
+.chatActions a.chatActionButton,.chatActions button.chatActionButton{display:inline-flex;align-items:center;gap:5px;padding:8px 10px;border:1px solid #d6e5df;border-radius:999px;color:#27666d;background:transparent;font-size:10px;font-weight:750;cursor:pointer}
+.chatActionButton svg{width:12px;height:12px}
+.chatResourceList{padding:0 16px 10px}
+.chatResource{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;padding:8px 10px;border:1px solid #dbe8e3;border-radius:15px;color:var(--ink);background:#ffffff80;text-align:left;cursor:pointer}
+.chatResource:hover{background:#fff;transform:translateY(-1px)}
+.chatResourceIcon{display:grid;place-items:center;width:44px;height:32px;overflow:hidden;border-radius:8px;background:#dfe9e4}
+.chatResourceIcon img{width:100%;height:100%;object-fit:cover}
+.chatResource>span:nth-child(2){display:grid;gap:3px;min-width:0}
+.chatResource strong{font-size:11px}
+.chatResource small{color:var(--muted);font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chatResource>svg{width:15px;color:var(--teal)}
+.chatFooterActions{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px 10px;color:var(--muted);font-size:9px}
+.chatReset{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border:0;border-radius:8px;color:#39747d;background:transparent;font-size:10px;font-weight:750;cursor:pointer}
+.chatReset:hover{background:#dff1f2}
+.chatReset svg{width:12px}
+.chatPanel form{min-height:58px}
+.chatDialogActions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.chatDialogActions .btn{min-height:42px}
+.chatProjectPreview{display:grid;gap:20px}
+.chatProjectPreview>img{width:100%;height:auto;overflow:hidden;border-radius:18px}
+.chatProjectPreview>div{display:grid;gap:12px;max-width:760px}
+.chatProjectPreview p{margin:0;color:var(--muted);line-height:1.55}
+[data-theme="dark"] .chatResource{border-color:#ffffff1f;background:#ffffff0a}
+[data-theme="dark"] .chatResource:hover{background:#ffffff12}
+[data-theme="dark"] .chatAvatar{color:#b8e2dc;background:#17373b}
+[data-theme="dark"] .chatReset:hover{background:#17373b}
+[data-theme="dark"] .chatBackdrop{background:#0008}
+@media(max-width:700px){.chatBackdrop{background:#0e111280}.chatPanel{right:-2px;width:min(410px,calc(100vw - 28px));max-height:calc(100vh - 82px);border-radius:22px}.chatMessages{padding:13px}.chatActions{padding-inline:13px}.chatResourceList{padding-inline:13px}.chatFooterActions{padding-inline:12px}.chatFooterActions>span{max-width:150px;text-align:right}.chatDialogActions{align-items:stretch;flex-direction:column}.chatDialogActions .btn,.chatDialogActions .textLink{width:100%}}
+@media(prefers-reduced-motion:reduce){.chatBackdrop,.chatResource,.chatReset{transition:none!important}.chatResource:hover{transform:none}.chatBackdrop{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* Keep the theme control and mobile menu trigger in separate, stable columns. */
+@media(max-width:980px){
+  .siteHeader,.siteHeader.headerCompressed{grid-template-columns:minmax(0,1fr) auto auto;}
+  .siteHeader .headerActions{grid-column:2;grid-row:1;justify-self:end;}
+  .siteHeader .menu{grid-column:3;grid-row:1;}
+  .siteHeader .mobile{top:calc(100% + 10px);}
+}
+@media(max-width:700px){
+  .siteHeader .headerActions{gap:6px;}
+  .siteHeader .themeToggle{width:40px;height:40px;}
+  .siteHeader .mobile{top:calc(100% + 8px);}
+}

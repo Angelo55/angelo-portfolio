@@ -1,11 +1,22 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
+
+const themeListeners = new Set<() => void>();
+const subscribeTheme = (listener: () => void) => {
+  themeListeners.add(listener);
+  return () => themeListeners.delete(listener);
+};
+const getThemeSnapshot = () => {
+  const saved = localStorage.getItem("theme");
+  return saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+};
+const getThemeServerSnapshot = () => false;
 
 export function ThemeToggle() {
-  const [dark, setDark] = useState(() => typeof window !== "undefined" && (localStorage.getItem("theme") === "dark" || (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)));
+  const dark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getThemeServerSnapshot);
   useEffect(() => { document.documentElement.dataset.theme = dark ? "dark" : "light"; }, [dark]);
-  function toggle() { const next = !dark; setDark(next); document.documentElement.dataset.theme = next ? "dark" : "light"; localStorage.setItem("theme", next ? "dark" : "light"); }
+  function toggle() { const next = !dark; document.documentElement.dataset.theme = next ? "dark" : "light"; localStorage.setItem("theme", next ? "dark" : "light"); themeListeners.forEach((listener) => listener()); }
   return <button className="themeToggle" type="button" onClick={toggle} aria-label={`Switch to ${dark ? "light" : "dark"} mode`}><span>{dark ? <Sun /> : <Moon />}</span></button>;
 }

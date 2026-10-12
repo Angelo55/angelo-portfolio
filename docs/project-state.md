@@ -9,8 +9,8 @@ Last updated: 2026-10-12
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
-- Data model: static source-controlled content; Supabase is not required
-- Required environment variables: none
+- Data model: static source-controlled portfolio content with optional Supabase-backed analytics
+- Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser
 - Deployment protection: disabled so the portfolio is public
 
 ## Completed
@@ -41,7 +41,7 @@ Last updated: 2026-10-12
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
 - Add a dedicated PESO repository link when the canonical project repository is confirmed.
-- Apply `supabase/analytics.sql` and configure server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ANALYTICS_HASH_SALT` before enabling persistent analytics in production.
+- Supabase analytics schema and server-only production variables are configured; the private dashboard remains owner-authenticated.
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 - Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
 - Mobile navigation now traps keyboard focus while open and restores focus on Escape; Supabase proxy lint warning was removed.
@@ -51,9 +51,14 @@ Last updated: 2026-10-12
 - Deployment responses now include baseline security headers, and the analytics endpoint rejects unexpected origins and oversized payloads.
 - GitHub Actions now runs locked dependency installation, lint, production build, and whitespace checks on pull requests and `main` pushes.
 - Added a public `/privacy` page describing analytics, hashed identifiers, local storage, theme preferences, contact behavior, and current retention.
-- Final production QA verified root/privacy/robots/sitemap HTTP 200 responses, protected analytics redirect, JSON-LD, security headers, and analytics origin rejection. Browser automation remains unavailable in this environment.
+- Final production QA verified root/privacy/robots/sitemap HTTP 200 responses, protected analytics redirect, JSON-LD, security headers, analytics origin rejection, and local interactive assistant/header behavior.
 - Recruiter-focused DeepSeek portfolio assistant added with verified knowledge grounding, quick actions for summary/skills/project/resume/contact, server-only key usage, input limits, rate limiting, timeout fallback, and responsive accessible UI.
 - Chatbot motion now follows the portfolio's Motion-based interaction language with restrained panel/message transitions, spring-like hover/tap feedback, and a reduced-motion override.
+- Portfolio copy now uses a consistent first-person voice for the candidate narrative and assistant knowledge base.
+- Header theme and mobile-menu controls now occupy stable responsive columns, preserving alignment at tablet and narrow mobile widths.
+- Chatbot redesigned as a compact recruiter assistant with concise quick prompts, assistant/visitor avatars, a functional New chat reset, focus containment, Escape/outside-click dismissal, backdrop blur, and resource actions.
+- Resume access reuses the existing embedded document dialog; the PESO resource opens an in-chat project preview with live-demo, source, and section-navigation actions; credentials link back to the existing certificate overlay section.
+- Fresh local browser QA confirmed the mobile header at 390px, assistant open/close, outside-click dismissal, New chat reset, PESO preview overlay, and clean console output on a fresh page.
 
 ## Known limitations
 

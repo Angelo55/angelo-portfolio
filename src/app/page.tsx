@@ -11,10 +11,10 @@ import { ProjectShowcase } from "@/components/project-showcase";
 import { Reveal } from "@/components/reveal";
 
 const capabilities = [
-  ["01", "Full-stack Development", "Frontend and backend implementation, system architecture, and infrastructure for practical web applications."],
-  ["02", "UI/UX Implementation", "Clear, intuitive interfaces designed around usability, accessibility, and real service workflows."],
-  ["03", "Workflow Automation", "Foundational hands-on exposure to n8n and AI-assisted workflows for connecting tools, reducing repetitive steps, and improving everyday processes."],
-  ["04", "IT Hardware Support", "Hands-on troubleshooting for electrical, computer hardware, and common technical problems."],
+  ["01", "Full-stack Development", "I build frontend and backend systems with practical architecture and infrastructure for useful web applications."],
+  ["02", "UI/UX Implementation", "I design clear, intuitive interfaces around usability, accessibility, and real service workflows."],
+  ["03", "Workflow Automation", "I apply foundational hands-on exposure to n8n and AI-assisted workflows to connect tools, reduce repetitive steps, and improve everyday processes."],
+  ["04", "IT Hardware Support", "I troubleshoot electrical, computer hardware, and common technical problems with a practical, methodical approach."],
 ];
 
 const experience = [
@@ -39,7 +39,7 @@ export default function Home() {
       <Reveal className="heroCopy">
         <div className="available"><i />Open to internships & entry-level roles</div>
         <HeroTitle />
-        <p>A fourth-year BSIT student with practical exposure to AI-powered workflow automation, n8n, full-stack development, IT support, and hardware support—focused on building reliable technology that improves everyday work.</p>
+        <p>I&apos;m a fourth-year BSIT student with practical exposure to AI-powered workflow automation, n8n, full-stack development, IT support, and hardware support. I focus on building reliable technology that improves everyday work.</p>
         <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small>Sipalay City, Philippines</small></div>
         </div>
-        <div className="focus"><small>CURRENT FOCUS</small><b>Exploring AI-powered workflow automation and n8n integrations for practical services and everyday work.</b></div>
+        <div className="focus"><small>CURRENT FOCUS</small><b>I&apos;m exploring AI-powered workflow automation and n8n integrations for practical services and everyday work.</b></div>
         <div className="social">
           <a href="mailto:angelopamalacsao@gmail.com" aria-label="Email Angelo"><Mail /></a>
           <DocumentDialog src="/documents/Angelo_Lacsao_Resume.pdf" title="Angelo Lacsao Resume" className="iconButton" iconOnly><FileText /></DocumentDialog>

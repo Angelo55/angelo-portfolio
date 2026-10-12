@@ -11,7 +11,7 @@ const projects = [{
   shortTitle: "PESO Kabankalan City",
   category: "Employment Services Platform",
   stage: "Capstone Project",
-  summary: "A digital employment platform connecting job seekers, employers, and PESO personnel through clearer, more accessible service workflows.",
+  summary: "I built a digital employment platform connecting job seekers, employers, and PESO personnel through clearer, more accessible service workflows.",
   role: "Architecture, Full-stack Development, UI/UX",
   tags: ["Full-stack", "UI/UX", "Infrastructure"],
   image: "/images/peso-kabankalan-preview.png",
@@ -65,7 +65,7 @@ export function ProjectShowcase() {
         open
         onClose={() => setActiveProject(null)}
         title={activeProject.title}
-        description="A digital employment portal designed around the real workflows of PESO Kabankalan City."
+        description="I designed this digital employment portal around the real workflows of PESO Kabankalan City."
         size="large"
         actions={<div className="projectDialogActions">
           <a className="btn" href={activeProject.website} target="_blank" rel="noreferrer">Visit live demo <ArrowUpRight /></a>
@@ -75,7 +75,7 @@ export function ProjectShowcase() {
         <div className="caseStudy">
           <div className="caseStudyCopy">
             <section><p className="eyebrow">PROJECT OVERVIEW</p><p>{activeProject.summary}</p></section>
-            <section><p className="eyebrow">MY CONTRIBUTION</p><p>Angelo contributed to system architecture and infrastructure, frontend and backend functionality, and the interface and experience design.</p></section>
+            <section><p className="eyebrow">MY CONTRIBUTION</p><p>I contributed to system architecture and infrastructure, frontend and backend functionality, and the interface and experience design.</p></section>
             <section><p className="eyebrow">VERIFIED CAPABILITIES</p><ul>{activeProject.features.map((feature) => <li key={feature}><CheckCircle2 />{feature}</li>)}</ul></section>
             <div className="projectRole"><BriefcaseBusiness /><span><small>ROLE AREAS</small><b>{activeProject.role}</b></span></div>
           </div>

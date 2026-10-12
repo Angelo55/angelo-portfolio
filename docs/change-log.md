@@ -233,3 +233,13 @@ Asset status:
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
 - Kept the committed continuous randomized bounce as the active implementation; no animation code changed in this documentation update.
+
+## 2026-10-12 - v1.20 recruiter assistant and first-person content
+
+- Standardized the visible candidate narrative and DeepSeek grounding prompt around a concise, authentic first-person voice.
+- Fixed the responsive header grid so the theme toggle and mobile menu trigger remain aligned at tablet and small-screen widths; anchored the dropdown to the full header height.
+- Removed the theme-toggle hydration mismatch by keeping the initial server/client render stable and applying the saved or system preference after mount.
+- Rebuilt the chatbot surface as a compact recruiter assistant with quick prompts, assistant/visitor avatars, clearer input copy, a functional New chat reset, focus containment, Escape/outside-click dismissal, premium backdrop blur, and reduced-motion behavior.
+- Added an in-chat PESO project preview with live demo, source, and in-page case-study actions; reused the document dialog for resume preview and linked credentials to the existing certificate gallery.
+- Added the LCP loading hint for the first decorative hero logo and re-ran fresh-page console checks.
+- Verification: `npm run lint`, `npm run build`, `git diff --check`, local browser interaction QA at default desktop and 390x844 mobile sizes. Confirmed assistant open/close, outside click, reset, PESO preview, mobile menu alignment, and no fresh console errors.
