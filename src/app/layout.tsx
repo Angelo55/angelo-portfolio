@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ChatbotWidget } from "@/components/chatbot-widget";
 
 const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
@@ -23,5 +24,5 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const profileJsonLd = { "@context": "https://schema.org", "@type": "Person", name: "Angelo Lacsao", url: productionUrl, jobTitle: "Full-stack Developer", email: "mailto:angelopamalacsao@gmail.com", sameAs: ["https://github.com/Angelo55", "https://www.linkedin.com/in/angelo-pama-lacsao-0aa681353/?isSelfProfile=true"] };
-  return <html lang="en"><body className={sans.variable + " " + mono.variable}>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} /></body></html>;
+  return <html lang="en"><body className={sans.variable + " " + mono.variable}>{children}<ChatbotWidget /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} /></body></html>;
 }

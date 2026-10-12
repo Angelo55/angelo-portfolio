@@ -217,6 +217,13 @@ Asset status:
 - Verified cross-origin analytics requests are rejected with HTTP 403.
 - Browser automation was not available in this environment; interactive QA remains a manual follow-up if needed.
 
+## 2026-10-12 - v1.18 recruiter-focused DeepSeek assistant
+
+- Added a floating, theme-aware portfolio assistant with recruiter quick actions and responsive chat layout.
+- Added a server-side DeepSeek route grounded in verified portfolio facts; credentials never reach the browser.
+- Added message validation, per-IP request limits, timeout/error fallback, and no conversation persistence.
+- Added `ChatbotPortfolio.txt` to `.gitignore`; the local credential file is not tracked.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

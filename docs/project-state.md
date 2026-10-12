@@ -52,6 +52,7 @@ Last updated: 2026-10-12
 - GitHub Actions now runs locked dependency installation, lint, production build, and whitespace checks on pull requests and `main` pushes.
 - Added a public `/privacy` page describing analytics, hashed identifiers, local storage, theme preferences, contact behavior, and current retention.
 - Final production QA verified root/privacy/robots/sitemap HTTP 200 responses, protected analytics redirect, JSON-LD, security headers, and analytics origin rejection. Browser automation remains unavailable in this environment.
+- Recruiter-focused DeepSeek portfolio assistant added with verified knowledge grounding, quick actions for summary/skills/project/resume/contact, server-only key usage, input limits, rate limiting, timeout fallback, and responsive accessible UI.
 
 ## Known limitations
 
