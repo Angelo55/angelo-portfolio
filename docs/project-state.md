@@ -44,6 +44,7 @@ Last updated: 2026-10-12
 - Apply `supabase/analytics.sql` and configure server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ANALYTICS_HASH_SALT` before enabling persistent analytics in production.
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 - Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
+- Mobile navigation now traps keyboard focus while open and restores focus on Escape; Supabase proxy lint warning was removed.
 
 ## Known limitations
 

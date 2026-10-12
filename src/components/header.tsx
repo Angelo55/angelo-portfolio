@@ -56,7 +56,15 @@ export function Header() {
       if (event.key === "Escape") {
         setOpen(false);
         menuRef.current?.focus();
+        return;
       }
+      if (event.key !== "Tab") return;
+      const focusable = [...(navRef.current?.querySelectorAll<HTMLElement>("a[href]") ?? [])];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     }
     function handlePointerDown(event: PointerEvent) {
       const target = event.target as Node;

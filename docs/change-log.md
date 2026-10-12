@@ -172,6 +172,12 @@ Asset status:
 - Added dark-theme surfaces, borders, controls, project actions, contact panel, and navigation contrast overrides.
 - Preserved the existing light theme as the default baseline and kept theme transitions compatible with reduced motion.
 
+## 2026-10-12 - v1.11 accessibility hardening
+
+- Added a keyboard focus loop for the mobile navigation so Tab cannot escape an open menu unexpectedly.
+- Preserved Escape-to-close and focus restoration behavior.
+- Removed the Supabase proxy lint warning and re-ran lint, production build, and diff checks successfully.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
