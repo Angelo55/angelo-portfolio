@@ -43,6 +43,7 @@ Last updated: 2026-10-12
 - Add a dedicated PESO repository link when the canonical project repository is confirmed.
 - Apply `supabase/analytics.sql` and configure server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ANALYTICS_HASH_SALT` before enabling persistent analytics in production.
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
+- Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
 
 ## Known limitations
 

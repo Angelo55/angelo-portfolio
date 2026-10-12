@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [["Work", "#work"], ["Skills", "#skills"], ["Certificates", "#certificates"], ["Experience", "#experience"]];
 
@@ -73,7 +74,7 @@ export function Header() {
   return <header className={"header siteHeader" + (compressed ? " headerCompressed" : "")} data-compressed={compressed}>
     <a className="brand" href="#top"><b>A</b><span>ANGELO</span></a>
     <nav className="desktop" aria-label="Primary navigation">{links.map((link) => <a key={link[1]} href={link[1]}>{link[0]}</a>)}</nav>
-    <a className="btn desktop" href="#contact">Let&apos;s talk</a>
+    <div className="headerActions"><ThemeToggle /><a className="btn desktop" href="#contact">Let&apos;s talk</a></div>
     <button ref={menuRef} className="menu" type="button" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
       <span className={`menuIcon menuIconOpen${open ? " menuIconHidden" : ""}`}><Menu /></span>
       <span className={`menuIcon menuIconClose${open ? "" : " menuIconHidden"}`}><X /></span>

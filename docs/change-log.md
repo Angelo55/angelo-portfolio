@@ -166,6 +166,12 @@ Asset status:
 - Added server-side metric aggregation for page views, estimated unique visitors, and tracked clicks.
 - Kept the dashboard out of public navigation; Supabase publishable keys are client-safe and the service-role key remains server-only.
 
+## 2026-10-12 - v1.10 theme preference and dark mode
+
+- Added an accessible header theme toggle with system-theme fallback and local preference persistence.
+- Added dark-theme surfaces, borders, controls, project actions, contact panel, and navigation contrast overrides.
+- Preserved the existing light theme as the default baseline and kept theme transitions compatible with reduced motion.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
