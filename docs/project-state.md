@@ -15,6 +15,12 @@ Last updated: 2026-10-12
 
 ## Completed
 
+- Completed a full-stack technical, UI/UX, accessibility, performance, security, and production-configuration audit on 2026-10-12; detailed evidence is recorded in `docs/audit-2026-10-12.md`.
+- Repaired dark-theme contrast across shared dialogs, profile controls, and certificate cards; restored explicit input focus rings.
+- Corrected same-origin document framing, analytics/browser-storage resilience, private-dashboard error handling, and chatbot/analytics API hardening.
+- Completed Codex Security scan `80239b26-8940-4b43-81eb-d16d39c6059e`: two low-severity findings on the prior snapshot were remediated in the working tree.
+- Production dependency advisory audit reports no known vulnerabilities.
+
 - Correct PNG profile asset verified by SHA-256 and served from public/images/lacsao-formal-photo.png.
 - Responsive desktop, tablet, and mobile profile composition.
 - Wide sticky navigation with reliable scroll-direction expansion and compression.
@@ -66,6 +72,9 @@ Last updated: 2026-10-12
 - Analytics events are accepted safely when storage is not configured, but are not persisted until the Supabase table and server-only environment variables are provisioned.
 - Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
 - The local Vercel prebuilt packager could not create Windows symlinks, so the successful release used the remote Linux builder.
+- The in-app audit browser cannot render localhost PDFs inline; resume and certificate open/download fallbacks remain available, and production document responses allow same-origin framing.
+- Rate limiting remains best-effort per Vercel function instance; a distributed limiter is only warranted if observed traffic or abuse requires it.
+- A strict nonce-based Content Security Policy and immutable GitHub Action SHA pins remain documented defense-in-depth follow-ups.
 
 ## Continue here
 

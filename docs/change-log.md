@@ -244,3 +244,15 @@ Asset status:
 - Added an in-chat PESO project preview with live demo, source, and in-page case-study actions; reused the document dialog for resume preview and linked credentials to the existing certificate gallery.
 - Added the LCP loading hint for the first decorative hero logo and re-ran fresh-page console checks.
 - Verification: `npm run lint`, `npm run build`, `git diff --check`, local browser interaction QA at default desktop and 390x844 mobile sizes. Confirmed assistant open/close, outside click, reset, PESO preview, mobile menu alignment, and no fresh console errors.
+
+## 2026-10-12 - v1.21 full-stack audit and remediation
+
+- Completed a repository-wide architecture, UI/UX, accessibility, performance, security, and production-configuration audit.
+- Fixed unreadable dark-mode resource dialogs, profile controls, and certificate cards; added explicit keyboard focus rings for contact and chatbot inputs.
+- Replaced the document-blocking `X-Frame-Options: DENY` policy with `SAMEORIGIN` so the portfolio can frame its own resume and certificates while blocking external framing.
+- Hardened analytics against blocked browser storage, stale idle callbacks, missing hash salt, unreachable Supabase, and unbounded rate-limit state.
+- Hardened the DeepSeek route with request-size and origin validation, bounded rate-limit state, no-store responses, and safe provider JSON handling.
+- Improved private analytics sign-in and dashboard failure states without exposing provider details.
+- Added eager loading for the small above-the-fold hero SVG field after a non-Python logo was observed as LCP.
+- Codex Security scan `80239b26-8940-4b43-81eb-d16d39c6059e` reported two low-severity issues on the prior snapshot; both are remediated here.
+- Verification passed: `npm run lint`, `npm run build`, `git diff --check`, `pnpm audit --prod`, local API boundary tests, desktop/mobile browser QA, keyboard flows, theme switching, chatbot reset/resources, and contact validation.

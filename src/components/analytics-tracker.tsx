@@ -4,12 +4,25 @@ import { useEffect } from "react";
 
 const VISITOR_KEY = "angelo-portfolio-visitor";
 
+function randomVisitorId() {
+  try {
+    if (typeof crypto.randomUUID === "function") return crypto.randomUUID().replaceAll("-", "");
+    return Array.from(crypto.getRandomValues(new Uint8Array(16)), (value) => value.toString(16).padStart(2, "0")).join("");
+  } catch {
+    return `${Date.now().toString(36)}_${Math.random().toString(36).slice(2)}`.padEnd(16, "0").slice(0, 80);
+  }
+}
+
 function visitorId() {
-  const existing = window.localStorage.getItem(VISITOR_KEY);
-  if (existing) return existing;
-  const next = crypto.randomUUID().replaceAll("-", "");
-  window.localStorage.setItem(VISITOR_KEY, next);
-  return next;
+  try {
+    const existing = window.localStorage.getItem(VISITOR_KEY);
+    if (existing) return existing;
+    const next = randomVisitorId();
+    window.localStorage.setItem(VISITOR_KEY, next);
+    return next;
+  } catch {
+    return randomVisitorId();
+  }
 }
 
 function send(event: { event: "page_view" | "click"; path: string; target?: string; visitorId?: string }) {
@@ -24,9 +37,15 @@ export function AnalyticsTracker() {
     const today = new Date().toISOString().slice(0, 10);
     const viewKey = `angelo-portfolio-view:${today}`;
     const schedule = window.requestIdleCallback ?? ((callback: IdleRequestCallback) => window.setTimeout(callback, 400));
-    if (!window.sessionStorage.getItem(viewKey)) {
-      window.sessionStorage.setItem(viewKey, "1");
-      schedule(() => send({ event: "page_view", path: window.location.pathname, visitorId: id }));
+    const cancel = window.cancelIdleCallback ?? window.clearTimeout;
+    let scheduled: number | undefined;
+    let shouldTrackView = true;
+    try {
+      shouldTrackView = !window.sessionStorage.getItem(viewKey);
+      if (shouldTrackView) window.sessionStorage.setItem(viewKey, "1");
+    } catch {}
+    if (shouldTrackView) {
+      scheduled = schedule(() => send({ event: "page_view", path: window.location.pathname, visitorId: id }));
     }
     let lastClick = "";
     let lastClickAt = 0;
@@ -38,7 +57,10 @@ export function AnalyticsTracker() {
       if (label && (label !== lastClick || now - lastClickAt > 1500)) { lastClick = label; lastClickAt = now; send({ event: "click", path: window.location.pathname, target: label, visitorId: id }); }
     };
     document.addEventListener("click", onClick, { passive: true });
-    return () => document.removeEventListener("click", onClick);
+    return () => {
+      document.removeEventListener("click", onClick);
+      if (scheduled !== undefined) cancel(scheduled);
+    };
   }, []);
   return null;
 }

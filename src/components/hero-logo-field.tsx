@@ -30,7 +30,7 @@ export function HeroLogoField() {
 
         return (
           <span className={`heroLogo ${logo.className}`} style={style} key={logo.id}>
-            <Image src={logo.src} alt="" width={logo.width} height={logo.height} loading={logo.id === "python" ? "eager" : "lazy"} />
+            <Image src={logo.src} alt="" width={logo.width} height={logo.height} loading="eager" />
           </span>
         );
       })}
