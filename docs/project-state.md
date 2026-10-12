@@ -48,6 +48,7 @@ Last updated: 2026-10-12
 - SEO metadata now includes Twitter cards, an explicit icon, Person JSON-LD, and robots exclusions for the private analytics/API paths.
 - Contact draft validation now trims input, enforces useful length bounds, and reports incomplete messages before opening the visitor's email app.
 - Analytics page-view events are deferred to idle time, use `sendBeacon` where supported, and suppress rapid duplicate click events.
+- Deployment responses now include baseline security headers, and the analytics endpoint rejects unexpected origins and oversized payloads.
 
 ## Known limitations
 

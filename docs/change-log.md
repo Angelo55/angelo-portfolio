@@ -191,6 +191,12 @@ Asset status:
 - Suppressed rapid duplicate click events to reduce noise and unnecessary requests.
 - Re-ran lint, production build, and diff checks successfully.
 
+## 2026-10-12 - v1.14 security hardening
+
+- Added `nosniff`, frame, referrer, permissions, and HSTS response headers through Next configuration.
+- Added analytics origin validation and a 4 KB request-size limit before processing or persistence.
+- Kept the service-role boundary server-only and verified the production build after the change.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

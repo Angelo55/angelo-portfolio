@@ -26,6 +26,10 @@ function hash(value: string) {
 }
 
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  const allowedOrigin = process.env.NEXT_PUBLIC_SITE_URL ?? "https://angelolacsao-portfolio.vercel.app";
+  if (origin && origin !== allowedOrigin) return NextResponse.json({ accepted: false }, { status: 403 });
+  if (Number(request.headers.get("content-length") ?? 0) > 4096) return NextResponse.json({ accepted: false }, { status: 413 });
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   const now = Date.now();
   const bucket = buckets.get(ip);
