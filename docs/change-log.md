@@ -184,6 +184,13 @@ Asset status:
 - Excluded the private analytics dashboard and API routes from indexing.
 - Added trimmed, bounded contact fields and a clear client-side message when the inquiry lacks enough detail.
 
+## 2026-10-12 - v1.13 analytics runtime performance
+
+- Deferred page-view tracking until browser idle time to keep initial rendering responsive.
+- Prefer `sendBeacon` for analytics delivery and retain a fetch fallback.
+- Suppressed rapid duplicate click events to reduce noise and unnecessary requests.
+- Re-ran lint, production build, and diff checks successfully.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
