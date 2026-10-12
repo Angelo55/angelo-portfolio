@@ -42,6 +42,7 @@ Last updated: 2026-10-12
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
 - Add a dedicated PESO repository link when the canonical project repository is confirmed.
 - Apply `supabase/analytics.sql` and configure server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ANALYTICS_HASH_SALT` before enabling persistent analytics in production.
+- Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 
 ## Known limitations
 

@@ -160,6 +160,12 @@ Asset status:
 - Added an RLS-protected Supabase schema for optional persistent storage; no service-role key is exposed to the browser.
 - The endpoint intentionally degrades to a successful non-persistent response until Supabase environment variables and the reviewed schema are configured.
 
+## 2026-10-12 - v1.9 private analytics dashboard
+
+- Added `/analytics/login` with Supabase email/password sign-in and a protected `/analytics` dashboard.
+- Added server-side metric aggregation for page views, estimated unique visitors, and tracked clicks.
+- Kept the dashboard out of public navigation; Supabase publishable keys are client-safe and the service-role key remains server-only.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

@@ -174,6 +174,7 @@ button{color:inherit}
 .headerCompressed>.btn{min-height:40px;padding-inline:17px}
 
 .work{display:block}
+.authPage,.analyticsPage{min-height:100vh;padding:clamp(32px,8vw,100px);background:var(--paper)}.authCard,.analyticsShell{max-width:900px;margin:auto;padding:clamp(28px,5vw,64px);background:#fff;border-radius:30px;box-shadow:var(--shadow)}.authCard{max-width:480px}.authCard h1,.analyticsShell h1{margin:12px 0;font-size:clamp(40px,6vw,72px);letter-spacing:-.06em}.authCard label{display:grid;gap:8px;margin:18px 0;font-size:12px;font-weight:700}.authCard input{padding:13px;border:1px solid #d7ded9;border-radius:10px;font:inherit}.authError{color:#a33}.analyticsMuted{color:var(--muted)}.analyticsCards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0}.analyticsCards article{display:grid;gap:12px;padding:22px;background:#edf5f2;border-radius:18px}.analyticsCards b{font-size:38px}.analyticsTable{margin-top:28px}.analyticsTable ul{padding:0;list-style:none}.analyticsTable li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #e5e9e4;font-size:13px}.analyticsTable time{color:var(--muted)}
 .work>.intro{position:static;display:grid;grid-template-columns:minmax(280px,.7fr) minmax(400px,1.3fr);align-items:end;gap:50px}
 .work>.intro h2{max-width:720px}
 .work>.projects{display:block;margin-top:clamp(40px,6vw,78px)}
