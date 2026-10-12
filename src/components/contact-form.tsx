@@ -10,9 +10,10 @@ export function ContactForm() {
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const message = String(data.get("message") ?? "");
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    if (name.length < 2 || message.length < 10) { setStatus("Please add your name and a little more detail so I can respond usefully."); return; }
     const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
     setStatus("Your email app is opening with the message ready to review.");
@@ -20,9 +21,9 @@ export function ContactForm() {
   }
   return (
     <form onSubmit={submit}>
-      <label>Name<input required name="name" autoComplete="name" placeholder="Your name" /></label>
+      <label>Name<input required minLength={2} maxLength={80} name="name" autoComplete="name" placeholder="Your name" /></label>
       <label>Email<input required type="email" name="email" autoComplete="email" placeholder="you@example.com" /></label>
-      <label className="full">Message<textarea required name="message" rows={4} placeholder="Tell me about your idea..." /></label>
+      <label className="full">Message<textarea required minLength={10} maxLength={2000} name="message" rows={4} placeholder="Tell me about your idea..." /></label>
       <button className="btn full" type="submit">Open email draft <ArrowUpRight /></button>
       <p className="formStatus full" aria-live="polite">{status}</p>
     </form>

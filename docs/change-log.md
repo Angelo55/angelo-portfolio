@@ -178,6 +178,12 @@ Asset status:
 - Preserved Escape-to-close and focus restoration behavior.
 - Removed the Supabase proxy lint warning and re-ran lint, production build, and diff checks successfully.
 
+## 2026-10-12 - v1.12 SEO and contact-flow hardening
+
+- Added Twitter card metadata, explicit favicon metadata, and Person JSON-LD for search and social previews.
+- Excluded the private analytics dashboard and API routes from indexing.
+- Added trimmed, bounded contact fields and a clear client-side message when the inquiry lacks enough detail.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

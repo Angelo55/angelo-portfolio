@@ -16,9 +16,12 @@ export const metadata: Metadata = {
     description: "A portfolio of practical digital products, technical skills, credentials, and experience.",
     url: "/", siteName: "Angelo Lacsao Portfolio", type: "website",
   },
+  twitter: { card: "summary", title: "Angelo Lacsao | Full-stack Developer", description: "A portfolio of practical digital products, technical skills, credentials, and experience." },
+  icons: { icon: "/icon.svg" },
   robots: { index: true, follow: true },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body className={sans.variable + " " + mono.variable}>{children}</body></html>;
+  const profileJsonLd = { "@context": "https://schema.org", "@type": "Person", name: "Angelo Lacsao", url: productionUrl, jobTitle: "Full-stack Developer", email: "mailto:angelopamalacsao@gmail.com", sameAs: ["https://github.com/Angelo55", "https://www.linkedin.com/in/angelo-pama-lacsao-0aa681353/?isSelfProfile=true"] };
+  return <html lang="en"><body className={sans.variable + " " + mono.variable}>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} /></body></html>;
 }

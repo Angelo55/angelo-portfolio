@@ -45,6 +45,8 @@ Last updated: 2026-10-12
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 - Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
 - Mobile navigation now traps keyboard focus while open and restores focus on Escape; Supabase proxy lint warning was removed.
+- SEO metadata now includes Twitter cards, an explicit icon, Person JSON-LD, and robots exclusions for the private analytics/API paths.
+- Contact draft validation now trims input, enforces useful length bounds, and reports incomplete messages before opening the visitor's email app.
 
 ## Known limitations
 
