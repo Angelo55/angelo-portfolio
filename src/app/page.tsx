@@ -107,6 +107,7 @@ export default function Home() {
         <span className="languages"><Languages /> Tagalog / English / Hiligaynon</span>
         <span>Copyright 2026</span>
         <a href="#top">Back to top <ArrowUpRight /></a>
+        <a href="/privacy">Privacy <ArrowUpRight /></a>
       </div>
     </footer>
   </div></main>;

@@ -50,6 +50,7 @@ Last updated: 2026-10-12
 - Analytics page-view events are deferred to idle time, use `sendBeacon` where supported, and suppress rapid duplicate click events.
 - Deployment responses now include baseline security headers, and the analytics endpoint rejects unexpected origins and oversized payloads.
 - GitHub Actions now runs locked dependency installation, lint, production build, and whitespace checks on pull requests and `main` pushes.
+- Added a public `/privacy` page describing analytics, hashed identifiers, local storage, theme preferences, contact behavior, and current retention.
 
 ## Known limitations
 
