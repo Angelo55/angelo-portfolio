@@ -10,14 +10,14 @@ const productionUrl = "https://angelolacsao-portfolio.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
   title: "Angelo Lacsao | BSIT Student & Full-stack Developer",
-  description: "Portfolio of Angelo Lacsao, a fourth-year BSIT student building practical full-stack web experiences.",
+  description: "I’m Angelo Lacsao, a fourth-year BSIT student building practical full-stack web experiences.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Angelo Lacsao | Full-stack Developer",
-    description: "A portfolio of practical digital products, technical skills, credentials, and experience.",
+    description: "I share practical digital products, technical skills, credentials, and experience.",
     url: "/", siteName: "Angelo Lacsao Portfolio", type: "website",
   },
-  twitter: { card: "summary", title: "Angelo Lacsao | Full-stack Developer", description: "A portfolio of practical digital products, technical skills, credentials, and experience." },
+  twitter: { card: "summary", title: "Angelo Lacsao | Full-stack Developer", description: "I share practical digital products, technical skills, credentials, and experience." },
   icons: { icon: "/icon.svg" },
   robots: { index: true, follow: true },
 };

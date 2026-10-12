@@ -237,6 +237,7 @@ Asset status:
 ## 2026-10-12 - v1.20 recruiter assistant and first-person content
 
 - Standardized the visible candidate narrative and DeepSeek grounding prompt around a concise, authentic first-person voice.
+- Aligned page, Open Graph, and Twitter descriptions with the same first-person content standard.
 - Fixed the responsive header grid so the theme toggle and mobile menu trigger remain aligned at tablet and small-screen widths; anchored the dropdown to the full header height.
 - Removed the theme-toggle hydration mismatch by keeping the initial server/client render stable and applying the saved or system preference after mount.
 - Rebuilt the chatbot surface as a compact recruiter assistant with quick prompts, assistant/visitor avatars, clearer input copy, a functional New chat reset, focus containment, Escape/outside-click dismissal, premium backdrop blur, and reduced-motion behavior.
