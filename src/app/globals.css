@@ -353,6 +353,7 @@ button{color:inherit}
 .chatHeader>div{min-width:0}
 .chatHeader h2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chatMessages{max-height:none;min-height:96px;scrollbar-width:thin}
+.chatMessage{white-space:pre-line}
 .chatMessageRow{display:flex;align-items:flex-end;gap:7px;max-width:95%}
 .chatMessageRow.user{justify-content:flex-end;align-self:end;margin-left:auto}
 .chatMessageRow.user .chatAvatar{order:2;color:#fff;background:#267d88}

@@ -65,6 +65,7 @@ Last updated: 2026-10-12
 - Chatbot redesigned as a compact recruiter assistant with concise quick prompts, assistant/visitor avatars, a functional New chat reset, focus containment, Escape/outside-click dismissal, backdrop blur, and resource actions.
 - Resume access reuses the existing embedded document dialog; the PESO resource opens an in-chat project preview with live-demo, source, and section-navigation actions; credentials link back to the existing certificate overlay section.
 - Fresh local browser QA confirmed the mobile header at 390px, assistant open/close, outside-click dismissal, New chat reset, PESO preview overlay, and clean console output on a fresh page.
+- Production assistant responses are normalized to safe plain text and preserve line breaks, preventing raw Markdown emphasis markers from appearing in recruiter-facing answers.
 
 ## Known limitations
 

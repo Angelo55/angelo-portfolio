@@ -256,3 +256,4 @@ Asset status:
 - Added eager loading for the small above-the-fold hero SVG field after a non-Python logo was observed as LCP.
 - Codex Security scan `80239b26-8940-4b43-81eb-d16d39c6059e` reported two low-severity issues on the prior snapshot; both are remediated here.
 - Verification passed: `npm run lint`, `npm run build`, `git diff --check`, `pnpm audit --prod`, local API boundary tests, desktop/mobile browser QA, keyboard flows, theme switching, chatbot reset/resources, and contact validation.
+- Production smoke testing found and fixed literal DeepSeek Markdown emphasis markers in assistant bubbles; answers now remain text-only while preserving scannable line breaks.

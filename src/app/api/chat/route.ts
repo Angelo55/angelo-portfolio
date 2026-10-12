@@ -10,6 +10,15 @@ function json(body: object, status = 200) {
   return NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
 }
 
+function normalizeAnswer(value: string) {
+  return value
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/`([^`]+)`/g, "$1")
+    .trim();
+}
+
 function isRateLimited(ip: string, now: number) {
   const current = requests.get(ip);
   if (current && current.resetAt > now) {
@@ -77,5 +86,5 @@ export async function POST(request: Request) {
   if (!response?.ok) return json({ answer: "I can’t reach the assistant right now, but you can review my resume, selected work, or contact me directly." });
   const data = await response.json().catch(() => null);
   const answer = data?.choices?.[0]?.message?.content;
-  return json({ answer: typeof answer === "string" && answer.trim() ? answer.trim().slice(0, 1_200) : "I don’t have a verified answer for that yet. Please use the portfolio sections or contact me directly." });
+  return json({ answer: typeof answer === "string" && answer.trim() ? normalizeAnswer(answer).slice(0, 1_200) : "I don’t have a verified answer for that yet. Please use the portfolio sections or contact me directly." });
 }
