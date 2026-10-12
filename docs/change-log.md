@@ -197,6 +197,12 @@ Asset status:
 - Added analytics origin validation and a 4 KB request-size limit before processing or persistence.
 - Kept the service-role boundary server-only and verified the production build after the change.
 
+## 2026-10-12 - v1.15 CI quality gates
+
+- Added a GitHub Actions workflow for pull requests and `main` pushes.
+- The workflow uses Node 22, pnpm 10.28.0, frozen-lockfile installation, lint, production build, and `git diff --check`.
+- Added least-privilege read-only repository permissions and cancel-in-progress concurrency.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.
