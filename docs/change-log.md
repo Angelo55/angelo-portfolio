@@ -224,6 +224,11 @@ Asset status:
 - Added message validation, per-IP request limits, timeout/error fallback, and no conversation persistence.
 - Added `ChatbotPortfolio.txt` to `.gitignore`; the local credential file is not tracked.
 
+## 2026-10-12 - v1.19 chatbot motion alignment
+
+- Replaced the static chatbot open state with Motion-based panel enter/exit, staggered message entry, and restrained action micro-interactions.
+- Matched the existing easing and interaction language while preserving keyboard access and reduced-motion behavior.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

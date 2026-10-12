@@ -53,6 +53,7 @@ Last updated: 2026-10-12
 - Added a public `/privacy` page describing analytics, hashed identifiers, local storage, theme preferences, contact behavior, and current retention.
 - Final production QA verified root/privacy/robots/sitemap HTTP 200 responses, protected analytics redirect, JSON-LD, security headers, and analytics origin rejection. Browser automation remains unavailable in this environment.
 - Recruiter-focused DeepSeek portfolio assistant added with verified knowledge grounding, quick actions for summary/skills/project/resume/contact, server-only key usage, input limits, rate limiting, timeout fallback, and responsive accessible UI.
+- Chatbot motion now follows the portfolio's Motion-based interaction language with restrained panel/message transitions, spring-like hover/tap feedback, and a reduced-motion override.
 
 ## Known limitations
 
