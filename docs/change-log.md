@@ -153,6 +153,13 @@ Asset status:
 - Kept the current PESO deployment as the live demo and labeled the known portfolio repository accurately; no unverified PESO repository was invented.
 - Preserved keyboard access, external-link semantics, responsive wrapping, and the existing case-study interaction.
 
+## 2026-10-12 - v1.8 privacy-conscious analytics foundation
+
+- Added a client tracker that separates page views from meaningful link/button clicks and deduplicates page views per browser session/day.
+- Added a server-only analytics endpoint with payload validation, bounded labels, hashed visitor/IP identifiers, and an in-memory rate limit.
+- Added an RLS-protected Supabase schema for optional persistent storage; no service-role key is exposed to the browser.
+- The endpoint intentionally degrades to a successful non-persistent response until Supabase environment variables and the reviewed schema are configured.
+
 ## 2026-10-09 - retained continuous hero bounce baseline
 
 - Tested an approved two-stage fade/re-entry variation locally, then reverted it at the user's request.

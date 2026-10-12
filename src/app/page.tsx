@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight, Code2, Facebook, FileText, Github, Instagram, Languages, Linkedin, Mail, Sparkles, Wrench } from "lucide-react";
 import { CertificateGallery } from "@/components/certificate-gallery";
 import { ContactForm } from "@/components/contact-form";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
 import { DocumentDialog } from "@/components/document-dialog";
 import { Header } from "@/components/header";
 import { HeroLogoField } from "@/components/hero-logo-field";
@@ -31,7 +32,7 @@ const socials = [
 ] as const;
 
 export default function Home() {
-  return <main id="top"><div className="shell">
+  return <main id="top"><AnalyticsTracker /><div className="shell">
     <Header />
     <section className="hero pad">
       <HeroLogoField />

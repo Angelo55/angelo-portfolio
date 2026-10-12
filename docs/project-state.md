@@ -41,10 +41,12 @@ Last updated: 2026-10-12
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
 - Add a dedicated PESO repository link when the canonical project repository is confirmed.
+- Apply `supabase/analytics.sql` and configure server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ANALYTICS_HASH_SALT` before enabling persistent analytics in production.
 
 ## Known limitations
 
 - Contact submission opens the visitor's configured email application.
+- Analytics events are accepted safely when storage is not configured, but are not persisted until the Supabase table and server-only environment variables are provisioned.
 - Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
 - The local Vercel prebuilt packager could not create Windows symlinks, so the successful release used the remote Linux builder.
 
