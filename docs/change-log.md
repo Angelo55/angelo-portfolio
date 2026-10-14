@@ -5,6 +5,7 @@
 - Reordered only the four existing certificate records in the gallery: IT Customer Support Basics; Core Generative AI Skills; Introduction to AI Literacy and Responsible Use; English for Career Development MOOC.
 - Kept every certificate's title, issuer, date, credential metadata, preview image, PDF path, card styling, and shared dialog behavior unchanged. No certificate was added or removed.
 - Verification: ESLint and Next.js production build passed. Headless Chrome at 1440x900, 820x900, and 390x900 confirmed the exact order, four loaded preview images, four correct dialog titles and PDF action paths, HTTP 200 `application/pdf` responses for all four documents, and zero page errors. Desktop and mobile screenshots were visually reviewed.
+- Production release: commit `46bd6c5` deployed as `dpl_BuZcGN8zK92eyyPBxnQxbDXX57dv` (`READY`), and the requested alias was explicitly assigned. Live HTML presented the four titles in the requested order; all four WebP previews and all four PDF assets returned HTTP 200 with the expected media types.
 
 ## 2026-10-15 - v1.24 skills, resume, and chatbot corrections
 
