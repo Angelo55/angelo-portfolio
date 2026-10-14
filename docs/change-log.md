@@ -308,3 +308,9 @@ Asset status:
 
 - Replaced the ineffective email-draft fallback under the contact form with a visible email address and Copy address control. Copy status is announced accessibly; visitors can still select the address manually if clipboard access is blocked.
 - Updated the privacy explanation to match the actual contact fallback. The owner confirmed a successful Formspree submission on the live site.
+
+## 2026-10-15 - Contact confirmation and PESO repository status
+
+- Recorded the owner's confirmation that a live Formspree message arrived in the inbox, not spam, and the Copy address control reported success.
+- Clarified that the PESO Kabankalan repository is intentionally private for now. Keep the live-demo link distinct from the portfolio source link; add a dedicated PESO source link only if the owner later chooses to make that repository public.
+- Documentation-only update; no application code or public-facing link was changed.

@@ -29,7 +29,7 @@ Last updated: 2026-10-15
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
 - Accessible resume and credential overlays.
 - Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with a visible copyable email-address fallback.
-- Project showcase links distinguish the PESO live deployment from the portfolio source repository; a dedicated PESO repository URL can replace the portfolio source when confirmed.
+- Project showcase links distinguish the PESO live deployment from the portfolio source repository. The PESO repository remains private by the owner's choice; do not add a public source link unless the owner later makes it available.
 - Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
 - ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
 - GitHub repository and Vercel Git integration configured.
@@ -50,7 +50,7 @@ Last updated: 2026-10-15
 - Add future projects to the reusable project collection.
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
-- Add a dedicated PESO repository link when the canonical project repository is confirmed.
+- If the owner later chooses to make the PESO repository public, confirm its canonical URL and then add a clearly labeled source link; keep it private for now.
 - Supabase analytics schema and server-only production variables are configured; the private dashboard remains owner-authenticated.
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 - Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
@@ -79,7 +79,7 @@ Last updated: 2026-10-15
 
 ## Known limitations
 
-- Contact submissions use the owner-provided Formspree endpoint. The owner confirmed a successful live-site submission. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion. The form's fallback displays the email address with a Copy address action so it works even without a configured `mailto:` handler.
+- Contact submissions use the owner-provided Formspree endpoint. The owner confirmed a live-site submission arrived in the inbox rather than spam, and the Copy address fallback displayed its success message after copying. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion.
 - Analytics events are accepted safely when storage is not configured, but are not persisted until the Supabase table and server-only environment variables are provisioned.
 - Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
 - The local Vercel prebuilt packager could not create Windows symlinks, so the successful release used the remote Linux builder.
