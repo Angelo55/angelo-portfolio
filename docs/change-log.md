@@ -1,5 +1,11 @@
 # Change history
 
+## 2026-10-15 - v1.25 certificate display order
+
+- Reordered only the four existing certificate records in the gallery: IT Customer Support Basics; Core Generative AI Skills; Introduction to AI Literacy and Responsible Use; English for Career Development MOOC.
+- Kept every certificate's title, issuer, date, credential metadata, preview image, PDF path, card styling, and shared dialog behavior unchanged. No certificate was added or removed.
+- Verification: ESLint and Next.js production build passed. Headless Chrome at 1440x900, 820x900, and 390x900 confirmed the exact order, four loaded preview images, four correct dialog titles and PDF action paths, HTTP 200 `application/pdf` responses for all four documents, and zero page errors. Desktop and mobile screenshots were visually reviewed.
+
 ## 2026-10-15 - v1.24 skills, resume, and chatbot corrections
 
 - Removed Credly links and interaction styling from Skills. All existing skill names and categories remain as informational chips.

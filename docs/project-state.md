@@ -8,7 +8,7 @@ Last updated: 2026-10-15
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
-- Latest application release: `5d22afa` / Vercel deployment `dpl_7HspmoS47j1Y3qxYZPRdq4kabT4n` (READY, 2026-10-15). `angelolacsao-portfolio.vercel.app` was explicitly assigned to it; homepage and resume returned HTTP 200, and recent deployment error logs were empty. GitHub `main` remains the release source of truth.
+- Production source of truth: GitHub `main`, deployed to `angelolacsao-portfolio.vercel.app`. The previous verified release was `5d22afa` / Vercel deployment `dpl_7HspmoS47j1Y3qxYZPRdq4kabT4n` (READY, 2026-10-15); see the change history for newer feature and verification records.
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
 - Data model: static source-controlled portfolio content with optional Supabase-backed analytics
 - Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser
@@ -39,7 +39,7 @@ Last updated: 2026-10-15
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
-- All four supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata.
+- All four supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata. Their gallery order is IT Customer Support Basics, Core Generative AI Skills, Introduction to AI Literacy and Responsible Use, then English for Career Development MOOC.
 - Skills are grouped into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation; all skill chips are non-interactive and no longer redirect to Credly.
 - The current one-page letter resume uses a single-column, black-text, ATS-readable layout with selectable top-to-bottom text, conventional section headings, and the current BSIT profile, project, experience, skills, and four listed certificates. Personal birth details, phone number, and street-level address remain omitted from the public version.
 - The chatbot panel retains its fixed launcher-relative placement; opening, resetting, using a document preview, and closing no longer move the page. Background scroll is locked while chat is open, internal message scroll is contained, and the topmost document dialog handles Escape before chat.
