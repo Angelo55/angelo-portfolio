@@ -8,6 +8,7 @@ Last updated: 2026-10-15
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
+- Latest release: `8da4b3b` / Vercel deployment `dpl_H93fMHtRB7iZS5fnYSFeCnoTL4o8` (READY, 2026-10-15); custom alias and homepage/document asset smoke tests passed.
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
 - Data model: static source-controlled portfolio content with optional Supabase-backed analytics
 - Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser
