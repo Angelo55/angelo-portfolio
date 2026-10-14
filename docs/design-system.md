@@ -104,7 +104,7 @@ Approved on 2026-10-12.
 - Use first person for the candidate narrative: “I build,” “I contributed,” “I’m exploring,” and “I’m open to.”
 - Keep section copy concise, specific, and recruiter-readable. Prefer one clear idea per sentence and avoid inflated claims.
 - Describe skills as practical contribution areas and label foundational exposure honestly (for example, n8n and AI-assisted workflows).
-- Group skills into clear, responsive categories. Supplied Credly skill pages may be linked from the skill name, but must not be presented as proof of an independently earned badge unless a badge credential is supplied.
+- Group skills into clear, responsive categories and present each skill as non-interactive information, not as an independent credential claim. Evidence for earned certificates belongs in the Certificates/Achievements section.
 - Keep the chatbot in the same first-person voice, grounded only in verified portfolio facts. Answers should be a short paragraph or up to five scannable bullets with a relevant next action when useful.
 
 ## Recruiter assistant interaction system

@@ -1,5 +1,14 @@
 # Change history
 
+## 2026-10-15 - v1.24 skills, resume, and chatbot corrections
+
+- Removed Credly links and interaction styling from Skills. All existing skill names and categories remain as informational chips.
+- Rebuilt the resume generator and published PDF as a single-column, letter-size document with dark-neutral text, conventional headings, selectable text, and a top-to-bottom extraction order. The verified profile, experience, project, education, skill groups, and four listed certificates remain intact. The stable public PDF URL still serves every resume preview and download.
+- Fixed the chatbot scroll jump at its causes: programmatic focus now uses `preventScroll`, the panel's CSS is anchored rather than overridden by `position: relative`, and background scrolling is locked while chat is open. Chat-message scrolling is contained independently.
+- Fixed nested modal ownership: pointer events in the document preview no longer dismiss the chatbot, and Escape closes only the topmost document dialog. Focus returns without scrolling.
+- Validation: ESLint, Next.js production build, PDF visual render and text extraction, one-page letter dimensions, two PDF links, matching local/public PDF hashes, and `git diff --check` passed. Headless Chrome tested the homepage at 1440x900, 390x844, and 320x844: no Skills links, no page errors, unchanged scroll position after open/reset/close at y=0/900/2200, background-wheel scroll lock, in-viewport chat panel, nested resume preview Escape/close behavior and focus return, outside-click dismissal, and intentional Credentials anchor navigation. Reduced-motion mode was included in the additional viewport pass; the resume route returned HTTP 200 with `application/pdf`.
+- Limitation: the headless browser did not verify native inline PDF painting; the PDF was visually reviewed using Poppler rendering and checked for a successful local asset response.
+
 ## 2026-10-08  v0.1 approved foundation
 
 Approved:

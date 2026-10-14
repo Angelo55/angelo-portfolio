@@ -8,7 +8,7 @@ Last updated: 2026-10-15
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
-- Latest application release: `8da4b3b` / Vercel deployment `dpl_H93fMHtRB7iZS5fnYSFeCnoTL4o8` (READY, 2026-10-15); custom alias and homepage/document asset smoke tests passed. The final documentation-only push was also confirmed READY, with alias and asset checks repeated.
+- Production tracking: GitHub `main` is the release source of truth; verify each new commit's Vercel `READY` deployment, the alias, and key assets after pushing. The previous verified baseline was `8da4b3b` / deployment `dpl_H93fMHtRB7iZS5fnYSFeCnoTL4o8` on 2026-10-15.
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
 - Data model: static source-controlled portfolio content with optional Supabase-backed analytics
 - Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser
@@ -40,8 +40,9 @@ Last updated: 2026-10-15
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
 - All four supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata.
-- Skills are grouped into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation; supplied Credly skill pages are linked directly and are not represented as independently earned badges.
-- Updated the resume to match the current BSIT profile, project, experience, skills, and four listed certificates; personal birth details, phone number, and street-level address are omitted from the public version.
+- Skills are grouped into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation; all skill chips are non-interactive and no longer redirect to Credly.
+- The current one-page letter resume uses a single-column, black-text, ATS-readable layout with selectable top-to-bottom text, conventional section headings, and the current BSIT profile, project, experience, skills, and four listed certificates. Personal birth details, phone number, and street-level address remain omitted from the public version.
+- The chatbot panel retains its fixed launcher-relative placement; opening, resetting, using a document preview, and closing no longer move the page. Background scroll is locked while chat is open, internal message scroll is contained, and the topmost document dialog handles Escape before chat.
 - Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
 
 ## Pending

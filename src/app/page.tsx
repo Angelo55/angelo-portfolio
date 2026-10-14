@@ -18,9 +18,9 @@ const skillGroups = [
     summary: "Support fundamentals, troubleshooting, and practical problem solving.",
     icon: Headset,
     skills: [
-      { label: "Help Desk Concepts", href: "https://www.credly.com/skills/help-desk-concepts" },
-      { label: "Remote Troubleshooting", href: "https://www.credly.com/skills/remote-troubleshooting" },
-      { label: "Technical Problem Solving", href: "https://www.credly.com/skills/technical-problem-solving.ca7b324b" },
+      { label: "Help Desk Concepts" },
+      { label: "Remote Troubleshooting" },
+      { label: "Technical Problem Solving" },
       { label: "IT Hardware Support" },
     ],
   },
@@ -31,7 +31,7 @@ const skillGroups = [
     summary: "Clear, patient communication shaped by frontline retail experience.",
     icon: MessageCircle,
     skills: [
-      { label: "Customer Service", href: "https://www.credly.com/skills/customer-service" },
+      { label: "Customer Service" },
       { label: "End-user Communication" },
       { label: "Issue Documentation" },
       { label: "Critical Thinking" },
@@ -44,8 +44,8 @@ const skillGroups = [
     summary: "Generative AI and practical AI-assisted work and productivity.",
     icon: Sparkles,
     skills: [
-      { label: "Generative AI", href: "https://www.credly.com/skills/ce81c19f-f223-4de7-88d4-4604ec817203" },
-      { label: "Prompt Engineering", href: "https://www.credly.com/skills/4905d9a2-f6d6-4e17-9472-18bdd7174f02" },
+      { label: "Generative AI" },
+      { label: "Prompt Engineering" },
       { label: "AI-Assisted Writing" },
       { label: "AI Models and Tools" },
       { label: "AI Tool Evaluation" },
@@ -60,8 +60,8 @@ const skillGroups = [
     summary: "Privacy, security awareness, and human review in AI-assisted work.",
     icon: ShieldCheck,
     skills: [
-      { label: "AI Ethics", href: "https://www.credly.com/skills/fda9eb69-5218-4fe0-8a1f-4ab3bf8bacb6" },
-      { label: "Data Privacy", href: "https://www.credly.com/skills/1c2ad532-23bd-43d7-8910-7b669b1a2880" },
+      { label: "AI Ethics" },
+      { label: "Data Privacy" },
       { label: "AI Security Awareness" },
       { label: "Bias Detection" },
       { label: "Human-in-the-Loop Review" },
@@ -141,7 +141,7 @@ export default function Home() {
             <p>{group.summary}</p>
             <ul aria-label={`${group.title} skills`}>
               {group.skills.map((skill) => <li key={skill.label}>
-                {"href" in skill ? <a href={skill.href} target="_blank" rel="noreferrer" aria-label={`${skill.label} on Credly, opens in a new tab`}>{skill.label}<ArrowUpRight aria-hidden="true" /></a> : <span>{skill.label}</span>}
+                <span>{skill.label}</span>
               </li>)}
             </ul>
           </Reveal>;

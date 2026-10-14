@@ -78,13 +78,17 @@ export function ChatbotWidget() {
 
   useEffect(() => {
     if (!open) return;
-    inputRef.current?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    inputRef.current?.focus({ preventScroll: true });
 
     function handleKeyDown(event: KeyboardEvent) {
+      // A document preview is the topmost dialog while it is open.
+      if (document.querySelector(".dialogBackdrop [role='dialog']")) return;
       if (event.key === "Escape") {
         event.preventDefault();
         setOpen(false);
-        requestAnimationFrame(() => launcherRef.current?.focus());
+        requestAnimationFrame(() => launcherRef.current?.focus({ preventScroll: true }));
         return;
       }
       if (event.key !== "Tab" || !panelRef.current) return;
@@ -96,21 +100,26 @@ export function ChatbotWidget() {
       const last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
-        last.focus();
+        last.focus({ preventScroll: true });
       } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
-        first.focus();
+        first.focus({ preventScroll: true });
       }
     }
 
     function handlePointerDown(event: PointerEvent) {
       const target = event.target as Node;
-      if (!panelRef.current?.contains(target) && !launcherRef.current?.contains(target)) setOpen(false);
+      if (document.querySelector(".dialogBackdrop")?.contains(target)) return;
+      if (!panelRef.current?.contains(target) && !launcherRef.current?.contains(target)) {
+        setOpen(false);
+        requestAnimationFrame(() => launcherRef.current?.focus({ preventScroll: true }));
+      }
     }
 
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("pointerdown", handlePointerDown);
     return () => {
+      document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("pointerdown", handlePointerDown);
     };
@@ -141,12 +150,12 @@ export function ChatbotWidget() {
     setMessages([initialMessage]);
     setInput("");
     setLoading(false);
-    requestAnimationFrame(() => inputRef.current?.focus());
+    requestAnimationFrame(() => inputRef.current?.focus({ preventScroll: true }));
   }
 
-  function closeChat() {
+  function closeChat(restoreFocus = true) {
     setOpen(false);
-    requestAnimationFrame(() => launcherRef.current?.focus());
+    if (restoreFocus) requestAnimationFrame(() => launcherRef.current?.focus({ preventScroll: true }));
   }
 
   function submit(event: FormEvent) {
@@ -157,13 +166,13 @@ export function ChatbotWidget() {
   return (
     <div className="chatbot">
       <AnimatePresence>
-        {open && <motion.div className="chatBackdrop" aria-hidden="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onPointerDown={closeChat} />}
+        {open && <motion.div className="chatBackdrop" aria-hidden="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onPointerDown={() => closeChat()} />}
       </AnimatePresence>
       <motion.button
         ref={launcherRef}
         className="chatLauncher"
         type="button"
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => open ? closeChat() : setOpen(true)}
         aria-expanded={open}
         aria-controls="portfolio-chat"
         aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
@@ -180,7 +189,7 @@ export function ChatbotWidget() {
             id="portfolio-chat"
             className="chatPanel"
             role="dialog"
-            aria-modal="false"
+            aria-modal="true"
             aria-labelledby="chat-title"
             initial={{ opacity: 0, y: 14, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -191,7 +200,7 @@ export function ChatbotWidget() {
             <header className="chatHeader">
               <span className="chatIcon"><Bot /></span>
               <div><h2 id="chat-title">My portfolio assistant</h2><small>Verified profile information</small></div>
-              <button type="button" onClick={closeChat} aria-label="Close assistant"><X /></button>
+              <button type="button" onClick={() => closeChat()} aria-label="Close assistant"><X /></button>
             </header>
 
             <motion.div className="chatMessages" aria-live="polite" initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.035 } } }}>
@@ -207,10 +216,10 @@ export function ChatbotWidget() {
             <div className="chatActions" aria-label="Quick questions">
               {promptActions.map((action) => <motion.button key={action.label} type="button" onClick={() => void send(action.prompt)} whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>{action.label}<ArrowUpRight /></motion.button>)}
               <DocumentDialog src="/documents/Angelo_Lacsao_Resume.pdf" title="My resume" className="chatActionButton"><FileText />View resume</DocumentDialog>
-              <a className="chatActionButton" href="#certificates" onClick={closeChat}>Credentials <ArrowUpRight /></a>
+              <a className="chatActionButton" href="#certificates" onClick={() => closeChat(false)}>Credentials <ArrowUpRight /></a>
               <a className="chatActionButton" href="mailto:angelopamalacsao@gmail.com">Contact me <ExternalLink /></a>
             </div>
-            <div className="chatResourceList"><PesoPreview onNavigate={closeChat} /></div>
+            <div className="chatResourceList"><PesoPreview onNavigate={() => closeChat(false)} /></div>
 
             <div className="chatFooterActions">
               <button type="button" className="chatReset" onClick={resetChat}><RefreshCcw />New chat</button>

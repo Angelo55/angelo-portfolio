@@ -41,39 +41,41 @@ export function OverlayDialog({
 
     const frame = requestAnimationFrame(() => {
       const first = dialogRef.current?.querySelector<HTMLElement>(focusableSelector);
-      (first ?? dialogRef.current)?.focus();
+      (first ?? dialogRef.current)?.focus({ preventScroll: true });
     });
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         event.preventDefault();
+        event.stopImmediatePropagation();
         onClose();
         return;
       }
       if (event.key !== "Tab" || !dialogRef.current) return;
+      event.stopImmediatePropagation();
       const focusable = [...dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector)];
       if (!focusable.length) {
         event.preventDefault();
-        dialogRef.current.focus();
+        dialogRef.current.focus({ preventScroll: true });
         return;
       }
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
-        last.focus();
+        last.focus({ preventScroll: true });
       } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
-        first.focus();
+        first.focus({ preventScroll: true });
       }
     }
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown, true);
     return () => {
       cancelAnimationFrame(frame);
       document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", handleKeyDown);
-      returnFocusRef.current?.focus();
+      document.removeEventListener("keydown", handleKeyDown, true);
+      returnFocusRef.current?.focus({ preventScroll: true });
     };
   }, [open, onClose]);
 
