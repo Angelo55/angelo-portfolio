@@ -4,10 +4,20 @@ import { ArrowUpRight } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 const endpoint = "https://formspree.io/f/xrpeogpy";
+const contactEmail = "angelopamalacsao@gmail.com";
 
 export function ContactForm() {
   const [status, setStatus] = useState("");
+  const [copyStatus, setCopyStatus] = useState("");
   const [sending, setSending] = useState(false);
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+      setCopyStatus("Email address copied.");
+    } catch {
+      setCopyStatus("Copy unavailable here. Select the address above to copy it.");
+    }
+  }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -57,7 +67,8 @@ export function ContactForm() {
       </div>
       <button className="btn full" type="submit" disabled={sending} aria-disabled={sending}>{sending ? "Sending…" : "Send message"} <ArrowUpRight /></button>
       <p className="formStatus full" role="status" aria-live="polite">{status}</p>
-      <p className="formStatus full">Prefer email? <a href="mailto:angelopamalacsao@gmail.com">Open an email draft</a>.</p>
+      <p className="formStatus full">Prefer email? <span className="contactEmail">{contactEmail}</span> <button className="copyEmailButton" type="button" onClick={copyEmail}>Copy address</button></p>
+      {copyStatus && <p className="formStatus full" role="status" aria-live="polite">{copyStatus}</p>}
     </form>
   );
 }

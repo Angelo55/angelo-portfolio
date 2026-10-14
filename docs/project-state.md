@@ -28,7 +28,7 @@ Last updated: 2026-10-15
 - Bidirectional viewport reveals with reduced-motion support.
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
 - Accessible resume and credential overlays.
-- Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with an email-draft fallback.
+- Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with a visible copyable email-address fallback.
 - Project showcase links distinguish the PESO live deployment from the portfolio source repository; a dedicated PESO repository URL can replace the portfolio source when confirmed.
 - Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
 - ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
@@ -79,7 +79,7 @@ Last updated: 2026-10-15
 
 ## Known limitations
 
-- Contact submissions use the owner-provided Formspree endpoint. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion. Production delivery still needs one owner-verified end-to-end message test; the email-draft link remains available as fallback.
+- Contact submissions use the owner-provided Formspree endpoint. The owner confirmed a successful live-site submission. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion. The form's fallback displays the email address with a Copy address action so it works even without a configured `mailto:` handler.
 - Analytics events are accepted safely when storage is not configured, but are not persisted until the Supabase table and server-only environment variables are provisioned.
 - Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
 - The local Vercel prebuilt packager could not create Windows symlinks, so the successful release used the remote Linux builder.

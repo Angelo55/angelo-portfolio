@@ -303,3 +303,8 @@ Asset status:
 - Kept the direct email-draft link as a fallback and updated the privacy notice to disclose Formspree processing and the free plan's 30-day submission retention.
 - The owner reported that domain restriction is unavailable without upgrading. No paid upgrade, custom domain, or Supabase contact storage was introduced. Formspree's 50-submission monthly free quota and automated-submission risk remain.
 - Verification: ESLint, production build, and `git diff --check`. A real delivery test should be done with the owner checking the destination inbox; automated QA must not consume the monthly submission quota.
+
+## 2026-10-15 - Email fallback correction
+
+- Replaced the ineffective email-draft fallback under the contact form with a visible email address and Copy address control. Copy status is announced accessibly; visitors can still select the address manually if clipboard access is blocked.
+- Updated the privacy explanation to match the actual contact fallback. The owner confirmed a successful Formspree submission on the live site.
