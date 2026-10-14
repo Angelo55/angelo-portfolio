@@ -42,6 +42,18 @@ const certificates = [
     document: "/documents/certificates/english-career-development-mooc.pdf",
     tone: "open",
   },
+  {
+    id: "it-customer-support-basics",
+    title: "IT Customer Support Basics",
+    issuer: "Cisco Networking Academy",
+    date: "14 October 2026",
+    type: "Certificate of Course Completion - student-level credential",
+    credentialId: null,
+    verification: "The certificate includes a Cisco Networking Academy verified badge and a QR verification mark.",
+    preview: "/images/certificates/it-customer-support-basics.webp",
+    document: "/documents/certificates/it-customer-support-basics.pdf",
+    tone: "cisco-support",
+  },
 ] as const;
 
 type Certificate = (typeof certificates)[number];

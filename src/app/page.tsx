@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Code2, Facebook, FileText, Github, Instagram, Languages, Linkedin, Mail, Sparkles, Wrench } from "lucide-react";
+import { ArrowUpRight, Code2, Facebook, FileText, Github, Headset, Instagram, Languages, Linkedin, Mail, MessageCircle, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 import { CertificateGallery } from "@/components/certificate-gallery";
 import { ContactForm } from "@/components/contact-form";
 import { AnalyticsTracker } from "@/components/analytics-tracker";
@@ -10,11 +10,77 @@ import { HeroTitle } from "@/components/hero-title";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Reveal } from "@/components/reveal";
 
-const capabilities = [
-  ["01", "Full-stack Development", "I build frontend and backend systems with practical architecture and infrastructure for useful web applications."],
-  ["02", "UI/UX Implementation", "I design clear, intuitive interfaces around usability, accessibility, and real service workflows."],
-  ["03", "Workflow Automation", "I apply foundational hands-on exposure to n8n and AI-assisted workflows to connect tools, reduce repetitive steps, and improve everyday processes."],
-  ["04", "IT Hardware Support", "I troubleshoot electrical, computer hardware, and common technical problems with a practical, methodical approach."],
+const skillGroups = [
+  {
+    id: "it-support",
+    number: "01",
+    title: "IT Support",
+    summary: "Support fundamentals, troubleshooting, and practical problem solving.",
+    icon: Headset,
+    skills: [
+      { label: "Help Desk Concepts", href: "https://www.credly.com/skills/help-desk-concepts" },
+      { label: "Remote Troubleshooting", href: "https://www.credly.com/skills/remote-troubleshooting" },
+      { label: "Technical Problem Solving", href: "https://www.credly.com/skills/technical-problem-solving.ca7b324b" },
+      { label: "IT Hardware Support" },
+    ],
+  },
+  {
+    id: "customer-service",
+    number: "02",
+    title: "Customer Service",
+    summary: "Clear, patient communication shaped by frontline retail experience.",
+    icon: MessageCircle,
+    skills: [
+      { label: "Customer Service", href: "https://www.credly.com/skills/customer-service" },
+      { label: "End-user Communication" },
+      { label: "Issue Documentation" },
+      { label: "Critical Thinking" },
+    ],
+  },
+  {
+    id: "artificial-intelligence",
+    number: "03",
+    title: "Artificial Intelligence",
+    summary: "Generative AI and practical AI-assisted work and productivity.",
+    icon: Sparkles,
+    skills: [
+      { label: "Generative AI", href: "https://www.credly.com/skills/ce81c19f-f223-4de7-88d4-4604ec817203" },
+      { label: "Prompt Engineering", href: "https://www.credly.com/skills/4905d9a2-f6d6-4e17-9472-18bdd7174f02" },
+      { label: "AI-Assisted Writing" },
+      { label: "AI Models and Tools" },
+      { label: "AI Tool Evaluation" },
+      { label: "Business Productivity" },
+      { label: "Content Generation" },
+    ],
+  },
+  {
+    id: "responsible-ai",
+    number: "04",
+    title: "Responsible AI",
+    summary: "Privacy, security awareness, and human review in AI-assisted work.",
+    icon: ShieldCheck,
+    skills: [
+      { label: "AI Ethics", href: "https://www.credly.com/skills/fda9eb69-5218-4fe0-8a1f-4ab3bf8bacb6" },
+      { label: "Data Privacy", href: "https://www.credly.com/skills/1c2ad532-23bd-43d7-8910-7b669b1a2880" },
+      { label: "AI Security Awareness" },
+      { label: "Bias Detection" },
+      { label: "Human-in-the-Loop Review" },
+      { label: "Responsible AI" },
+    ],
+  },
+  {
+    id: "development-automation",
+    number: "05",
+    title: "Development & Automation",
+    summary: "Building useful web experiences and exploring workflow automation.",
+    icon: Code2,
+    skills: [
+      { label: "Full-stack Development" },
+      { label: "UI/UX Implementation" },
+      { label: "AI-powered Workflow Automation" },
+      { label: "n8n (foundational exposure)" },
+    ],
+  },
 ];
 
 const experience = [
@@ -64,7 +130,23 @@ export default function Home() {
 
     <section id="skills" className="split pad">
       <Reveal className="intro"><small>01 / CAPABILITIES</small><h2>How I can<br />contribute.</h2></Reveal>
-      <div className="cards">{capabilities.map((capability, index) => <Reveal className="cap" delay={index * 0.05} key={capability[0]}><p>{capability[2]}</p><div><b>{capability[1]}</b><span>{capability[0]}</span></div></Reveal>)}</div>
+      <div className="skillGroups">
+        {skillGroups.map((group, index) => {
+          const Icon = group.icon;
+          return <Reveal className="skillCategory" delay={index * 0.04} key={group.id}>
+            <div className="skillCategoryHeading">
+              <span className="skillIcon"><Icon aria-hidden="true" /></span>
+              <div><small>{group.number} / SKILL GROUP</small><h3>{group.title}</h3></div>
+            </div>
+            <p>{group.summary}</p>
+            <ul aria-label={`${group.title} skills`}>
+              {group.skills.map((skill) => <li key={skill.label}>
+                {"href" in skill ? <a href={skill.href} target="_blank" rel="noreferrer" aria-label={`${skill.label} on Credly, opens in a new tab`}>{skill.label}<ArrowUpRight aria-hidden="true" /></a> : <span>{skill.label}</span>}
+              </li>)}
+            </ul>
+          </Reveal>;
+        })}
+      </div>
     </section>
 
     <section id="work" className="split pad work">

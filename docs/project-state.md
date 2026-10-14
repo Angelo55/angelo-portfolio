@@ -1,6 +1,6 @@
 # Current project state
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 ## Production
 
@@ -38,7 +38,9 @@ Last updated: 2026-10-14
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
-- All three supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata.
+- All four supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata.
+- Skills are grouped into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation; supplied Credly skill pages are linked directly and are not represented as independently earned badges.
+- Updated the resume to match the current BSIT profile, project, experience, skills, and four listed certificates; personal birth details, phone number, and street-level address are omitted from the public version.
 - Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
 
 ## Pending
@@ -68,6 +70,10 @@ Last updated: 2026-10-14
 - Production assistant responses are normalized to safe plain text and preserve line breaks, preventing raw Markdown emphasis markers from appearing in recruiter-facing answers.
 - The English for Career Development MOOC Certificate of Award is integrated with a legible cropped preview, unchanged source PDF, verified OPEN metadata, and the existing accessible document overlay.
 - Local certificate QA confirms three cards, correct PDF/open/download paths, HTTP 200 asset responses, clean console output, responsive 390x844 overlay bounds, and keyboard focus restoration after Escape.
+- IT Customer Support Basics is integrated with a responsive preview, original Cisco Networking Academy certificate, verified course/title/recipient/date details, and the existing accessible document overlay.
+- The resume has a refreshed one-page, two-column layout based on the supplied reference's hierarchy and dividers, with current site-consistent education, work/leadership history, project, skills, and all four certificates.
+- Resume links in the hero, experience section, and chatbot continue to use the same public URL, now serving the refreshed PDF; chatbot knowledge includes the updated skill groups and certificate list.
+- Local validation for this update: lint/build/diff-check pass; resume and certificate text, page count, links, and source/public hashes were checked; all public asset routes returned HTTP 200; desktop skill links, credential overlay metadata/actions, Escape dismissal, and focus restoration were verified. PDF visual review used a local renderer because the available in-app browser does not render embedded PDFs. Responsive CSS targets were inspected; a live mobile viewport was unavailable in this browser session.
 
 ## Known limitations
 

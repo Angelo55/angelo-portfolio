@@ -265,3 +265,16 @@ Asset status:
 - Added the unchanged source PDF and an optimized, tightly cropped WebP preview for legible certificate-card rendering.
 - Reused the existing responsive card, animated overlay, focus management, embedded PDF viewer, and open/download fallbacks without altering the two existing certificate records.
 - Verification passed: ESLint, Next.js production build, `git diff --check`, byte-for-byte PDF hash comparison, HTTP asset checks, clean browser console, desktop overlay interaction, and 390x844 mobile card/overlay QA with Escape focus restoration.
+
+## 2026-10-15 - v1.23 skills, IT support certificate, and resume
+
+- Reorganized the Skills section into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation groups. The supplied Credly skill pages are linked from their corresponding skill names without suggesting each is a separately earned badge.
+- Added the Cisco Networking Academy IT Customer Support Basics Certificate of Course Completion with document-verified recipient, issue date, student-level credential type, verified badge, and QR verification mark.
+- Added the source certificate PDF and an optimized public preview while retaining all three existing certificate records and overlay behavior.
+- Redesigned the one-page resume with readable two-column hierarchy and reference-inspired dividers; synchronized the BSIT status, experience, project, skills, and four displayed certificates with the portfolio.
+- Removed birth date, birthplace, phone number, and street-level address from the public resume.
+- Kept the existing public resume URL stable so the hero, experience, and chatbot previews/downloads receive the new document.
+- Updated recruiter-assistant knowledge to reflect the current categorized skills and certificate collection.
+- Local verification: `npm run lint`, `npm run build`, and `git diff --check` pass; the resume is one page with two working links and verified text, the certificate PDF matches its source byte-for-byte, and the resume/certificate/preview routes return HTTP 200. The new credential overlay, verified metadata, actions, Escape dismissal, and focus restoration pass desktop browser checks. Both PDFs and the certificate preview were rendered for visual review.
+- Verification limitation: the available in-app browser does not render PDF content in its embedded or direct PDF surface, so visual PDF review used the local PDF renderer; open/download URLs were separately checked. This browser session did not expose a responsive viewport override, so mobile behavior was checked against the existing single-column and reduced-motion CSS rules, not a live mobile-sized viewport.
+- Production alias and smoke-test results will be recorded after release verification.
