@@ -257,3 +257,11 @@ Asset status:
 - Codex Security scan `80239b26-8940-4b43-81eb-d16d39c6059e` reported two low-severity issues on the prior snapshot; both are remediated here.
 - Verification passed: `npm run lint`, `npm run build`, `git diff --check`, `pnpm audit --prod`, local API boundary tests, desktop/mobile browser QA, keyboard flows, theme switching, chatbot reset/resources, and contact validation.
 - Production smoke testing found and fixed literal DeepSeek Markdown emphasis markers in assistant bubbles; answers now remain text-only while preserving scannable line breaks.
+
+## 2026-10-14 - v1.22 English for Career Development certificate
+
+- Added Angelo Pama Lacsao's English for Career Development MOOC Certificate of Award to the reusable certificate collection.
+- Recorded the document-verified issuer, program, issue date, credential type, sponsorship context, and QR verification mark without relying on the PDF filename as the award title.
+- Added the unchanged source PDF and an optimized, tightly cropped WebP preview for legible certificate-card rendering.
+- Reused the existing responsive card, animated overlay, focus management, embedded PDF viewer, and open/download fallbacks without altering the two existing certificate records.
+- Verification passed: ESLint, Next.js production build, `git diff --check`, byte-for-byte PDF hash comparison, HTTP asset checks, clean browser console, desktop overlay interaction, and 390x844 mobile card/overlay QA with Escape focus restoration.

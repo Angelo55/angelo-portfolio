@@ -30,6 +30,18 @@ const certificates = [
     document: "/documents/certificates/core-generative-ai-skills.pdf",
     tone: "cisco",
   },
+  {
+    id: "english-career-development",
+    title: "English for Career Development MOOC",
+    issuer: "OPEN MOOCs / Online Professional English Network",
+    date: "14 October 2026",
+    type: "Certificate of Award - MOOC completion",
+    credentialId: null,
+    verification: "OPEN is sponsored by the U.S. Department of State and administered by FHI 360; the original certificate includes a QR verification mark.",
+    preview: "/images/certificates/english-career-development-mooc.webp",
+    document: "/documents/certificates/english-career-development-mooc.pdf",
+    tone: "open",
+  },
 ] as const;
 
 type Certificate = (typeof certificates)[number];

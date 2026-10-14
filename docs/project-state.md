@@ -1,6 +1,6 @@
 # Current project state
 
-Last updated: 2026-10-12
+Last updated: 2026-10-14
 
 ## Production
 
@@ -38,7 +38,7 @@ Last updated: 2026-10-12
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
-- Both supplied certificates have responsive preview cards and accessible PDF overlays with verified metadata.
+- All three supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata.
 - Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
 
 ## Pending
@@ -66,6 +66,8 @@ Last updated: 2026-10-12
 - Resume access reuses the existing embedded document dialog; the PESO resource opens an in-chat project preview with live-demo, source, and section-navigation actions; credentials link back to the existing certificate overlay section.
 - Fresh local browser QA confirmed the mobile header at 390px, assistant open/close, outside-click dismissal, New chat reset, PESO preview overlay, and clean console output on a fresh page.
 - Production assistant responses are normalized to safe plain text and preserve line breaks, preventing raw Markdown emphasis markers from appearing in recruiter-facing answers.
+- The English for Career Development MOOC Certificate of Award is integrated with a legible cropped preview, unchanged source PDF, verified OPEN metadata, and the existing accessible document overlay.
+- Local certificate QA confirms three cards, correct PDF/open/download paths, HTTP 200 asset responses, clean console output, responsive 390x844 overlay bounds, and keyboard focus restoration after Escape.
 
 ## Known limitations
 
