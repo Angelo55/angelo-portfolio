@@ -8,7 +8,7 @@ Last updated: 2026-10-15
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
-- Production tracking: GitHub `main` is the release source of truth; verify each new commit's Vercel `READY` deployment, the alias, and key assets after pushing. The previous verified baseline was `8da4b3b` / deployment `dpl_H93fMHtRB7iZS5fnYSFeCnoTL4o8` on 2026-10-15.
+- Latest application release: `5d22afa` / Vercel deployment `dpl_7HspmoS47j1Y3qxYZPRdq4kabT4n` (READY, 2026-10-15). `angelolacsao-portfolio.vercel.app` was explicitly assigned to it; homepage and resume returned HTTP 200, and recent deployment error logs were empty. GitHub `main` remains the release source of truth.
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
 - Data model: static source-controlled portfolio content with optional Supabase-backed analytics
 - Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser

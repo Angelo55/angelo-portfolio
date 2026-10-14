@@ -8,6 +8,7 @@
 - Fixed nested modal ownership: pointer events in the document preview no longer dismiss the chatbot, and Escape closes only the topmost document dialog. Focus returns without scrolling.
 - Validation: ESLint, Next.js production build, PDF visual render and text extraction, one-page letter dimensions, two PDF links, matching local/public PDF hashes, and `git diff --check` passed. Headless Chrome tested the homepage at 1440x900, 390x844, and 320x844: no Skills links, no page errors, unchanged scroll position after open/reset/close at y=0/900/2200, background-wheel scroll lock, in-viewport chat panel, nested resume preview Escape/close behavior and focus return, outside-click dismissal, and intentional Credentials anchor navigation. Reduced-motion mode was included in the additional viewport pass; the resume route returned HTTP 200 with `application/pdf`.
 - Limitation: the headless browser did not verify native inline PDF painting; the PDF was visually reviewed using Poppler rendering and checked for a successful local asset response.
+- Production release: commit `5d22afa` deployed as `dpl_7HspmoS47j1Y3qxYZPRdq4kabT4n` with status `READY`. The requested alias was explicitly updated. Live homepage and resume returned HTTP 200; the resume was served as `application/pdf` with the expected 4,396-byte size, the homepage contained the Skills and resume path without Credly skill URLs, and a one-hour deployment error-log query found no errors.
 
 ## 2026-10-08  v0.1 approved foundation
 
