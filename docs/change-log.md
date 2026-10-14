@@ -296,3 +296,10 @@ Asset status:
 - Verification limitation: the available in-app browser does not render PDF content in its embedded or direct PDF surface, so visual PDF review used the local PDF renderer; open/download URLs were separately checked. This browser session did not expose a responsive viewport override, so mobile behavior was checked against the existing single-column and reduced-motion CSS rules, not a live mobile-sized viewport.
 - Production release: commit `8da4b3b` deployed as `dpl_H93fMHtRB7iZS5fnYSFeCnoTL4o8` with Vercel status `READY`; `angelolacsao-portfolio.vercel.app` was assigned to the deployment.
 - Production smoke test passed: homepage and resume, certificate PDF, and preview routes returned HTTP 200 with expected content types; the homepage contains the new category, certificate, and stable resume link. Vercel reported no deployment error logs for the last hour.
+
+## 2026-10-15 - Direct contact submission
+
+- Connected the contact form to the owner-provided Formspree endpoint with trimmed native validation, duplicate-submit prevention, a timeout, a spam-trap field, and clear pending, success, rate-limit, and failure states.
+- Kept the direct email-draft link as a fallback and updated the privacy notice to disclose Formspree processing and the free plan's 30-day submission retention.
+- The owner reported that domain restriction is unavailable without upgrading. No paid upgrade, custom domain, or Supabase contact storage was introduced. Formspree's 50-submission monthly free quota and automated-submission risk remain.
+- Verification: ESLint, production build, and `git diff --check`. A real delivery test should be done with the owner checking the destination inbox; automated QA must not consume the monthly submission quota.
