@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const links = [["Work", "#work"], ["Skills", "#skills"], ["Certificates", "#certificates"], ["Experience", "#experience"]];
+const links = [["Work", "#work"], ["Skills", "#skills"], ["GitHub", "#github"], ["Certificates", "#certificates"], ["Experience", "#experience"]];
 
 export function Header() {
   const [open, setOpen] = useState(false);

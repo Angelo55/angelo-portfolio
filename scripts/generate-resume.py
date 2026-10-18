@@ -59,7 +59,7 @@ pdf.drawString(LEFT, 747, "Angelo Pama Lacsao")
 pdf.setFont("Helvetica-Bold", 9)
 pdf.drawString(LEFT, 727, "FOURTH-YEAR BSIT STUDENT  |  IT SUPPORT  |  FULL-STACK DEVELOPMENT")
 pdf.setFont("Helvetica", 9)
-pdf.drawString(LEFT, 712, "Sipalay City, Philippines  |  angelopamalacsao@gmail.com")
+pdf.drawString(LEFT, 712, "Sipalay City, Negros Occidental, Philippines  |  angelopamalacsao@gmail.com")
 pdf.setStrokeColor(RULE)
 pdf.setLineWidth(0.8)
 pdf.line(LEFT, 700, PAGE_WIDTH - RIGHT, 700)
@@ -120,7 +120,7 @@ y = paragraph(
 )
 
 y = section(pdf, "Education", y)
-y = paragraph(pdf, "<b>Bachelor of Science in Information Technology</b> - Fourth-year student, current", y, BODY, gap=2)
+y = paragraph(pdf, "<b>Bachelor of Science in Information Technology</b> - Fourth-year student, current<br/>Fellowship Baptist College, Kabankalan City, Philippines", y, BODY, gap=2)
 y = paragraph(pdf, "<b>Holy Rosary Academy</b> - Senior High School Graduate with Honors, Jul 2021 - May 2022", y, BODY, gap=14)
 
 y = section(pdf, "Certificates & Achievements", y)

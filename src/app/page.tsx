@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { ArrowUpRight, Code2, Facebook, FileText, Github, Headset, Instagram, Languages, Linkedin, Mail, MessageCircle, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 import { CertificateGallery } from "@/components/certificate-gallery";
+import { GitHubActivity, GitHubActivityFallback } from "@/components/github-activity";
 import { ContactForm } from "@/components/contact-form";
+import { Suspense } from "react";
 import { AnalyticsTracker } from "@/components/analytics-tracker";
 import { DocumentDialog } from "@/components/document-dialog";
 import { Header } from "@/components/header";
@@ -114,7 +116,7 @@ export default function Home() {
           <div className="profileMedia">
             <Image src="/images/lacsao-formal-photo.png" alt="Angelo Lacsao in formal business attire" fill priority sizes="(max-width: 700px) calc(100vw - 72px), (max-width: 1100px) 620px, 32vw" />
           </div>
-          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small>Sipalay City, Philippines</small></div>
+          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small className="profileLocation">Lives in Sipalay City, Negros Occidental, Philippines<br />Currently studying at Fellowship Baptist College, Kabankalan City, Philippines</small></div>
         </div>
         <div className="focus"><small>CURRENT FOCUS</small><b>I&apos;m exploring AI-powered workflow automation with n8n and Make.com for practical services and everyday work.</b></div>
         <div className="social">
@@ -155,14 +157,18 @@ export default function Home() {
       <div className="projects"><Reveal><ProjectShowcase /></Reveal></div>
     </section>
 
+    <section id="github" className="githubActivity pad" aria-label="GitHub activity">
+      <Suspense fallback={<GitHubActivityFallback />}><GitHubActivity /></Suspense>
+    </section>
+
     <section id="certificates" className="split pad">
-      <Reveal className="intro"><small>03 / CREDENTIALS</small><h2>Certificates &<br />continuous learning.</h2></Reveal>
+      <Reveal className="intro"><small>04 / CREDENTIALS</small><h2>Certificates &<br />continuous learning.</h2></Reveal>
       <Reveal><CertificateGallery /></Reveal>
     </section>
 
     <section id="experience" className="experience pad">
       <Reveal>
-        <small>04 / JOURNEY</small><h2>Experience,<br />education & leadership.</h2>
+        <small>05 / JOURNEY</small><h2>Experience,<br />education & leadership.</h2>
         <DocumentDialog src="/documents/Angelo_Lacsao_Resume.pdf" title="Angelo Lacsao Resume">View resume <ArrowUpRight /></DocumentDialog>
       </Reveal>
       <div className="expgrid">{experience.map((item, index) => <Reveal className="exp" key={item[1]} delay={index * 0.05}><small>{item[0]}</small><h3>{item[1]}</h3><p>{item[2]}</p></Reveal>)}</div>
@@ -170,7 +176,7 @@ export default function Home() {
 
     <section id="contact" className="contact">
       <Reveal className="contactBox">
-        <div><small>05 / GET IN TOUCH</small><h2>Have a project or<br />opportunity in mind?</h2><p>I&apos;m open to AI automation, IT support, hardware support, development internships, entry-level roles, collaborations, and conversations about useful technology.</p></div>
+        <div><small>06 / GET IN TOUCH</small><h2>Have a project or<br />opportunity in mind?</h2><p>I&apos;m open to AI automation, IT support, hardware support, development internships, entry-level roles, collaborations, and conversations about useful technology.</p></div>
         <ContactForm />
       </Reveal>
     </section>
