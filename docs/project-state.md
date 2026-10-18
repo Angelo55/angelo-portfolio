@@ -87,6 +87,8 @@ Last updated: 2026-10-18
 
 ## Known limitations
 
+- The GitHub contribution calendar intentionally keeps a dense 11px visual grid; its roving keyboard focus and day labels are accessible, but a larger alternative touch-selection control would improve precision on phones. This pass did not alter the approved calendar layout.
+
 - Contact submissions use the owner-provided Formspree endpoint. The owner confirmed a live-site submission arrived in the inbox rather than spam, and the Copy address fallback displayed its success message after copying. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion.
 - Analytics events are accepted safely when storage is not configured, but are not persisted until the Supabase table and server-only environment variables are provisioned.
 - Facebook returned HTTP 405 to a HEAD-only automated check; this is normal for services that reject HEAD and the URL remains configured.
