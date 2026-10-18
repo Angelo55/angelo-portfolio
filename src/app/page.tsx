@@ -109,8 +109,8 @@ export default function Home() {
         <div className="available"><i />Open to internships & entry-level roles</div>
         <HeroTitle />
         <p>I&apos;m a fourth-year BSIT student with practical exposure to AI-powered workflow automation using n8n and Make.com, full-stack development, IT support, and hardware support. I focus on building reliable technology that improves everyday work.</p>
-        <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
         <p className="heroEducation">Currently studying at Fellowship Baptist College, Kabankalan City, Philippines.</p>
+        <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
         <div className="profileCard">

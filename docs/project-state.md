@@ -28,7 +28,7 @@ Last updated: 2026-10-18
 - Bidirectional viewport reveals with reduced-motion support.
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
 - Reference-led GitHub Activity section follows Featured Projects. Public repository/star counts come from cached GitHub REST data; the server-only GraphQL token supplies the contribution calendar and a private-repository count without exposing private repository details. The production calendar matches GitHub's public 631-contribution total as of 2026-10-18; the no-token state remains explicit.
-- The profile card shows only the Sipalay City residence beneath the portrait. Fellowship Baptist College appears beneath the hero's “Explore my work” action; chatbot knowledge and the public resume retain the same verified facts.
+- The desktop profile card uses two caption rows: name and role together, then Sipalay City residence. Mobile retains its stacked caption. Fellowship Baptist College appears above the hero's “Explore my work” action; chatbot knowledge and the public resume retain the same verified facts.
 - Accessible resume and credential overlays.
 - Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with a visible copyable email-address fallback.
 - Project showcase links distinguish the PESO live deployment from the portfolio source repository. The PESO repository remains private by the owner's choice; do not add a public source link unless the owner later makes it available.

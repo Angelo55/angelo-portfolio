@@ -357,3 +357,9 @@ Asset status:
 - Centered the contribution grid inside its card when space permits, preserving touch-friendly horizontal scrolling on narrow screens and existing keyboard/day-selection behavior.
 - Kept the Sipalay City residence beneath the profile portrait and moved the Fellowship Baptist College statement below the hero’s “Explore my work” action, removing the crowded two-part caption.
 - Desktop/mobile Playwright checks at 1440px and 390px found no horizontal page overflow or console errors. Graph centering and mobile scrolling were checked against real production contribution data. ESLint, production build, and diff check passed; production layout verification follows deployment.
+
+## 2026-10-18 - Hero caption refinement
+
+- Aligned name and role on the first desktop profile-caption row, with residence on the second; preserved the existing stacked mobile layout.
+- Moved the college statement above “Explore my work” and adjusted its typography and spacing to read as supporting context rather than part of the button.
+- Local Chrome/Playwright checks at 1440px and 390px confirmed the row relationships, working work-section anchor, no page overflow, and no console errors.
