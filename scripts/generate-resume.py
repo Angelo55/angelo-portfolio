@@ -126,9 +126,10 @@ y = paragraph(pdf, "<b>Holy Rosary Academy</b> - Senior High School Graduate wit
 y = section(pdf, "Certificates & Achievements", y)
 certificates = [
     "<b>IT Customer Support Basics</b> - Cisco Networking Academy, 14 Oct 2026",
-    "<b>English for Career Development MOOC</b> - OPEN MOOCs / Online Professional English Network, 14 Oct 2026",
+    "<b>IT Support Specialist Pathway Exam</b> - Cisco Networking Academy, 18 Oct 2026",
     "<b>Core Generative AI Skills</b> - Cisco Networking Academy, 5 Oct 2026",
     "<b>Introduction to AI Literacy and Responsible Use</b> - Mapua University / ACHIEVE, 14 Sep 2026",
+    "<b>English for Career Development MOOC</b> - OPEN MOOCs / Online Professional English Network, 14 Oct 2026",
 ]
 for credential in certificates:
     y = paragraph(pdf, "- " + credential, y, SMALL, gap=4)

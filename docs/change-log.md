@@ -321,3 +321,9 @@ Asset status:
 - Added a legible WebP preview and reused the existing certificate card, PDF overlay, open/download actions, and responsive layout. The other four certificate records remain unchanged; recruiter-assistant knowledge now includes the fifth credential.
 - Corrected the chatbot grid from five to six explicit rows and bounded the desktop panel to 420px by 610px. Mobile sizing stays within the viewport; short-height layouts use a horizontal quick-action strip so messages and controls do not overlap.
 - Local verification: lint and production build passed (the build required network access to fetch the existing Geist fonts); PDF hash and visual preview passed; Playwright with Chrome at 1440x900, 390x844, and 320x520 confirmed certificate order and overlay URL, bounded chat panel, long-message scrolling, body scroll lock, stable page position after close, and no page errors. The Browser plugin was unavailable. The public resume remains unchanged and still lists four credentials pending a separate update.
+
+## 2026-10-18 - Resume credential synchronization
+
+- Updated the source-controlled resume generator and regenerated the stable public resume PDF with IT Support Specialist Pathway Exam - Cisco Networking Academy, 18 Oct 2026, immediately after IT Customer Support Basics. The five credentials now match the portfolio gallery order.
+- Preserved the one-page letter, single-column, dark-neutral, selectable-text layout and all other resume content. Hero, experience, and chatbot resume actions continue to use the same public PDF path.
+- Verification: PDF text extraction confirms five ordered credentials, one-page letter dimensions, readable visual render, and the existing two live links. Lint, build, local route, and production checks are recorded with the release.
