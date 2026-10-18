@@ -21,6 +21,8 @@ The GitHub Activity section sits between Featured Projects and Certificates. It 
 - Confirm public repository and star totals against signed-out GitHub REST results. Check empty/error states without a token, then check full calendar counts, date range, keyboard navigation, and privacy behavior after a public-only token is configured.
 - Verify the profile location and current college in the profile card, assistant grounding, and ATS-readable one-page resume.
 
-## Current limitation
+## Production activation (2026-10-18)
 
-No `GITHUB_ACTIVITY_TOKEN` was present locally or in Vercel Production during implementation (environment-variable names only were checked). The calendar and streak cannot be verified live or populated until a suitably scoped token is configured and the deployment rebuilt. Public REST statistics and their fallback behavior were verified.
+The owner added `GITHUB_ACTIVITY_TOKEN` to Vercel Production as a hidden Secret with a 90-day expiration. The value was not read, logged, or committed. Production deployment `dpl_8pJr7eDXVXrBck3wNSCwZK9buYKL` built successfully and reached READY; `angelolacsao-portfolio.vercel.app` was explicitly assigned to it. A public HTTP smoke test returned 200, found the GitHub Activity section and contribution-calendar accessibility label, and did not find the unavailable-calendar message. This confirms the production calendar is rendered, but is not a visual, keyboard, or mobile-device QA result.
+
+Replace the token in Vercel before its 90-day expiration and redeploy. If the token expires or GitHub rejects it, the section falls back to the unavailable state without exposing a credential.
