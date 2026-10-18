@@ -27,8 +27,8 @@ Last updated: 2026-10-18
 - Persistent sticky navigation remains visible in both scroll directions; scroll-direction expansion/compression, responsive menu, theme control, and keyboard behavior are preserved. The outer shell uses `overflow: clip` so it does not intercept sticky positioning.
 - Bidirectional viewport reveals with reduced-motion support.
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
-- Reference-led GitHub Activity section follows Featured Projects. Public repository/star counts come from cached GitHub REST data; the contribution calendar awaits a server-only `GITHUB_ACTIVITY_TOKEN` for GraphQL. The no-token state is explicit and does not invent counts.
-- The profile card, chatbot knowledge, and public resume now distinguish living in Sipalay City, Negros Occidental from studying at Fellowship Baptist College in Kabankalan City.
+- Reference-led GitHub Activity section follows Featured Projects. Public repository/star counts come from cached GitHub REST data; the server-only GraphQL token supplies the contribution calendar and a private-repository count without exposing private repository details. The production calendar matches GitHub's public 631-contribution total as of 2026-10-18; the no-token state remains explicit.
+- The profile card shows only the Sipalay City residence beneath the portrait. Fellowship Baptist College appears beneath the hero's “Explore my work” action; chatbot knowledge and the public resume retain the same verified facts.
 - Accessible resume and credential overlays.
 - Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with a visible copyable email-address fallback.
 - Project showcase links distinguish the PESO live deployment from the portfolio source repository. The PESO repository remains private by the owner's choice; do not add a public source link unless the owner later makes it available.

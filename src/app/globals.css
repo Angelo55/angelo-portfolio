@@ -436,7 +436,10 @@ button{color:inherit}
 }
 
 /* GitHub activity: reference-led statistics and an accessible contribution calendar. */
-.profileLocation{max-width:250px;line-height:1.45}
+.heroCopy>p.heroEducation{max-width:520px;margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.profileMeta{display:grid;align-items:start;justify-content:stretch;gap:10px}
+.profileMeta small{text-align:left}
+.profileLocation{max-width:none;white-space:nowrap;line-height:1.45}
 .githubActivity{background:#f7f7f5}
 .githubActivityBody{display:grid;gap:24px}
 .githubActivityIntro{display:flex;align-items:end;justify-content:space-between;gap:24px}
@@ -460,7 +463,7 @@ button{color:inherit}
 .githubCalendarTop>span,.githubCalendarHint,.githubCalendarBottom,.githubActivityFoot{color:var(--muted);font-family:var(--font-mono);font-size:10px;line-height:1.5}
 .githubCalendarHint{margin:12px 0 18px}
 .githubCalendarScroll{overflow-x:auto;overscroll-behavior-inline:contain;padding:4px 2px 14px;scrollbar-width:thin}
-.githubCalendarGrid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,11px);grid-auto-columns:11px;gap:4px;width:max-content;min-height:101px}
+.githubCalendarGrid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,11px);grid-auto-columns:11px;gap:4px;width:max-content;min-height:101px;margin-inline:auto}
 .githubDay{width:11px;height:11px;padding:0;border:1px solid #e0e4e1;border-radius:3px;background:#f2f4f2;cursor:pointer}
 .githubLevel1{background:#cce8e7;border-color:#cce8e7}.githubLevel2{background:#92cfcd;border-color:#92cfcd}.githubLevel3{background:#52abb2;border-color:#52abb2}.githubLevel4{background:#258393;border-color:#258393}
 .githubDaySelected{outline:2px solid var(--ink);outline-offset:2px}
@@ -476,7 +479,7 @@ button{color:inherit}
 .githubActivityLoading{display:grid;gap:20px}.githubStatsSkeleton{height:116px}.githubCalendarSkeleton{height:230px}.githubStatsSkeleton,.githubCalendarSkeleton{border-radius:20px;background:linear-gradient(100deg,#e9eeeb 20%,#f4f7f5 45%,#e9eeeb 70%);background-size:200% 100%;animation:github-loading 1.4s ease-in-out infinite}
 @keyframes github-loading{to{background-position-x:-200%}}
 @media(max-width:1100px){.githubStats{grid-template-columns:repeat(2,minmax(0,1fr))}.githubStat:last-child{grid-column:span 2}}
-@media(max-width:700px){.profileLocation{max-width:100%}.githubActivityIntro{align-items:start;flex-direction:column}.githubStats{gap:9px}.githubStat{min-height:100px;padding:13px;gap:9px}.githubStatIcon{flex-basis:34px;width:34px;height:34px}.githubStatIcon svg{width:16px;height:16px}.githubStat strong{font-size:25px}.githubCalendar{padding:18px}.githubCalendarTop{align-items:start;flex-direction:column;gap:5px}.githubCalendarBottom{align-items:start;flex-direction:column;gap:8px}}
+@media(max-width:700px){.profileLocation{white-space:normal}.githubActivityIntro{align-items:start;flex-direction:column}.githubStats{gap:9px}.githubStat{min-height:100px;padding:13px;gap:9px}.githubStatIcon{flex-basis:34px;width:34px;height:34px}.githubStatIcon svg{width:16px;height:16px}.githubStat strong{font-size:25px}.githubCalendar{padding:18px}.githubCalendarTop{align-items:start;flex-direction:column;gap:5px}.githubCalendarBottom{align-items:start;flex-direction:column;gap:8px}}
 @media(max-width:360px){.githubStats{grid-template-columns:1fr}.githubStat:last-child{grid-column:auto}}
 [data-theme="dark"] .githubActivity{background:#202526}[data-theme="dark"] .githubStat,[data-theme="dark"] .githubCalendar,[data-theme="dark"] .githubActivityIntro>a,[data-theme="dark"] .githubCalendarEmpty>a{border-color:#ffffff1c}[data-theme="dark"] .githubStatIcon{background:#17373b}[data-theme="dark"] .githubDay{border-color:#455153}[data-theme="dark"] .githubLevel1{background:#315e63}[data-theme="dark"] .githubLevel2{background:#397e86}[data-theme="dark"] .githubLevel3{background:#4daab2}[data-theme="dark"] .githubLevel4{background:#75c8cc}
 @media(prefers-reduced-motion:reduce){.githubActivityIntro>a,.githubCalendarEmpty>a{transition:none}.githubActivityIntro>a:hover,.githubCalendarEmpty>a:hover{transform:none}.githubStatsSkeleton,.githubCalendarSkeleton{animation:none}}

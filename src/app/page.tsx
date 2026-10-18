@@ -110,13 +110,14 @@ export default function Home() {
         <HeroTitle />
         <p>I&apos;m a fourth-year BSIT student with practical exposure to AI-powered workflow automation using n8n and Make.com, full-stack development, IT support, and hardware support. I focus on building reliable technology that improves everyday work.</p>
         <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
+        <p className="heroEducation">Currently studying at Fellowship Baptist College, Kabankalan City, Philippines.</p>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
         <div className="profileCard">
           <div className="profileMedia">
             <Image src="/images/lacsao-formal-photo.png" alt="Angelo Lacsao in formal business attire" fill priority sizes="(max-width: 700px) calc(100vw - 72px), (max-width: 1100px) 620px, 32vw" />
           </div>
-          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small className="profileLocation">Lives in Sipalay City, Negros Occidental, Philippines<br />Currently studying at Fellowship Baptist College, Kabankalan City, Philippines</small></div>
+          <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small className="profileLocation">Lives in Sipalay City, Negros Occidental, Philippines</small></div>
         </div>
         <div className="focus"><small>CURRENT FOCUS</small><b>I&apos;m exploring AI-powered workflow automation with n8n and Make.com for practical services and everyday work.</b></div>
         <div className="social">

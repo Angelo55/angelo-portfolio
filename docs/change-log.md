@@ -351,3 +351,9 @@ Asset status:
 - Added a reference-led GitHub Activity section between Featured Projects and Certificates, with navigation, four metrics, a responsive calendar component, accessible day controls, and loading/unavailable states. Public repositories and stars use cached official GitHub REST data; the contribution graph uses GraphQL only when a server-only token is configured.
 - Updated the profile card to distinguish Sipalay City residence from study at Fellowship Baptist College, Kabankalan City. Synchronized the assistant knowledge and the ATS-readable public resume generator/PDF.
 - Local lint and production build passed. Desktop/tablet/mobile checks confirmed section order, real public counts, responsive layout, no horizontal overflow, and the no-token calendar fallback. The public-only GraphQL calendar remains pending credential setup and live validation; see `docs/github-activity.md`.
+
+## 2026-10-18 - GitHub calendar and hero profile layout
+
+- Centered the contribution grid inside its card when space permits, preserving touch-friendly horizontal scrolling on narrow screens and existing keyboard/day-selection behavior.
+- Kept the Sipalay City residence beneath the profile portrait and moved the Fellowship Baptist College statement below the hero’s “Explore my work” action, removing the crowded two-part caption.
+- Desktop/mobile Playwright checks at 1440px and 390px found no horizontal page overflow or console errors. Graph centering and mobile scrolling were checked against real production contribution data. ESLint, production build, and diff check passed; production layout verification follows deployment.
