@@ -45,7 +45,7 @@ Last updated: 2026-10-18
 - The current one-page letter resume uses a single-column, black-text, ATS-readable layout with selectable top-to-bottom text, conventional section headings, and the current BSIT profile, project, experience, skills, and five listed certificates. Personal birth details, phone number, and street-level address remain omitted from the public version.
 - The chatbot panel retains its fixed launcher-relative placement; opening, resetting, using a document preview, and closing no longer move the page. Background scroll is locked while chat is open, internal message scroll is contained, and the topmost document dialog handles Escape before chat.
 - The recruiter assistant uses a 420px desktop width and a bounded 610px height, six explicit grid rows, and a contained message scroller. Mobile sizes respect viewport height; short-height screens keep quick actions accessible in a horizontal strip.
-- Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
+- Professional positioning now covers AI automation and automation internships, hands-on n8n and Make.com exposure, full-stack development, IT support, and hardware support.
 
 ## Pending
 

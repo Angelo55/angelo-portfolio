@@ -81,7 +81,7 @@ skills = [
     ("Customer Service", "Customer Service, End-user Communication, Issue Documentation, Critical Thinking"),
     ("Artificial Intelligence", "Generative AI, Prompt Engineering, AI-Assisted Writing, AI Models and Tools, AI Tool Evaluation, Business Productivity, Content Generation"),
     ("Responsible AI", "AI Ethics, Data Privacy, AI Security Awareness, Bias Detection, Human-in-the-Loop Review, Responsible AI"),
-    ("Development &amp; Automation", "Full-stack Development, UI/UX Implementation, AI-powered Workflow Automation, foundational n8n exposure"),
+    ("Development &amp; Automation", "Full-stack Development, UI/UX Implementation, AI-powered Workflow Automation, hands-on exposure to n8n and Make.com"),
 ]
 for label, detail in skills:
     y = paragraph(pdf, f"<b>{label}:</b> {detail}", y, SMALL, gap=4)

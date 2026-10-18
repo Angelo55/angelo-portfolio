@@ -334,3 +334,8 @@ Asset status:
 - Updated the chatbot project preview and verified-knowledge grounding to use the same distinction.
 - Regenerated the stable public resume PDF from its source script with the corrected project description; preserved its one-page, single-column layout and existing links.
 - The owner confirmed that the system did not integrate employer-role users. No other project capabilities or credentials were changed.
+
+## 2026-10-18 - Automation tool exposure
+
+- Added n8n and Make.com as hands-on exposure in the non-interactive Development & Automation skills group, with matching first-person profile copy.
+- Updated the source-controlled resume generator and public PDF, plus recruiter-assistant grounding, to use the same calibrated wording. This does not claim certification or advanced proficiency in either tool.

@@ -78,7 +78,8 @@ const skillGroups = [
       { label: "Full-stack Development" },
       { label: "UI/UX Implementation" },
       { label: "AI-powered Workflow Automation" },
-      { label: "n8n (foundational exposure)" },
+      { label: "n8n (hands-on exposure)" },
+      { label: "Make.com (hands-on exposure)" },
     ],
   },
 ];
@@ -105,7 +106,7 @@ export default function Home() {
       <Reveal className="heroCopy">
         <div className="available"><i />Open to internships & entry-level roles</div>
         <HeroTitle />
-        <p>I&apos;m a fourth-year BSIT student with practical exposure to AI-powered workflow automation, n8n, full-stack development, IT support, and hardware support. I focus on building reliable technology that improves everyday work.</p>
+        <p>I&apos;m a fourth-year BSIT student with practical exposure to AI-powered workflow automation using n8n and Make.com, full-stack development, IT support, and hardware support. I focus on building reliable technology that improves everyday work.</p>
         <a className="btn" href="#work">Explore my work <ArrowUpRight /></a>
       </Reveal>
       <Reveal className="heroCards" delay={0.1}>
@@ -115,7 +116,7 @@ export default function Home() {
           </div>
           <div className="profileMeta"><span><b>Angelo Lacsao</b><small>Full-stack & Automation</small></span><small>Sipalay City, Philippines</small></div>
         </div>
-        <div className="focus"><small>CURRENT FOCUS</small><b>I&apos;m exploring AI-powered workflow automation and n8n integrations for practical services and everyday work.</b></div>
+        <div className="focus"><small>CURRENT FOCUS</small><b>I&apos;m exploring AI-powered workflow automation with n8n and Make.com for practical services and everyday work.</b></div>
         <div className="social">
           <a href="mailto:angelopamalacsao@gmail.com" aria-label="Email Angelo"><Mail /></a>
           <DocumentDialog src="/documents/Angelo_Lacsao_Resume.pdf" title="Angelo Lacsao Resume" className="iconButton" iconOnly><FileText /></DocumentDialog>
