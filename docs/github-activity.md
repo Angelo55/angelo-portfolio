@@ -13,6 +13,7 @@ The GitHub Activity section sits between Featured Projects and Certificates. It 
 ## States and interaction
 
 - A Suspense skeleton covers server fetch time. REST failures degrade individual public metrics to an em dash; missing or failed GraphQL data shows the unavailable calendar state.
+- Once loaded, the section body uses the same viewport reveal as adjacent portfolio sections; reduced-motion users see it immediately without movement. The loading skeleton is not animated by the reveal wrapper.
 - When GraphQL data is available, the calendar shows real daily counts for GitHub's returned year. The longest streak is calculated only within that displayed period. Day buttons expose counts to screen readers and support arrow-key navigation; the grid scrolls horizontally on narrow screens.
 - The GitHub profile action is explicit. The separate portfolio repository remains private and is not presented as a public activity source.
 

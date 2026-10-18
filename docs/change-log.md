@@ -363,3 +363,8 @@ Asset status:
 - Aligned name and role on the first desktop profile-caption row, with residence on the second; preserved the existing stacked mobile layout.
 - Moved the college statement above “Explore my work” and adjusted its typography and spacing to read as supporting context rather than part of the button.
 - Local Chrome/Playwright checks at 1440px and 390px confirmed the row relationships, working work-section anchor, no page overflow, and no console errors.
+
+## 2026-10-18 - GitHub Activity scroll reveal
+
+- Applied the shared `Reveal` component to the loaded GitHub Activity body so its heading, metrics, and calendar enter with the same restrained fade-and-rise motion as neighboring sections; the Suspense loading skeleton remains outside that animation.
+- Local Chrome/Playwright checks at 1440px and 390px confirmed opacity transitions from 0 to 1 on scroll, no page overflow or console errors, and a static visible result with `prefers-reduced-motion: reduce`.
