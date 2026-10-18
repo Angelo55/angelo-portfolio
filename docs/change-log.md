@@ -339,3 +339,9 @@ Asset status:
 
 - Added n8n and Make.com as hands-on exposure in the non-interactive Development & Automation skills group, with matching first-person profile copy.
 - Updated the source-controlled resume generator and public PDF, plus recruiter-assistant grounding, to use the same calibrated wording. This does not claim certification or advanced proficiency in either tool.
+
+## 2026-10-18 - Persistent sticky header
+
+- Root cause: the page shell's `overflow: hidden` created an overflow container, so the existing sticky header scrolled off-screen despite `position: sticky`. A local desktop check measured its top edge at -1084px after scrolling.
+- Switched only the shell's clipping mode to `overflow: clip`, retaining its rounded appearance without making it a scroll container. Existing header transitions, scroll listener, navigation, theme toggle, and mobile dropdown are unchanged.
+- Local production-build browser checks at 1440x900, 800x900, 390x844, and 320x520 confirmed a visible header after downward scrolling, usable tablet/mobile dropdowns, no horizontal overflow or page errors, and a visible Skills heading after anchor navigation. Normal upward wheel scrolling restored the expanded header on desktop and mobile. The dark-theme, reduced-motion mobile check preserved header contrast, Escape dismissal, and focus restoration. ESLint and production build passed; the Browser plugin was unavailable, so automated Chrome/Playwright was used.

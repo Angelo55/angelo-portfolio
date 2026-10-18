@@ -24,7 +24,7 @@ Last updated: 2026-10-18
 
 - Correct PNG profile asset verified by SHA-256 and served from public/images/lacsao-formal-photo.png.
 - Responsive desktop, tablet, and mobile profile composition.
-- Wide sticky navigation with reliable scroll-direction expansion and compression.
+- Persistent sticky navigation remains visible in both scroll directions; scroll-direction expansion/compression, responsive menu, theme control, and keyboard behavior are preserved. The outer shell uses `overflow: clip` so it does not intercept sticky positioning.
 - Bidirectional viewport reveals with reduced-motion support.
 - Horizontal, extensible PESO Kabankalan showcase and accessible case-study overlay.
 - Accessible resume and credential overlays.
