@@ -11,7 +11,7 @@ const projects = [{
   shortTitle: "PESO Kabankalan City",
   category: "Employment Services Platform",
   stage: "Capstone Project",
-  summary: "I built a digital employment platform connecting job seekers, employers, and PESO personnel through clearer, more accessible service workflows.",
+  summary: "I built a digital employment services platform for job seekers and PESO personnel, with clearer, more accessible service workflows.",
   role: "Architecture, Full-stack Development, UI/UX",
   tags: ["Full-stack", "UI/UX", "Infrastructure"],
   image: "/images/peso-kabankalan-preview.png",
@@ -23,7 +23,7 @@ const projects = [{
     "Job seeker registration, email verification, and unified profiles",
     "AI assisted resume review, job compatibility, and smart matching",
     "Application, referral, and employment progress tracking",
-    "Employer and PESO administration workflows",
+    "PESO staff administration workflows",
     "Career guidance, messaging, and event administration",
   ],
 }];

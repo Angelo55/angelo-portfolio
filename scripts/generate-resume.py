@@ -104,7 +104,7 @@ y = section(pdf, "Selected Project", y)
 y = entry(pdf, "PESO Kabankalan Employment System", "Capstone project", y)
 y = paragraph(
     pdf,
-    "I developed a full-stack employment platform connecting job seekers, employers, and PESO personnel. "
+    "I developed a full-stack employment services platform for job seekers and PESO personnel. "
     "My contributions covered system architecture, infrastructure, frontend and backend functionality, and UI/UX implementation.",
     y,
     SMALL,

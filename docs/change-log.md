@@ -327,3 +327,10 @@ Asset status:
 - Updated the source-controlled resume generator and regenerated the stable public resume PDF with IT Support Specialist Pathway Exam - Cisco Networking Academy, 18 Oct 2026, immediately after IT Customer Support Basics. The five credentials now match the portfolio gallery order.
 - Preserved the one-page letter, single-column, dark-neutral, selectable-text layout and all other resume content. Hero, experience, and chatbot resume actions continue to use the same public PDF path.
 - Verification: PDF text extraction confirms five ordered credentials, one-page letter dimensions, readable visual render, and the existing two live links. Lint, build, local route, and production checks are recorded with the release.
+
+## 2026-10-18 - PESO platform role clarification
+
+- Corrected the PESO Kabankalan project summary and case-study feature to describe job seekers and PESO personnel, without implying an integrated employer user role.
+- Updated the chatbot project preview and verified-knowledge grounding to use the same distinction.
+- Regenerated the stable public resume PDF from its source script with the corrected project description; preserved its one-page, single-column layout and existing links.
+- The owner confirmed that the system did not integrate employer-role users. No other project capabilities or credentials were changed.

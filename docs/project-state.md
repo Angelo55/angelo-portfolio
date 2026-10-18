@@ -30,6 +30,7 @@ Last updated: 2026-10-18
 - Accessible resume and credential overlays.
 - Social links, GitHub profile link, explicit live-demo/source actions, resume document, and Formspree contact flow with a visible copyable email-address fallback.
 - Project showcase links distinguish the PESO live deployment from the portfolio source repository. The PESO repository remains private by the owner's choice; do not add a public source link unless the owner later makes it available.
+- PESO Kabankalan project descriptions and the public resume identify job seekers and PESO personnel as the platform's users. The owner confirmed that no employer user role was integrated; recruiter-assistant grounding explicitly preserves that distinction.
 - Canonical metadata, robots, sitemap, favicon, and public indexing configuration.
 - ESLint, TypeScript, local production build, Vercel build, and critical asset HTTP checks pass.
 - GitHub repository and Vercel Git integration configured.

@@ -58,7 +58,7 @@ function PesoPreview({ onNavigate }: { onNavigate: () => void }) {
         <div className="chatProjectPreview">
           <Image src="/images/peso-kabankalan-preview.png" alt="Preview of the PESO Kabankalan Employment System" width={1440} height={810} sizes="(max-width: 800px) 92vw, 52vw" />
           <div>
-            <p>I contributed across architecture, full-stack development, infrastructure, and UI/UX implementation for a platform connecting job seekers, employers, and PESO personnel.</p>
+            <p>I contributed across architecture, full-stack development, infrastructure, and UI/UX implementation for a platform serving job seekers and PESO personnel.</p>
             <a className="textLink" href="#work" onClick={() => setOpen(false)}>Read the full case study <ArrowUpRight /></a>
           </div>
         </div>
