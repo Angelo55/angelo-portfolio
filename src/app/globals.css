@@ -349,11 +349,11 @@ button{color:inherit}
 .chatBackdrop{position:fixed;inset:0;z-index:0;background:#15211c18;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
 .chatbot{isolation:isolate}
 .chatLauncher{position:relative;z-index:1}
-.chatPanel{position:absolute;z-index:1;grid-template-rows:auto minmax(0,1fr) auto auto auto;max-height:min(680px,calc(100dvh - 96px));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.chatPanel{position:absolute;z-index:1;width:min(420px,calc(100vw - 48px));height:min(610px,calc(100dvh - 108px));grid-template-rows:auto minmax(0,1fr) auto auto auto auto;max-height:calc(100dvh - 108px);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .chatHeader{min-height:66px}
 .chatHeader>div{min-width:0}
 .chatHeader h2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.chatMessages{max-height:none;min-height:96px;scrollbar-width:thin;overscroll-behavior:contain}
+.chatMessages{max-height:none;min-height:0;scrollbar-width:thin;overscroll-behavior:contain}
 .chatMessage{white-space:pre-line}
 .chatMessageRow{display:flex;align-items:flex-end;gap:7px;max-width:95%}
 .chatMessageRow.user{justify-content:flex-end;align-self:end;margin-left:auto}
@@ -399,7 +399,8 @@ button{color:inherit}
 [data-theme="dark"] .profileCard,[data-theme="dark"] .certificateCard,[data-theme="dark"] .iconButton,[data-theme="dark"] .social a{color:var(--ink);background:var(--surface);border-color:#ffffff18;box-shadow:0 8px 22px #0005}
 [data-theme="dark"] .projectSnapshot figcaption{background:#ffffff0a}
 [data-theme="dark"] .projectDialogActions .btnSecondary{color:#b8e2dc;background:#173537}
-@media(max-width:700px){.chatBackdrop{background:#0e111280}.chatPanel{right:-2px;width:min(410px,calc(100vw - 28px));max-height:calc(100dvh - 82px);border-radius:22px}.chatMessages{padding:13px}.chatActions{padding-inline:13px}.chatResourceList{padding-inline:13px}.chatFooterActions{padding-inline:12px}.chatFooterActions>span{max-width:150px;text-align:right}.chatDialogActions{align-items:stretch;flex-direction:column}.chatDialogActions .btn,.chatDialogActions .textLink{width:100%}}
+@media(max-width:700px){.chatBackdrop{background:#0e111280}.chatPanel{right:-2px;width:min(410px,calc(100vw - 28px));height:min(610px,calc(100dvh - 82px));max-height:calc(100dvh - 82px);border-radius:22px}.chatMessages{padding:13px}.chatActions{padding-inline:13px}.chatResourceList{padding-inline:13px}.chatFooterActions{padding-inline:12px}.chatFooterActions>span{max-width:150px;text-align:right}.chatDialogActions{align-items:stretch;flex-direction:column}.chatDialogActions .btn,.chatDialogActions .textLink{width:100%}}
+@media(max-height:540px){.chatActions{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-inline:contain}.chatActions a,.chatActions button{flex:0 0 auto}}
 @media(prefers-reduced-motion:reduce){.chatBackdrop,.chatResource,.chatReset{transition:none!important}.chatResource:hover{transform:none}.chatBackdrop{backdrop-filter:none;-webkit-backdrop-filter:none}}
 
 /* Categorized, informational skills */

@@ -1,6 +1,6 @@
 # Current project state
 
-Last updated: 2026-10-15
+Last updated: 2026-10-18
 
 ## Production
 
@@ -8,7 +8,7 @@ Last updated: 2026-10-15
 - GitHub: https://github.com/Angelo55/angelo-portfolio
 - Vercel project: angelo55s-projects/angelo-portfolio
 - Branch: main
-- Latest application release: `46bd6c5` / Vercel deployment `dpl_BuZcGN8zK92eyyPBxnQxbDXX57dv` (`READY`, 2026-10-15). The alias `angelolacsao-portfolio.vercel.app` was explicitly assigned; the homepage and all eight certificate preview/PDF assets returned HTTP 200. GitHub `main` remains the production source of truth.
+- GitHub `main` is the production source of truth; Vercel deploys pushes to the linked project. Verify deployment readiness and the `angelolacsao-portfolio.vercel.app` alias after each release.
 - Application: Next.js 16 App Router, React 19, TypeScript, Motion
 - Data model: static source-controlled portfolio content with optional Supabase-backed analytics
 - Runtime integrations: server-only DeepSeek and Supabase analytics credentials are configured in Vercel; no secrets are exposed to the browser
@@ -39,10 +39,11 @@ Last updated: 2026-10-15
 - Profile presentation now uses an isolated source-ratio container with a centered responsive crop.
 - Navigation is centered and width-bounded in both expanded and compressed states.
 - Tablet and mobile navigation use a right-aligned trigger with reversible dropdown motion and preserved keyboard/outside-click behavior.
-- All four supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata. Their gallery order is IT Customer Support Basics, Core Generative AI Skills, Introduction to AI Literacy and Responsible Use, then English for Career Development MOOC.
+- All five supplied certificates have responsive preview cards and accessible PDF overlays with document-verified metadata. Their gallery order is IT Customer Support Basics, IT Support Specialist Pathway Exam, Core Generative AI Skills, Introduction to AI Literacy and Responsible Use, then English for Career Development MOOC.
 - Skills are grouped into IT Support, Customer Service, Artificial Intelligence, Responsible AI, and Development & Automation; all skill chips are non-interactive and no longer redirect to Credly.
 - The current one-page letter resume uses a single-column, black-text, ATS-readable layout with selectable top-to-bottom text, conventional section headings, and the current BSIT profile, project, experience, skills, and four listed certificates. Personal birth details, phone number, and street-level address remain omitted from the public version.
 - The chatbot panel retains its fixed launcher-relative placement; opening, resetting, using a document preview, and closing no longer move the page. Background scroll is locked while chat is open, internal message scroll is contained, and the topmost document dialog handles Escape before chat.
+- The recruiter assistant uses a 420px desktop width and a bounded 610px height, six explicit grid rows, and a contained message scroller. Mobile sizes respect viewport height; short-height screens keep quick actions accessible in a horizontal strip.
 - Professional positioning now covers AI automation and automation internships, n8n workflow exposure, full-stack development, IT support, and hardware support.
 
 ## Pending
@@ -51,6 +52,7 @@ Last updated: 2026-10-15
 - Add a custom domain if desired.
 - Add Supabase only if stored submissions, owner-managed content, or authentication is approved later.
 - If the owner later chooses to make the PESO repository public, confirm its canonical URL and then add a clearly labeled source link; keep it private for now.
+- The public resume still lists the earlier four credentials. Add the new Pathway Exam only as part of a separately approved resume update.
 - Supabase analytics schema and server-only production variables are configured; the private dashboard remains owner-authenticated.
 - Private `/analytics` dashboard is implemented with Supabase email/password authentication; create the owner account in Supabase Auth before first use.
 - Light/dark mode toggle now persists a user choice, follows the system theme by default, and applies a dark contrast palette without changing the light-theme baseline.
@@ -73,6 +75,7 @@ Last updated: 2026-10-15
 - The English for Career Development MOOC Certificate of Award is integrated with a legible cropped preview, unchanged source PDF, verified OPEN metadata, and the existing accessible document overlay.
 - Local certificate QA confirms three cards, correct PDF/open/download paths, HTTP 200 asset responses, clean console output, responsive 390x844 overlay bounds, and keyboard focus restoration after Escape.
 - IT Customer Support Basics is integrated with a responsive preview, original Cisco Networking Academy certificate, verified course/title/recipient/date details, and the existing accessible document overlay.
+- IT Support Specialist Pathway Exam is integrated immediately after IT Customer Support Basics with an unchanged PDF, optimized preview, verified Cisco Networking Academy title, recipient, 18 October 2026 completion date, and certificate ID. The chatbot knowledge base includes the new credential.
 - The resume has a refreshed one-page, two-column layout based on the supplied reference's hierarchy and dividers, with current site-consistent education, work/leadership history, project, skills, and all four certificates.
 - Resume links in the hero, experience section, and chatbot continue to use the same public URL, now serving the refreshed PDF; chatbot knowledge includes the updated skill groups and certificate list.
 - Local validation for this update: lint/build/diff-check pass; resume and certificate text, page count, links, and source/public hashes were checked; all public asset routes returned HTTP 200; desktop skill links, credential overlay metadata/actions, Escape dismissal, and focus restoration were verified. PDF visual review used a local renderer because the available in-app browser does not render embedded PDFs. Responsive CSS targets were inspected; a live mobile viewport was unavailable in this browser session.

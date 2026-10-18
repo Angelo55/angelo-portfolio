@@ -314,3 +314,10 @@ Asset status:
 - Recorded the owner's confirmation that a live Formspree message arrived in the inbox, not spam, and the Copy address control reported success.
 - Clarified that the PESO Kabankalan repository is intentionally private for now. Keep the live-demo link distinct from the portfolio source link; add a dedicated PESO source link only if the owner later chooses to make that repository public.
 - Documentation-only update; no application code or public-facing link was changed.
+
+## 2026-10-18 - Cisco Pathway Exam credential and chatbot sizing
+
+- Added the document-titled IT Support Specialist Pathway Exam immediately after IT Customer Support Basics. The certificate names Angelo Pama Lacsao, Cisco Networking Academy, 18 October 2026, and certificate ID `87af25c7-d8fe-4579-a351-fe71b42ee861`; the public PDF is byte-for-byte identical to the supplied original.
+- Added a legible WebP preview and reused the existing certificate card, PDF overlay, open/download actions, and responsive layout. The other four certificate records remain unchanged; recruiter-assistant knowledge now includes the fifth credential.
+- Corrected the chatbot grid from five to six explicit rows and bounded the desktop panel to 420px by 610px. Mobile sizing stays within the viewport; short-height layouts use a horizontal quick-action strip so messages and controls do not overlap.
+- Local verification: lint and production build passed (the build required network access to fetch the existing Geist fonts); PDF hash and visual preview passed; Playwright with Chrome at 1440x900, 390x844, and 320x520 confirmed certificate order and overlay URL, bounded chat panel, long-message scrolling, body scroll lock, stable page position after close, and no page errors. The Browser plugin was unavailable. The public resume remains unchanged and still lists four credentials pending a separate update.

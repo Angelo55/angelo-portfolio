@@ -19,6 +19,18 @@ const certificates = [
     tone: "cisco-support",
   },
   {
+    id: "it-support-specialist-pathway-exam",
+    title: "IT Support Specialist Pathway Exam",
+    issuer: "Cisco Networking Academy",
+    date: "18 October 2026",
+    type: "Certificate of completion - pathway exam",
+    credentialId: "87af25c7-d8fe-4579-a351-fe71b42ee861",
+    verification: "The original certificate includes a QR verification mark and certificate ID.",
+    preview: "/images/certificates/it-support-specialist-pathway-exam.webp",
+    document: "/documents/certificates/it-support-specialist-pathway-exam.pdf",
+    tone: "cisco-support",
+  },
+  {
     id: "generative-ai",
     title: "Core Generative AI Skills",
     issuer: "Cisco Networking Academy",

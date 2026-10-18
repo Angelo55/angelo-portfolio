@@ -117,6 +117,7 @@ Approved on 2026-10-12.
 - New chat restores the verified welcome state and clears the current input/conversation; Escape and outside click close the panel and return focus to the launcher.
 - Resume and PESO resources use embedded previews or existing overlays where appropriate. Certificate navigation returns visitors to the established credential gallery.
 - The panel uses a blurred backdrop, bounded height, compact spacing, and a mobile-safe width. Reduced motion removes transitions and backdrop blur while preserving state changes.
+- Panel sizing targets 420px width and at most 610px height on desktop; mobile width and height remain viewport-bounded. Six explicit layout rows keep messages as the scrolling region while the header, quick actions, project resource, reset, and input remain accessible. On short-height screens, quick actions scroll horizontally rather than crowding the conversation.
 
 ## Responsive header controls
 
