@@ -389,6 +389,11 @@ Asset status:
 - Refined the Turnstile widget's contact-form layout: it now has a restrained 340px maximum width, aligns with the form fields on larger screens, and can shrink with the form on narrow screens. The owner confirmed CAPTCHA submission already worked on mobile; verification behavior was not changed.
 - Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
 
+## 2026-10-19 - Contact form readability and focus
+
+- Increased contact-field label size slightly and set explicit placeholder colors in both themes. In dark mode, labels, the section eyebrow, status/email fallback text, and keyboard focus outlines now remain legible against the purple panel.
+- Inspected the existing production form and the changed local form at desktop and 390px widths in light and dark themes. The form layout and Turnstile sizing were not changed; no additional Formspree submission was made.
+
 ## 2026-10-18 - Focused accessibility and performance pass
 
 - Darkened the shared light-theme muted-text token from `#777873` to `#62655f`. Its contrast against the main light background rises from about 4.01:1 to 5.33:1; the dark-theme token is unchanged.

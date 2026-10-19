@@ -70,6 +70,13 @@ button{color:inherit}
 .formStatus{min-height:18px;margin:0;color:#49495c;font-size:12px}
 .contactEmail{overflow-wrap:anywhere}.copyEmailButton{padding:4px 0;border:0;background:none;color:inherit;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.copyEmailButton:focus-visible{outline:3px solid #176f7e;outline-offset:3px;border-radius:2px}
 .turnstileWrap{width:min(100%,340px);min-height:65px;justify-self:start;overflow:visible}
+.contact label{font-size:12px}
+.contact input::placeholder,.contact textarea::placeholder{color:#555569;opacity:1}
+[data-theme="dark"] .contactBox>div>small,[data-theme="dark"] .contact label,[data-theme="dark"] .formStatus{color:#f0effa}
+[data-theme="dark"] .contact input,[data-theme="dark"] .contact textarea{background:#201d4b66}
+[data-theme="dark"] .contact input:focus,[data-theme="dark"] .contact textarea:focus{background:#201d4b99;border-color:#a6eee9}
+[data-theme="dark"] .contact input::placeholder,[data-theme="dark"] .contact textarea::placeholder{color:#f0effa;opacity:1}
+[data-theme="dark"] .contact input:focus-visible,[data-theme="dark"] .contact textarea:focus-visible,[data-theme="dark"] .copyEmailButton:focus-visible{outline-color:#a6eee9}
 .follow small{display:block}
 .follow a{display:flex;align-items:center;gap:10px}
 .follow a svg{width:22px}
