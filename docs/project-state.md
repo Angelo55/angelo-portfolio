@@ -88,7 +88,7 @@ Last updated: 2026-10-18
 ## Known limitations
 
 - Portfolio POST routes now have bounded parsing, timeouts/admission limits, and same-instance duplicate-request safeguards; see `docs/backend-reliability-audit.md` for the 2026-10-19 controlled concurrency results. Cross-instance event uniqueness and atomic distributed rate limiting are not claimed because the portfolio Supabase database is not connected in this workspace.
-- Request-abuse controls, environment settings, and the **unpublished** Vercel chat WAF draft are documented in `docs/request-abuse-protection.md`. The staged log-only rule has no production effect until the owner reviews and publishes it. Live Formspree CAPTCHA/domain settings still need account-level verification; the direct endpoint remains bypassable by scripts.
+- Request-abuse controls, environment settings, and the **live, log-only** Vercel chat WAF rule are documented in `docs/request-abuse-protection.md`. The rule observes traffic but does not block it. Live Formspree CAPTCHA/domain settings still need account-level verification; the direct endpoint remains bypassable by scripts.
 
 - The GitHub contribution calendar intentionally keeps a dense 11px visual grid; its roving keyboard focus and day labels are accessible, but a larger alternative touch-selection control would improve precision on phones. This pass did not alter the approved calendar layout.
 

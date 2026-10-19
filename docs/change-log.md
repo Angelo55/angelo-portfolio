@@ -380,7 +380,8 @@ Asset status:
 
 - Added configurable, bounded per-instance chat minute/daily limits, a short cooldown, accurate `Retry-After` guidance, and quota accounting for coalesced in-flight questions. Analytics rate and active-store limits are now configurable within bounds.
 - Validated forwarded client addresses, removed a forwarded-host origin exception, and added sampled reason/count-only rejection logs without visitor or message data.
-- Staged a non-enforcing Vercel chat POST rate-limit observation rule; it is not published. Documented owner review/publish steps, Formspree direct-endpoint limitations, configuration, tests, and remaining cross-instance limits in `docs/request-abuse-protection.md`.
+- Staged a non-enforcing Vercel chat POST rate-limit observation rule. Documented Formspree direct-endpoint limitations, configuration, tests, and remaining cross-instance limits in `docs/request-abuse-protection.md`.
+- Reviewed the exact Vercel firewall diff and valid rule configuration, then published the log-only chat rule. Verified live status with no pending changes. Formspree account settings remain unverified because its dashboard required sign-in.
 - Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
 
 ## 2026-10-18 - Focused accessibility and performance pass
