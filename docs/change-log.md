@@ -386,6 +386,7 @@ Asset status:
 - Added the public Turnstile site key to Vercel Production, redeployed, and verified a successful widget on the custom portfolio hostname. Updated the privacy notice. Formspree's private secret, CAPTCHA toggle, and post-enablement delivery test remain pending owner action.
 - The owner reported configuring Formspree's private Turnstile secret and enabling CAPTCHA. Verified that a single tokenless POST with the production Origin and Referer returns HTTP `400` (`Please complete the Turnstile`); positive-path inbox receipt remains pending owner confirmation.
 - The owner confirmed a normal post-CAPTCHA submission showed the site's success message and reached the inbox, completing the contact-form positive-path check.
+- Refined the Turnstile widget's contact-form layout: it now has a restrained 340px maximum width, aligns with the form fields on larger screens, and can shrink with the form on narrow screens. The owner confirmed CAPTCHA submission already worked on mobile; verification behavior was not changed.
 - Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
 
 ## 2026-10-18 - Focused accessibility and performance pass

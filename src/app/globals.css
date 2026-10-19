@@ -69,7 +69,7 @@ button{color:inherit}
 .cert{width:100%;border-top:0;border-left:0;border-right:0;background:transparent;text-align:left;cursor:pointer}
 .formStatus{min-height:18px;margin:0;color:#49495c;font-size:12px}
 .contactEmail{overflow-wrap:anywhere}.copyEmailButton{padding:4px 0;border:0;background:none;color:inherit;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.copyEmailButton:focus-visible{outline:3px solid #176f7e;outline-offset:3px;border-radius:2px}
-.turnstileWrap{min-height:65px;max-width:100%;overflow:visible}
+.turnstileWrap{width:min(100%,340px);min-height:65px;justify-self:start;overflow:visible}
 .follow small{display:block}
 .follow a{display:flex;align-items:center;gap:10px}
 .follow a svg{width:22px}
