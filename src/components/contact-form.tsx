@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 const endpoint = "https://formspree.io/f/xrpeogpy";
 const contactEmail = "angelopamalacsao@gmail.com";
@@ -10,6 +10,7 @@ export function ContactForm() {
   const [status, setStatus] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
   const [sending, setSending] = useState(false);
+  const sendingRef = useRef(false);
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(contactEmail);
@@ -30,7 +31,8 @@ export function ContactForm() {
     data.set("name", name);
     data.set("email", email);
     data.set("message", message);
-    if (sending) return;
+    if (sendingRef.current) return;
+    sendingRef.current = true;
     setSending(true);
     setStatus("Sending your message…");
     const controller = new AbortController();
@@ -50,10 +52,13 @@ export function ContactForm() {
       }
       form.reset();
       setStatus("Thanks—your message was sent. I'll reply by email.");
-    } catch {
-      setStatus("I couldn't send your message. Please try again or email me directly.");
+    } catch (error) {
+      setStatus(error instanceof DOMException && error.name === "AbortError"
+        ? "The request timed out, so I can't confirm delivery. Please wait before trying again, or email me directly."
+        : "I couldn't send your message. Please try again or email me directly.");
     } finally {
       window.clearTimeout(timeout);
+      sendingRef.current = false;
       setSending(false);
     }
   }

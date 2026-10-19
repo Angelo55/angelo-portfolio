@@ -1,17 +1,26 @@
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
+import { readBoundedJson } from "@/lib/read-bounded-json";
 
 type AnalyticsEvent = {
   event: "page_view" | "click";
   path: string;
   target?: string;
   visitorId?: string;
+  eventId?: string;
 };
 
 const buckets = new Map<string, { count: number; resetAt: number }>();
 const WINDOW_MS = 60_000;
 const MAX_EVENTS_PER_WINDOW = 30;
 const MAX_RATE_LIMIT_BUCKETS = 2_048;
+const EVENT_CACHE_MS = 10 * 60_000;
+const MAX_EVENT_CACHE = 2_048;
+const MAX_ACTIVE_STORES = 64;
+let activeStores = 0;
+type StoreResult = { accepted: boolean; persisted?: boolean; status: number };
+const pendingEvents = new Map<string, { fingerprint: string; work: Promise<StoreResult> }>();
+const completedEvents = new Map<string, { fingerprint: string; result: StoreResult; expiresAt: number }>();
 
 function isValidEvent(value: unknown): value is AnalyticsEvent {
   if (!value || typeof value !== "object") return false;
@@ -19,15 +28,16 @@ function isValidEvent(value: unknown): value is AnalyticsEvent {
   return (event.event === "page_view" || event.event === "click")
     && typeof event.path === "string" && event.path.startsWith("/") && event.path.length <= 160
     && (event.target === undefined || (typeof event.target === "string" && event.target.length <= 120))
-    && (event.visitorId === undefined || (typeof event.visitorId === "string" && /^[a-zA-Z0-9_-]{16,80}$/.test(event.visitorId)));
+    && (event.visitorId === undefined || (typeof event.visitorId === "string" && /^[a-zA-Z0-9_-]{16,80}$/.test(event.visitorId)))
+    && (event.eventId === undefined || (typeof event.eventId === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(event.eventId)));
 }
 
 function hash(value: string, salt: string) {
   return createHash("sha256").update(`${salt}:${value}`).digest("hex");
 }
 
-function json(body: object, status: number) {
-  return NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
+function json(body: object, status: number, retryAfter?: number) {
+  return NextResponse.json(body, { status, headers: { "Cache-Control": "no-store", ...(retryAfter ? { "Retry-After": String(retryAfter) } : {}) } });
 }
 
 export async function POST(request: Request) {
@@ -43,7 +53,7 @@ export async function POST(request: Request) {
   const now = Date.now();
   const bucket = buckets.get(ip);
   if (!bucket || bucket.resetAt <= now) buckets.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-  else if (bucket.count >= MAX_EVENTS_PER_WINDOW) return json({ accepted: false }, 429);
+  else if (bucket.count >= MAX_EVENTS_PER_WINDOW) return json({ accepted: false }, 429, Math.max(1, Math.ceil((bucket.resetAt - now) / 1000)));
   else bucket.count += 1;
 
   if (buckets.size >= MAX_RATE_LIMIT_BUCKETS) {
@@ -56,14 +66,50 @@ export async function POST(request: Request) {
     }
   }
 
-  let event: unknown;
-  try { event = await request.json(); } catch { return json({ accepted: false }, 400); }
+  const parsed = await readBoundedJson(request, 4_096);
+  if (!parsed.ok) return json({ accepted: false }, parsed.reason === "too-large" ? 413 : 400);
+  const event = parsed.value;
   if (!isValidEvent(event)) return json({ accepted: false }, 400);
 
+  const eventId = event.eventId?.toLowerCase();
+  const fingerprint = eventId ? hash(JSON.stringify([ip, event.event, event.path, event.target ?? null, event.visitorId ?? null]), "event") : "";
+  if (eventId) {
+    const finished = completedEvents.get(eventId);
+    if (finished && finished.expiresAt > now) {
+      if (finished.fingerprint !== fingerprint) return json({ accepted: false }, 409);
+      return json({ accepted: finished.result.accepted, persisted: finished.result.persisted }, finished.result.status);
+    }
+    const pending = pendingEvents.get(eventId);
+    if (pending) {
+      if (pending.fingerprint !== fingerprint) return json({ accepted: false }, 409);
+      const result = await pending.work;
+      return json({ accepted: result.accepted, persisted: result.persisted }, result.status);
+    }
+  }
+
+  if (activeStores >= MAX_ACTIVE_STORES) return json({ accepted: false }, 503, 2);
+  activeStores += 1;
+  const work = storeEvent(event, ip);
+  if (eventId) pendingEvents.set(eventId, { fingerprint, work });
+  try {
+    const result = await work;
+    if (eventId && result.accepted) {
+      for (const [id, cached] of completedEvents) if (cached.expiresAt <= now) completedEvents.delete(id);
+      if (completedEvents.size >= MAX_EVENT_CACHE) completedEvents.delete(completedEvents.keys().next().value!);
+      completedEvents.set(eventId, { fingerprint, result, expiresAt: Date.now() + EVENT_CACHE_MS });
+    }
+    return json({ accepted: result.accepted, persisted: result.persisted }, result.status);
+  } finally {
+    if (eventId) pendingEvents.delete(eventId);
+    activeStores -= 1;
+  }
+}
+
+async function storeEvent(event: AnalyticsEvent, ip: string): Promise<StoreResult> {
   const url = process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const hashSalt = process.env.ANALYTICS_HASH_SALT;
-  if (!url || !serviceRoleKey || !hashSalt) return json({ accepted: true, persisted: false }, 202);
+  if (!url || !serviceRoleKey || !hashSalt) return { accepted: true, persisted: false, status: 202 };
 
   let response: Response;
   try {
@@ -78,10 +124,15 @@ export async function POST(request: Request) {
         ip_hash: hash(ip, hashSalt),
       }),
       cache: "no-store",
+      signal: AbortSignal.timeout(5_000),
     });
   } catch {
-    return json({ accepted: false, persisted: false }, 503);
+    console.warn("[portfolio/analytics] storage request failed", { reason: "network-or-timeout" });
+    return { accepted: false, persisted: false, status: 503 };
   }
-  if (!response.ok) return json({ accepted: false, persisted: false }, 503);
-  return json({ accepted: true, persisted: true }, 202);
+  if (!response.ok) {
+    console.warn("[portfolio/analytics] storage request failed", { status: response.status });
+    return { accepted: false, persisted: false, status: 503 };
+  }
+  return { accepted: true, persisted: true, status: 202 };
 }

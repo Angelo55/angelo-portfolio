@@ -369,6 +369,13 @@ Asset status:
 - Applied the shared `Reveal` component to the loaded GitHub Activity body so its heading, metrics, and calendar enter with the same restrained fade-and-rise motion as neighboring sections; the Suspense loading skeleton remains outside that animation.
 - Local Chrome/Playwright checks at 1440px and 390px confirmed opacity transitions from 0 to 1 on scroll, no page overflow or console errors, and a static visible result with `prefers-reduced-motion: reduce`.
 
+## 2026-10-19 - Portfolio request-integrity pass
+
+- Audited portfolio-only request lifecycles and classifications in `docs/backend-reliability-audit.md`; the separate PESO application was explicitly excluded.
+- Bounded API request bodies and analytics storage waits, capped concurrent provider/storage work per instance, and deduplicated identical in-flight chat questions and repeated analytics event IDs within an instance.
+- Added synchronous client submission guards for chat and contact, reliable `sendBeacon` fallback, clearer uncertain-delivery messaging, and status-only upstream failure logs.
+- Controlled simultaneous-request and mocked-browser checks passed without consuming DeepSeek/Formspree quota. Cross-instance analytics uniqueness remains pending access to the portfolio database.
+
 ## 2026-10-18 - Focused accessibility and performance pass
 
 - Darkened the shared light-theme muted-text token from `#777873` to `#62655f`. Its contrast against the main light background rises from about 4.01:1 to 5.33:1; the dark-theme token is unchanged.

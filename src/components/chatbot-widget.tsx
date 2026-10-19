@@ -75,6 +75,7 @@ export function ChatbotWidget() {
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
+  const sendingRef = useRef(false);
 
   useEffect(() => {
     if (!open) return;
@@ -127,7 +128,8 @@ export function ChatbotWidget() {
 
   async function send(message = input) {
     const value = message.trim();
-    if (!value || loading) return;
+    if (!value || sendingRef.current) return;
+    sendingRef.current = true;
     setInput("");
     setMessages((items) => [...items, { role: "user", text: value }]);
     setLoading(true);
@@ -142,11 +144,13 @@ export function ChatbotWidget() {
     } catch {
       setMessages((items) => [...items, { role: "assistant", text: "I can’t reach the assistant right now. You can still review my portfolio links or contact me directly." }]);
     } finally {
+      sendingRef.current = false;
       setLoading(false);
     }
   }
 
   function resetChat() {
+    if (sendingRef.current) return;
     setMessages([initialMessage]);
     setInput("");
     setLoading(false);
@@ -222,7 +226,7 @@ export function ChatbotWidget() {
             <div className="chatResourceList"><PesoPreview onNavigate={() => closeChat(false)} /></div>
 
             <div className="chatFooterActions">
-              <button type="button" className="chatReset" onClick={resetChat}><RefreshCcw />New chat</button>
+              <button type="button" className="chatReset" onClick={resetChat} disabled={loading}><RefreshCcw />New chat</button>
               <span>Answers are grounded in my portfolio</span>
             </div>
             <form onSubmit={submit}>

@@ -87,6 +87,8 @@ Last updated: 2026-10-18
 
 ## Known limitations
 
+- Portfolio POST routes now have bounded parsing, timeouts/admission limits, and same-instance duplicate-request safeguards; see `docs/backend-reliability-audit.md` for the 2026-10-19 controlled concurrency results. Cross-instance event uniqueness and atomic distributed rate limiting are not claimed because the portfolio Supabase database is not connected in this workspace.
+
 - The GitHub contribution calendar intentionally keeps a dense 11px visual grid; its roving keyboard focus and day labels are accessible, but a larger alternative touch-selection control would improve precision on phones. This pass did not alter the approved calendar layout.
 
 - Contact submissions use the owner-provided Formspree endpoint. The owner confirmed a live-site submission arrived in the inbox rather than spam, and the Copy address fallback displayed its success message after copying. The free plan is limited to 50 monthly submissions, and the owner reported that domain restriction is unavailable on that plan. A hidden spam-trap field and Formspree's own protections help, but cannot fully prevent automated submissions or quota exhaustion.
