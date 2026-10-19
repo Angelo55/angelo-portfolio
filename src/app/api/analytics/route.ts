@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 import { readBoundedJson } from "@/lib/read-bounded-json";
+import { boundedInteger, clientAddress, recordRequestRejection } from "@/lib/request-protection";
 
 type AnalyticsEvent = {
   event: "page_view" | "click";
@@ -12,11 +13,11 @@ type AnalyticsEvent = {
 
 const buckets = new Map<string, { count: number; resetAt: number }>();
 const WINDOW_MS = 60_000;
-const MAX_EVENTS_PER_WINDOW = 30;
+const MAX_EVENTS_PER_WINDOW = boundedInteger(process.env.ANALYTICS_RATE_LIMIT_PER_MINUTE, 30, 1, 300);
 const MAX_RATE_LIMIT_BUCKETS = 2_048;
 const EVENT_CACHE_MS = 10 * 60_000;
 const MAX_EVENT_CACHE = 2_048;
-const MAX_ACTIVE_STORES = 64;
+const MAX_ACTIVE_STORES = boundedInteger(process.env.ANALYTICS_MAX_ACTIVE_STORES, 64, 1, 128);
 let activeStores = 0;
 type StoreResult = { accepted: boolean; persisted?: boolean; status: number };
 const pendingEvents = new Map<string, { fingerprint: string; work: Promise<StoreResult> }>();
@@ -44,16 +45,16 @@ export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const allowedOrigin = process.env.NEXT_PUBLIC_SITE_URL ?? "https://angelolacsao-portfolio.vercel.app";
   const requestOrigin = new URL(request.url).origin;
-  const requestHost = request.headers.get("x-forwarded-host") ?? request.headers.get("host");
-  const requestProtocol = request.headers.get("x-forwarded-proto") ?? new URL(request.url).protocol.replace(":", "");
-  const forwardedOrigin = requestHost ? `${requestProtocol}://${requestHost}` : requestOrigin;
-  if (origin && origin !== allowedOrigin && origin !== requestOrigin && origin !== forwardedOrigin) return json({ accepted: false }, 403);
+  if (origin && origin !== allowedOrigin && origin !== requestOrigin) return json({ accepted: false }, 403);
   if (Number(request.headers.get("content-length") ?? 0) > 4096) return json({ accepted: false }, 413);
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip = clientAddress(request);
   const now = Date.now();
   const bucket = buckets.get(ip);
   if (!bucket || bucket.resetAt <= now) buckets.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-  else if (bucket.count >= MAX_EVENTS_PER_WINDOW) return json({ accepted: false }, 429, Math.max(1, Math.ceil((bucket.resetAt - now) / 1000)));
+  else if (bucket.count >= MAX_EVENTS_PER_WINDOW) {
+    recordRequestRejection("analytics", "minute_limit");
+    return json({ accepted: false }, 429, Math.max(1, Math.ceil((bucket.resetAt - now) / 1000)));
+  }
   else bucket.count += 1;
 
   if (buckets.size >= MAX_RATE_LIMIT_BUCKETS) {
@@ -87,7 +88,10 @@ export async function POST(request: Request) {
     }
   }
 
-  if (activeStores >= MAX_ACTIVE_STORES) return json({ accepted: false }, 503, 2);
+  if (activeStores >= MAX_ACTIVE_STORES) {
+    recordRequestRejection("analytics", "busy");
+    return json({ accepted: false }, 503, 2);
+  }
   activeStores += 1;
   const work = storeEvent(event, ip);
   if (eventId) pendingEvents.set(eventId, { fingerprint, work });

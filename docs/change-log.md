@@ -376,6 +376,13 @@ Asset status:
 - Added synchronous client submission guards for chat and contact, reliable `sendBeacon` fallback, clearer uncertain-delivery messaging, and status-only upstream failure logs.
 - Controlled simultaneous-request and mocked-browser checks passed without consuming DeepSeek/Formspree quota. Cross-instance analytics uniqueness remains pending access to the portfolio database.
 
+## 2026-10-19 - Layered request-abuse hardening
+
+- Added configurable, bounded per-instance chat minute/daily limits, a short cooldown, accurate `Retry-After` guidance, and quota accounting for coalesced in-flight questions. Analytics rate and active-store limits are now configurable within bounds.
+- Validated forwarded client addresses, removed a forwarded-host origin exception, and added sampled reason/count-only rejection logs without visitor or message data.
+- Staged a non-enforcing Vercel chat POST rate-limit observation rule; it is not published. Documented owner review/publish steps, Formspree direct-endpoint limitations, configuration, tests, and remaining cross-instance limits in `docs/request-abuse-protection.md`.
+- Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
+
 ## 2026-10-18 - Focused accessibility and performance pass
 
 - Darkened the shared light-theme muted-text token from `#777873` to `#62655f`. Its contrast against the main light background rises from about 4.01:1 to 5.33:1; the dark-theme token is unchanged.
