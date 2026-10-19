@@ -382,6 +382,7 @@ Asset status:
 - Validated forwarded client addresses, removed a forwarded-host origin exception, and added sampled reason/count-only rejection logs without visitor or message data.
 - Staged a non-enforcing Vercel chat POST rate-limit observation rule. Documented Formspree direct-endpoint limitations, configuration, tests, and remaining cross-instance limits in `docs/request-abuse-protection.md`.
 - Reviewed the exact Vercel firewall diff and valid rule configuration, then published the log-only chat rule. Verified live status with no pending changes. Formspree account settings remain unverified because its dashboard required sign-in.
+- Prepared optional Cloudflare Turnstile support for the AJAX contact form, including token checks, responsive widget sizing, and reset after submission attempts. Kept it inactive pending a public site key and coordinated Formspree configuration; the owner confirmed domain restriction was enabled and a post-change test message reached the inbox.
 - Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
 
 ## 2026-10-18 - Focused accessibility and performance pass
