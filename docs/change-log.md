@@ -384,6 +384,7 @@ Asset status:
 - Reviewed the exact Vercel firewall diff and valid rule configuration, then published the log-only chat rule. Verified live status with no pending changes. Formspree account settings remain unverified because its dashboard required sign-in.
 - Prepared optional Cloudflare Turnstile support for the AJAX contact form, including token checks, responsive widget sizing, and reset after submission attempts. Kept it inactive pending a public site key and coordinated Formspree configuration; the owner confirmed domain restriction was enabled and a post-change test message reached the inbox.
 - Added the public Turnstile site key to Vercel Production, redeployed, and verified a successful widget on the custom portfolio hostname. Updated the privacy notice. Formspree's private secret, CAPTCHA toggle, and post-enablement delivery test remain pending owner action.
+- The owner reported configuring Formspree's private Turnstile secret and enabling CAPTCHA. Verified that a single tokenless POST with the production Origin and Referer returns HTTP `400` (`Please complete the Turnstile`); positive-path inbox receipt remains pending owner confirmation.
 - Four security helper tests, controlled local burst/cooldown/quota/origin checks, lint, build, and diff check passed without using live provider quotas.
 
 ## 2026-10-18 - Focused accessibility and performance pass
